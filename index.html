@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namrata Jaiswal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: EulogyDemo-SemiBold;
+      src: url(assets/fonts/eulogy-demo/EulogyDemo-SemiBold.ttf);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden; /* Hide scrollbars */
+      font-family: 'Arial', sans-serif;
+    }
+
+    .scrollable-container {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: #171717;
+    }
+
+    .slider-screen-container {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .slider {
+      position: absolute;
+      width: 100vw;
+      height: 50vh;
+      background-color: #F67C29;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      /* transition: transform 0.5s ease; */
+    }
+
+    .bottom-slider {
+      bottom: 0;
+    }
+
+    .top-slider {
+      top: 0;
+    }
+
+    .page {
+      width: 100vw;
+      position: relative;
+      height: 100vh;
+      transition: transform 0.5s ease;
+    }
+
+    #page-1 {
+      height: 30vh;
+    }
+
+    #page-2 {
+      height: 109vh;
+    }
+    
+    #landing-header-top {
+      position: absolute;
+      bottom: 0;
+      transform: translateY(15vh);
+    }
+
+    #landing-header-bottom {
+      position: absolute;
+      top: 0;
+      transform: translateY(-15vh);
+    }
+
+    .landing-header {
+      margin: 0px;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 25vh;
+    }
+
+    #page-2-video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #page-2-video-overlay-main {
+      height: 100%;
+      width: 100%;
+      opacity: 80%;
+      background-color: #201f1f;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #page-2-video-overlay-1 {
+      height: 81vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #page-2-video-overlay-2 {
+      height: 28vh;
+      width: 100vw;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    #page-2-video-overlay-2-main-overlay {
+      height: 100%;
+      width: 100%;
+      background-color: #2b32d4;
+      opacity: 80%;
+    }
+
+    #meshCanvas {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+
+    #mainCanvas {
+      position: absolute;
+    }
+
+    .page-2-header-container {
+      height: 12%;
+      width: 90%;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    .page-2-content-container {
+      height: 88%;
+      width: 90%;
+      padding-left: 5%;
+      padding-right: 5%;
+      display: flex;
+    }
+
+    .page-2-content-flex {
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #page-2-content-left {
+      width: 32%;
+      margin-right: 0.5%;
+    }
+
+    #page-2-content-middle {
+      width: 30%;
+      margin-right: 0.5%;
+      margin-left: 0.5%;
+    }
+
+    #page-2-content-right {
+      width: 36%;
+      margin-left: 0.5%;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 500%;
+      color: #E0DFBF;
+      padding-left: 10%;
+    }
+
+    .page-2-left-top {
+      height: 50%;
+      width: 100%;
+    }
+
+    .page-2-left-bottom {
+      height: 50%;
+      width: 100%;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 250%;
+      color: #E0DFBF;
+    }
+
+    .full-width-container {
+      width: 100%;
+    }
+
+    .collage-1 {
+      width: 60%;
+      max-width: 200px;
+    }
+
+    .collage-2 {
+      max-height: 95%;
+    }
+
+    .circular-stamp-container {
+      height: 20vh;
+      width: 20vh;
+      background-color: #F67C29;
+      border-radius: 51%;
+      padding: 12px;
+      cursor: pointer;
+      transform: translateY(-10vh);
+      margin-left: 12%;
+    }
+
+    .circular-stamp-arrow-container {
+      height: 20vh;
+      width: 20vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 12px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    #page-2-circular-text {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      transition: transform 0.5s ease-out;
+    }
+
+    #page-2-circular-arrow {
+      height: 40%;
+      width: 40%;
+      padding: 30%;
+      transition: transform 0.5s ease-out;
+    }
+
+    .circular-stamp-container:hover #page-2-circular-text {
+      transform: rotate(-180deg); /* Adjust the degree of rotation as needed */
+      transition: transform 0.5s ease;
+    }
+
+    .circular-stamp-container:hover #page-2-circular-arrow {
+      transform: rotate(45deg); /* Adjust the degree of rotation as needed */
+      transition: transform 0.5s ease;
+    }
+
+    #a-a-text {
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 300%;
+      color: #E0DFBF;
+      width: 28%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 5%;
+    }
+
+    .page-2-video-overlay-2-content {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #a-a-text > .full-width-container {
+      margin: 0;
+      padding: 0;
+    }
+
+    #awards-container {
+      height: 100%;
+    }
+
+    #awards-img {
+      width: 80%;
+      transform: translateY(-50%);
+      float: right;
+    }
+
+    #page-3 {
+      height: 91vh;
+    }
+
+    .page-container {
+      display: flex;
+      height: 100%;
+      width: 80%;
+      flex-wrap: wrap;
+      padding-left: 10%;
+      padding-right: 10%;
+      align-items: center;
+    }
+
+    .page-header {
+      width: 100%;
+      height: 5%;
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 20px;
+      color: #797979;
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+      display: flex;
+      margin-bottom: 58px;
+      letter-spacing: 19.2px;
+      margin-top: auto;
+    }
+
+    #page-3-text {
+      width: 100%;
+      max-width: 1093px;
+      font-family: "Inter";
+      font-weight: 500;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 64px;
+      color: #E0DFBF;
+      margin: 0;
+      padding: 0;
+      /* display: flex;
+      flex-wrap: wrap; */
+      letter-spacing: 3.84px;
+      margin-bottom: auto;
+    }
+
+    #page-4-header {
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 20px;
+      color: #797979;
+      align-items: flex-end;
+      display: flex;
+      margin-bottom: 58px;
+      letter-spacing: 19.2px;
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin-top: auto;
+    }
+
+    #page-4-selector-container {
+      height: 50%;
+      width: 100%;
+      margin-bottom: auto;
+    }
+
+    .what-i-do-selector {
+      width: 100%;
+      height: 20%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hover-highlight {
+      height: 0%;
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      transition: height 0.3s;
+      transition-timing-function: ease-in;
+      font-style: 'Inter';
+      font-weight: 500;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 0px;
+      display: flex;
+    }
+
+    .what-i-do-text {
+      position: absolute;
+      color: #E0DFBF;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 400%;
+      letter-spacing: 3.84px;
+      transition: transform 0.3s ease;
+      width: 80%;
+      height: 9%;
+      padding-top: 1%;
+      padding-left: 10%;
+      padding-right: 10%;
+      display: flex;
+      align-items: center;
+    }
+
+    .what-i-do-selector:hover > .hover-highlight {
+      height: 100%;
+      background-color: #F67C29;
+      color: #2B2B2B;
+      transition: height 0.3s;
+      transition-timing-function: ease-in;
+      font-size: 16px;
+    }
+
+    .what-i-do-selector:hover > .what-i-do-text {
+      color: #2B2B2B;
+      transition: transform 0.3s ease;
+    }
+
+    #page-5-text {
+      width: 100%;
+      max-width: 1093px;
+      font-family: "Inter";
+      font-weight: 500;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 64px;
+      color: #E0DFBF;
+      margin: 0;
+      padding: 0;
+      /* display: flex;
+      flex-wrap: wrap; */
+      letter-spacing: 3.84px;
+      margin-bottom: auto;
+    }
+
+    #page-5-overlay {
+      height: 100%;
+      width: 100%;
+      opacity: 80%;
+      background-color: #070FCE;
+    }
+
+    #page-6-header {
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 20px;
+      color: #797979;
+      align-items: flex-end;
+      display: flex;
+      margin-bottom: 58px;
+      letter-spacing: 19.2px;
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin-top: auto;
+    }
+
+    #page-6-selector-container {
+      height: 52%;
+      width: 100%;
+      margin-bottom: auto;
+    }
+
+    .history-selector {
+      width: 100%;
+      height: 25%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .history-text {
+      position: absolute;
+      color: #E0DFBF;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 300%;
+      letter-spacing: 3.84px;
+      transition: transform 0.3s ease;
+      width: 80%;
+      height: 11%;
+      padding-left: 10%;
+      padding-right: 10%;
+      display: flex;
+      align-items: center;
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+
+    .history-text-date {
+      width: 20%;
+      height: 100%;
+    }
+
+    .history-text-exp {
+      width: 80%;
+      height: 100%;
+    }
+
+    .exp-text {
+      width: 100%;
+    }
+
+    .exp-desc {
+      font-family: 'Inter';
+      font-size: 16px;
+      font-weight: 300;
+      color: #797979;
+    }
+
+    .history-selector:hover > .hover-highlight {
+      height: 100%;
+      background-color: #F67C29;
+      color: #2B2B2B;
+      transition: height 0.3s;
+      transition-timing-function: ease-in;
+      font-size: 16px;
+    }
+
+    .history-selector:hover > .history-text {
+      color: #2B2B2B;
+      transition: transform 0.3s ease;
+    }
+
+    .history-selector:hover .history-text .history-text-exp .exp-desc {
+      color: #282828;
+    }
+
+    #page-7 {
+      height: 300vh;
+      width: 100vw;
+    }
+
+    .page-7-content-container {
+      height: 60%;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      z-index: 1;
+    }
+
+    .page-7-container {
+      display: flex;
+      height: 100vh;
+      width: 80vw;
+      flex-wrap: wrap;
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
+    .app-name-text {
+      width: 30%;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 500%;
+      color: #E0DFBF;
+      align-items: flex-end;
+      display: flex;
+      position: absolute;
+      padding-left: 10%;
+      max-width: 830px;
+      letter-spacing: 3.84px;
+    }
+
+    .app-image-container {
+      height: 100%;
+      width: 100%;
+      justify-content: flex-end;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .app-image {
+      height: 90%;
+    }
+
+    #page-7-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      transition: background-image 0.2s ease;
+    }
+
+    #page-8-header {
+      width: 100%;
+      height: 5%;
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 20px;
+      color: #797979;
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+      display: flex;
+      letter-spacing: 19.2px;
+      margin-top: 10%;
+    }
+
+    #page-8-container {
+      width: 100%;
+      height: calc(75% - 58px);
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+      display: flex;
+      padding-top: 58px;
+    }
+
+    #page-8-quote-container {
+      width: 64px;
+      height: 100%;
+    }
+
+    #page-8-text-container {
+      margin-left: 36px;
+      width: 60%;
+      height: 100%;
+    }
+
+    #page-8-main-text {
+      width: 100%;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 500%;
+      color: #E0DFBF;
+      margin-bottom: 36px;
+    }
+
+    #page-8-name-text {
+      width: 100%;
+      font-family: 'Inter';
+      font-weight: 300;
+      font-size: 24px;
+      color: #E0DFBF;
+      margin-bottom: 20px;
+    }
+
+    #page-8-role-text {
+      width: 100%;
+      font-family: 'Inter';
+      font-weight: 300;
+      font-size: 24px;
+      color: #797979;
+    }
+
+    #page-8-selector-container {
+      width: calc(40% - 100px);
+      height: 100%;
+    }
+
+    .feedback-selector-container {
+      width: 100%;
+      height: 120px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .feedback-arrow {
+      margin-right: 20px;
+    }
+
+    .feedback-img{
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="scrollable-container" id="myScrollableDiv">
+    <canvas id="mainCanvas"></canvas>
+    <div class="slider-screen-container">
+      <div class="slider top-slider"><p class="landing-header" id="landing-header-top">NAMRATA</p></div>
+      <div class="slider bottom-slider"><p class="landing-header" id="landing-header-bottom">NAMRATA</p></div>
+    </div>
+    <div class="page" id="page-1"></div>
+    <div class="page" id="page-2">
+      <video id="page-2-video" autoplay muted>
+        <source src="assets/videos/fabric.mp4" type="video/mp4">
+      </video>
+      <div id="page-2-video-overlay-main">
+        <canvas id="meshCanvas"></canvas>
+      </div>
+      <div id="page-2-video-overlay-1">
+        <div class="page-2-header-container"></div>
+        <div class="page-2-content-container">
+          <div class="page-2-content-flex" id="page-2-content-left">
+            <div class="page-2-left-top">
+              <img class="collage-1" src="assets/images/collage-1.png">
+            </div>
+            <div class="page-2-left-bottom">
+              <div class="full-width-container">
+                From Textile
+              </div>
+              <div class="full-width-container">
+                ✦ Designer to
+              </div>
+              <div class="full-width-container">
+                Product Designer
+              </div>
+            </div>
+          </div>
+          <div class="page-2-content-flex" id="page-2-content-middle">
+            <img class="collage-2" src="assets/images/collage-1.png">
+          </div>
+          <div class="page-2-content" id="page-2-content-right">
+            <div class="full-width-container">
+              Crafting
+            </div>
+            <div class="full-width-container">
+              ✦ Digital
+            </div>
+            <div class="full-width-container">
+              Experiences
+            </div>
+            <div class="full-width-container" style="font-size: 41% !important; margin-top: 20px;">
+              No matter what,
+            </div>
+            <div class="full-width-container" style="font-size: 41% !important;">
+              <s>Design</s> User always matters !
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div id="page-2-video-overlay-2">
+        <div id="page-2-video-overlay-2-main-overlay"></div>
+        <div class="page-2-video-overlay-2-content">
+          <div class="circular-stamp-container" href="#page-6">
+            <img src="assets/images/circle-text.svg" id="page-2-circular-text">
+            <div class="circular-stamp-arrow-container">
+              <img src="assets/images/circle-arrow.svg" id="page-2-circular-arrow">
+            </div>
+          </div>
+          <div id="a-a-text">
+            <div class="full-width-container">AWARDS</div>
+            <div class="full-width-container">/ ACHIEVEMENTS</div>
+          </div>
+          <div id="awards-container">
+            <img id="awards-img" src="assets/images/awards.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page-3">
+      <div class="page-container">
+        <div class="page-header">
+          ABOUT ME ✦ 
+        </div>
+        <div id="page-3-text">
+          <span style="color: #F67C29;">Skilled product designer</span> striving to
+          balance Art and Usability in crafting high-quality digital experiences.   
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page-4">
+      <div class="page-container" style="padding: 0px; width: 100%;">
+        <div id="page-4-header">
+          WHAT I DO 
+        </div>
+        <div id="page-4-selector-container">
+          <div class="what-i-do-selector">
+            <div class="hover-highlight"> User Flows/ Information Architecture</div>
+            <div class="what-i-do-text">WIREFRAME</div>
+          </div>
+          <div class="what-i-do-selector">
+            <div class="hover-highlight"> User Flows/ Information Architecture</div>
+            <div class="what-i-do-text">VISUAL</div>
+          </div>
+          <div class="what-i-do-selector">
+            <div class="hover-highlight"> User Flows/ Information Architecture</div>
+            <div class="what-i-do-text">MOTION</div>
+          </div>
+          <div class="what-i-do-selector">
+            <div class="hover-highlight"> User Flows/ Information Architecture</div>
+            <div class="what-i-do-text">INTERACTION</div>
+          </div>
+          <div class="what-i-do-selector">
+            <div class="hover-highlight"> User Flows/ Information Architecture</div>
+            <div class="what-i-do-text">USER TESTING</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page-5">
+      <!-- <div id="page-5-overlay"></div> -->
+      <div class="page-container" style="position: absolute; top: 0; left: 0;">
+        <div class="page-header">
+          EXPERIENCE ✦ 
+        </div>
+        <div id="page-5-text">
+          With <span style="color: #F67C29;">3+ years</span> of experience
+          in Mobile & Web Interface design and thriving in high paced environments of Indian startups.  
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page-6">
+      <div class="page-container" style="padding: 0px; width: 100%;">
+        <div id="page-6-header">
+          HISTORY
+        </div>
+        <div id="page-6-selector-container">
+          <div class="history-selector">
+            <div class="hover-highlight"></div>
+            <div class="history-text">
+              <div class="history-text-date">Now</div>
+              <div class="history-text-exp">
+                <div class="exp-text">PRODUCT DESIGNER 2</div>
+                <div class="exp-desc">Flobiz</div>
+              </div>
+            </div>
+          </div>
+          <div class="history-selector">
+            <div class="hover-highlight"></div>
+            <div class="history-text">
+              <div class="history-text-date">2021</div>
+              <div class="history-text-exp">
+                <div class="exp-text">PRODUCT DESIGNER</div>
+                <div class="exp-desc">Goldsetu</div>
+              </div>
+            </div>
+          </div>
+          <div class="history-selector">
+            <div class="hover-highlight"></div>
+            <div class="history-text">
+              <div class="history-text-date">2020</div>
+              <div class="history-text-exp">
+                <div class="exp-text">UI/ UX DESIGNER</div>
+                <div class="exp-desc">Galleri5</div>
+              </div>
+            </div>
+          </div>
+          <div class="history-selector">
+            <div class="hover-highlight"></div>
+            <div class="history-text">
+              <div class="history-text-date">2019</div>
+              <div class="history-text-exp">
+                <div class="exp-text">STYLIST/ GRAPHIC DESIGNER</div>
+                <div class="exp-desc">Aditya Birla Fashion And Retail</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page-7">
+      <div class="page-7-container">
+        <div class="page-header">
+          SELECTED CASE STUDIES ✦ 
+        </div>
+        <div class="page-7-content-container" id="e-invoice-content">
+          <div class="app-image-container">
+            <img class="app-image" src="assets/images/e-invoice.png">
+          </div>
+          <div class="app-name-text">E-INVOICE / MYBILLBOOK</div>
+        </div>
+      </div>
+      <div class="page-7-container" style="align-items: center;">
+        <div class="page-7-content-container" id="digi-gold-content">
+          <div class="app-image-container">
+            <img class="app-image" src="assets/images/digi-gold.png">
+          </div>
+          <div class="app-name-text">DIGITAL GOLD / GOLDSETU</div>
+        </div>
+      </div>
+      <div class="page-7-container" style="align-items: center;">
+        <div class="page-7-content-container" id="groc-content">
+          <div class="app-image-container">
+            <img class="app-image" src="assets/images/delivery.png">
+          </div>
+          <div class="app-name-text">GROCERIES / PERSONAL</div>
+        </div>
+      </div>
+      <div id="page-7-bg"></div>
+    </div>
+    <div class="page" id="page-8">
+      <div class="page-container" style="position: absolute; top: 0; left: 0;">
+        <div id="page-8-header">
+          WHAT THEY SAID
+        </div>
+        <div id="page-8-container">
+          <div id="page-8-quote-container">
+            <img src="assets/images/open_quotes.svg">
+          </div>
+          <div id="page-8-text-container">
+            <div id="page-8-main-text">Working with her is<br> inspiring, her energy is<br> contagious and she’s<br> always up for any<br> challenge!</div>
+            <div id="page-8-name-text">
+              Siddharth Seth
+            </div>
+            <div id="page-8-role-text">
+              VP of Products<br>
+              Flobiz
+            </div>
+            </div>
+            <div id="page-8-selector-container">
+              <div class="feedback-selector-container">
+                <img class="feedback-arrow" id="sid-arrow" src="assets/images/left_arrow_selector.svg">
+                <img id="sid-img" class="feedback-img" src="assets/images/sid_active.svg">
+              </div>
+              <div class="feedback-selector-container">
+                <img class="feedback-arrow" id="kevin-arrow" style="display: none;" src="assets/images/left_arrow_selector.svg">
+                <img id="kevin-img" class="feedback-img" src="assets/images/kevin_inactive.svg">
+              </div>
+              <div class="feedback-selector-container">
+                <img class="feedback-arrow" id="shankar-arrow" style="display: none;" src="assets/images/left_arrow_selector.svg">
+                <img id="shankar-img" class="feedback-img" src="assets/images/kevin_inactive.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/index.js"></script>
+</html>

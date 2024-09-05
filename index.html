@@ -12,6 +12,10 @@
       font-family: EulogyDemo-SemiBold;
       src: url(assets/fonts/eulogy-demo/EulogyDemo-SemiBold.ttf);
     }
+    @font-face {
+      font-family: EulogyDemo-Medium;
+      src: url(assets/fonts/eulogy-demo/EulogyDemo-Medium.ttf);
+    }
     body {
       margin: 0;
       padding: 0;
@@ -28,6 +32,12 @@
       overflow-y: auto;
       overflow-x: hidden;
       background-color: #171717;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer and Edge */
+    }
+
+    .scrollable-container::-webkit-scrollbar {
+      display: none;
     }
 
     .slider-screen-container {
@@ -78,13 +88,13 @@
     #landing-header-top {
       position: absolute;
       bottom: 0;
-      transform: translateY(15vh);
+      transform: translateY(50%);
     }
 
     #landing-header-bottom {
       position: absolute;
       top: 0;
-      transform: translateY(-15vh);
+      transform: translateY(-50%);
     }
 
     .landing-header {
@@ -133,7 +143,7 @@
       height: 100%;
       width: 100%;
       background-color: #2b32d4;
-      opacity: 80%;
+      mix-blend-mode: difference;
     }
 
     #meshCanvas {
@@ -216,22 +226,22 @@
     }
 
     .circular-stamp-container {
-      height: 20vh;
-      width: 20vh;
+      height: 18vh;
+      width: 18vh;
       background-color: #F67C29;
       border-radius: 51%;
-      padding: 12px;
+      padding: 24px;
       cursor: pointer;
       transform: translateY(-10vh);
       margin-left: 12%;
     }
 
     .circular-stamp-arrow-container {
-      height: 20vh;
-      width: 20vh;
+      height: 18vh;
+      width: 18vh;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 1vh;
+      left: 1vh;
       margin: 12px;
       display: flex;
       align-items: center;
@@ -373,58 +383,76 @@
     }
 
     .what-i-do-selector {
+      position: relative;
       width: 100%;
-      height: 20%;
+      height: 6.85rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       width: 100%;
+      padding-top: 1rem;
     }
 
     .hover-highlight {
-      height: 0%;
-      width: 80%;
-      padding-left: 10%;
+      height: 100%;
       padding-right: 10%;
       transition: height 0.3s;
       transition-timing-function: ease-in;
-      font-style: 'Inter';
+      font-family: 'Inter';
       font-weight: 500;
       align-items: center;
-      justify-content: flex-end;
-      font-size: 0px;
+      justify-content: flex-start;
+      font-size: 0;
       display: flex;
+      z-index: 1;
     }
 
     .what-i-do-text {
-      position: absolute;
+      /* position: absolute; */
       color: #E0DFBF;
       font-family: 'EulogyDemo-SemiBold';
       font-weight: 600;
-      font-size: 400%;
+      font-size: 5.85rem;
       letter-spacing: 3.84px;
       transition: transform 0.3s ease;
-      width: 80%;
       height: 9%;
-      padding-top: 1%;
+      padding-top: 0.5%;
       padding-left: 10%;
-      padding-right: 10%;
+      padding-right: 25px;
       display: flex;
       align-items: center;
+      letter-spacing: 0.4rem;
+      z-index: 1;
+    }
+
+    .hover-aboslute-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #F67C29;
+      height: 0;
+      transition-timing-function: ease-in;
+      z-index: 0;
     }
 
     .what-i-do-selector:hover > .hover-highlight {
-      height: 100%;
-      background-color: #F67C29;
       color: #2B2B2B;
-      transition: height 0.3s;
-      transition-timing-function: ease-in;
       font-size: 16px;
     }
 
     .what-i-do-selector:hover > .what-i-do-text {
       color: #2B2B2B;
       transition: transform 0.3s ease;
+    }
+
+    .what-i-do-selector:hover > .hover-aboslute-bg {
+      height: 100%;
+      transition: height 0.3s;
+      transition-timing-function: ease-in;
+    }
+
+    #page-5 {
+      background-color: rgba(7, 15, 206, 0.5);
     }
 
     #page-5-text {
@@ -636,9 +664,11 @@
       width: 100%;
       font-family: 'EulogyDemo-SemiBold';
       font-weight: 600;
-      font-size: 500%;
+      font-size: 64px;
       color: #E0DFBF;
       margin-bottom: 36px;
+      line-height: 86px;
+      letter-spacing: 0.4rem;
     }
 
     #page-8-name-text {
@@ -650,7 +680,16 @@
       margin-bottom: 20px;
     }
 
-    #page-8-role-text {
+    #page-8-role-text-1 {
+      width: 100%;
+      font-family: 'Inter';
+      font-weight: 300;
+      font-size: 24px;
+      color: #797979;
+      margin-bottom: 8px;
+    }
+
+    #page-8-role-text-2 {
       width: 100%;
       font-family: 'Inter';
       font-weight: 300;
@@ -680,9 +719,508 @@
       cursor: pointer;
     }
 
+    #page-9 {
+      background-color: rgba(7, 15, 206, 0.5);
+    }
+
+    #page-9-header {
+      width: 100%;
+      height: 5%;
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 20px;
+      color: #ABABAB;
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+      margin-bottom: 58px;
+      letter-spacing: 19.2px;
+      margin-top: auto;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #page-9-text {
+      width: 100%;
+      font-family: "Inter";
+      font-weight: 500;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 7rem;
+      color: #E0DFBF;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      letter-spacing: 3.84px;
+      margin-bottom: 40px;
+      letter-spacing: 0.6rem;
+      text-align: center;
+    }
+
+    #page-9-footer {
+      width: 100%;
+      height: 5%;
+      font-family: "Inter";
+      font-weight: 400;
+      font-size: 16px;
+      color: #ABABAB;
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+      margin-bottom: auto;
+      text-align: center;
+    }
+
+    #page-10-header {
+      width: 100%;
+      height: 5%;
+      font-family: "Inter";
+      font-weight: 500;
+      font-size: 20px;
+      color: #ABABAB;
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+      margin-bottom: 58px;
+      letter-spacing: 19.2px;
+      margin-top: auto;
+    }
+
+    #page-10-text {
+      width: 100%;
+      font-family: "Inter";
+      font-weight: 500;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 5rem;
+      color: #E0DFBF;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 3.84px;
+      margin-bottom: 100px;
+      letter-spacing: 0.6rem;
+    }
+
+    #page-10-footer {
+      width: 100%;
+      height: 5%;
+      font-family: "Inter";
+      font-weight: 400;
+      font-size: 16px;
+      color: #ABABAB;
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+      margin-bottom: auto;
+      text-align: center;
+    }
+    
+    #page-10-gallery-container {
+      overflow-x: hidden;
+      width: 100vw;
+      height: 50%;
+      margin-left: -20%;
+      margin-right: -20%;
+      margin-bottom: 80px;
+      display: flex;
+    }
+    
+    #page-10-gallery {
+      display: flex;
+      height: 100%;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    .page-10-video {
+      aspect-ratio: 5/4;
+      height: 80%;
+      display: flex;
+      margin-left: 16px;
+      margin-right: 16px;
+      scroll-snap-align: start;
+      transition: height 0.5s ease;
+    } 
+
+    .page-10-video:hover {
+      height: 100%;
+    }
+
+    #page-10-gallery-container[data-animated="true"] {
+      overflow: hidden;
+    }
+
+    #page-10-gallery-container[data-animated="true"] #page-10-gallery {
+      width: max-content;
+      flex-wrap: nowrap;
+      animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+    }
+
+    #page-10-gallery-container[data-direction="right"] {
+      --_animation-direction: reverse;
+    }
+
+    #page-10-gallery-container[data-direction="left"] {
+      --_animation-direction: forwards;
+    }
+
+    #page-10-gallery-container[data-speed="fast"] {
+      --_animation-duration: 20s;
+    }
+
+    #page-10-gallery-container[data-speed="slow"] {
+      --_animation-duration: 60s;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translate(calc(-50% - 0.5rem));
+      }
+    }
+
+    .page-10-card-content {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    #page-11-footer {
+      width: 100%;
+      margin-bottom: 45px;
+      display: flex;
+      margin-top: auto;
+    }
+
+    #page-11-footer-left {
+      font-family: 'EulogyDemo-SemiBold';
+      color: #2B2B2B;
+      font-size: 5rem;
+    }
+
+    #page-11-footer-right {
+      margin-left: auto;
+      margin-right: 0px;
+      display: flex;
+    }
+
+    .contact-info {
+      color: #E0DFBF;
+      font-size: 3rem;
+      font-family: 'EulogyDemo-Medium';
+      display: flex;
+      flex-direction: column;
+      letter-spacing: 3.84px;
+    }
+
+    .contact-text {
+      font-family: "Inter";
+      font-weight: 200;
+      font-size: 1.2rem;
+      color: white;
+      margin-top: 0px;
+      margin-bottom: auto;
+      letter-spacing: 1px;
+    }
+
+    #page-11-content {
+      width: 100%;
+      height: 50%;
+      margin-top: auto;
+      align-items: center;
+      display: flex;
+    }
+
+    .view-resume {
+      position: fixed;
+      bottom: 100px;
+      right: 0px;
+      padding-top: 20px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: #F67C29;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      cursor: pointer;
+      transform: rotate(-90deg) translateX(100%);
+      z-index: 1;
+      transform-origin: bottom right;
+    }
+
+    #resume-btn-text {
+      color: #2B2B2B;
+      font-family: 'EulogyDemo-SemiBold';
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      display: none;
+      margin-right: 10px;
+    }
+
+    .view-resume:hover #resume-btn-text {
+      display: inline-block; /* Show the text on hover */
+    }
+
+    .left-sticky-menu {
+      position: fixed;
+      bottom: 100px;
+      left: 0px;
+      z-index: 1;
+      width: 4vh;
+      padding-left: 60px;
+    }
+
+    .left-sticky-logo {
+      position: fixed;
+      top: 60px;
+      left: 0px;
+      z-index: 1;
+      padding-left: 60px;
+    }
+
+    .left-sticky-menu-img-inactive {
+      width: 100%;
+    }
+
+    .left-sticky-menu-img-active {
+      width: 100%;
+      display: none;
+    }
+
+    .side-bar-logo-container {
+      width: 5vh;
+      height: 5vh;
+      margin-top: 32px;
+      border-radius: 100px;
+      padding: 5px;
+    }
+
+    .side-bar-logo-container:hover {
+      background-color: #F67C29;
+    }
+
+    .side-bar-logo-container:hover .left-sticky-menu-img-inactive {
+      display: none;
+    }
+
+    .side-bar-logo-container:hover .left-sticky-menu-img-active {
+      display: block;
+    }
+
+    .header_menu {
+        position: fixed;
+        right: 60px;
+        top: 60px;
+        z-index: 1;
+    }
+
+    .header_menu a {
+        leading-trim: top;
+        text-edge: cap alphabetic;
+        display: block;
+        line-height: 1;
+        padding: .25rem 0;
+        position: relative;
+        text-align: right
+    }
+
+    @media(min-width: 1200px) {
+        .header_menu a {
+            padding:.375rem 0
+        }
+    }
+
+    .header_menu_item_inner {
+        -webkit-clip-path: inset(0);
+        clip-path: inset(0);
+        display: block;
+        position: relative
+    }
+
+    .header_menu_item_link {
+        display: block;
+        -webkit-transition: color .4s cubic-bezier(.165,.84,.44,1),-webkit-transform .4s cubic-bezier(.165,.84,.44,1);
+        transition: color .4s cubic-bezier(.165,.84,.44,1),-webkit-transform .4s cubic-bezier(.165,.84,.44,1);
+        transition: transform .4s cubic-bezier(.165,.84,.44,1),color .4s cubic-bezier(.165,.84,.44,1);
+        transition: transform .4s cubic-bezier(.165,.84,.44,1),color .4s cubic-bezier(.165,.84,.44,1),-webkit-transform .4s cubic-bezier(.165,.84,.44,1)
+    }
+
+    .header_menu_item_link__inactive {
+        background: transparent;
+        color: #797979;
+    }
+
+    .header_menu_item_link__active {
+        color: #E0DFBF;
+        position: absolute;
+        right: 0;
+        top: 0;
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%)
+    }
+
+    .header_menu_item:hover .header_menu_item_link__inactive {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%)
+    }
+
+    .header_menu_item:hover .header_menu_item_link__active {
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
+
+    .header_menu_item.is-active:hover .header_menu_item_link__inactive {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%)
+    }
+
+    .header_menu_item.is-active:hover .header_menu_item_link__active {
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+    }
+
+    
+
+    .ul__reset {
+        list-style: none;
+        padding-left: 0
+    }
+
+    .ul__reset,.vc_custom_heading,.wpb_content_element p:last-child {
+        margin-bottom: 0
+    }
+
+    .desc {
+        font-family: 'EulogyDemo-SemiBold';
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        text-decoration: none;
+    }
+
+    #page-3-colored-text {
+        position: relative; /* Ensure the pseudo-element is positioned correctly */
+        color: #E0DFBF;
+    }
+
+    /* #page-3-colored-text:before {
+        content: attr(data-text);
+        position: absolute;
+        overflow: hidden;
+        max-width: 0;
+        white-space: nowrap;
+        color: #E0DFBF;
+        transition: max-width 2s linear;
+    }
+
+    #page-3-colored-text.animate:before {
+        max-width: 100vw;
+        color: #F67C29;
+    } */
+
+    #page-5-colored-text {
+        position: relative; /* Ensure the pseudo-element is positioned correctly */
+        color: #E0DFBF;
+    }
+
+    /* #page-5-colored-text:before {
+        content: attr(data-text);
+        position: absolute;
+        overflow: hidden;
+        max-width: 0;
+        white-space: nowrap;
+        color: #E0DFBF;
+        transition: max-width 1s linear;
+    }
+
+    #page-5-colored-text.animate:before {
+        max-width: 100vw; 
+        color: #F67C29;
+    } */
+
+    @keyframes loading {
+        0% {
+            max-width: 0;
+        }
+        100% {
+            max-width: 100vw;
+        }
+    }
+
   </style>
 </head>
 <body>
+  <div class="view-resume">
+    <a href="./resume.html" target="_blank">
+      <div id="resume-btn-text">VIEW RESUME </div>
+      <img src="assets/images/resume_arrow.svg" style="transform: rotate(90deg);">
+    </a>
+  </div>
+  <div class="left-sticky-logo">
+    <img src="assets/images/namy_logo.svg">
+  </div>
+  <div class="left-sticky-menu">
+    <div class="side-bar-logo-container">
+        <a href="https://dribbble.com/Namrata_Jaiswal" target="_blank">
+          <img class="left-sticky-menu-img-inactive" src="assets/images/dribble_inactive.svg">
+          <img class="left-sticky-menu-img-active" src="assets/images/dribble_active.svg">
+        </a>
+      </div>
+      <div class="side-bar-logo-container">
+        <a href="https://www.behance.net/namrata_jaiswal" target="_blank">
+          <img class="left-sticky-menu-img-inactive" src="assets/images/behance_inactive.svg">
+          <img class="left-sticky-menu-img-active" src="assets/images/behance_active.svg">
+        </a>
+      </div>
+      <div class="side-bar-logo-container">
+        <a href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank">
+          <img class="left-sticky-menu-img-inactive" src="assets/images/linkedin_inactive.svg">
+          <img class="left-sticky-menu-img-active" src="assets/images/linkedin_active.svg">
+        </a>
+      </div>
+  </div>
+  <div class="header_menu">
+    <ul class="header_menu_list ul__reset">
+      <li class="header_menu_item js-cursor-contract" id="about-list-btn">
+        <a href="#page-2" class="desc text-uppercase has-tag-handle">
+          <span class="header_menu_item_inner">
+            <span class="header_menu_item_link header_menu_item_link__inactive">
+              About
+            </span>
+            <span class="header_menu_item_link header_menu_item_link__active">
+              About
+            </span>
+          </span>
+        </a>
+      </li>
+      <li class="header_menu_item js-cursor-contract" id="work-list-btn">
+        <a href="#page-7" class="desc text-uppercase has-tag-handle">
+          <span class="header_menu_item_inner">
+            <span class="header_menu_item_link header_menu_item_link__inactive">
+              Work
+            </span>
+            <span class="header_menu_item_link header_menu_item_link__active">
+              Work
+            </span>
+          </span>
+        </a>
+      </li>
+      <li class="header_menu_item js-cursor-contract" id="contact-list-btn">
+        <a href="#page-11" class="desc text-uppercase has-tag-handle">
+          <span class="header_menu_item_inner">
+            <span class="header_menu_item_link header_menu_item_link__inactive">
+              Contact
+            </span>
+            <span class="header_menu_item_link header_menu_item_link__active">
+              Contact
+            </span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
   <div class="scrollable-container" id="myScrollableDiv">
     <canvas id="mainCanvas"></canvas>
     <div class="slider-screen-container">
@@ -742,10 +1280,12 @@
         <div id="page-2-video-overlay-2-main-overlay"></div>
         <div class="page-2-video-overlay-2-content">
           <div class="circular-stamp-container" href="#page-6">
-            <img src="assets/images/circle-text.svg" id="page-2-circular-text">
-            <div class="circular-stamp-arrow-container">
-              <img src="assets/images/circle-arrow.svg" id="page-2-circular-arrow">
-            </div>
+            <a href="#page-11">
+              <img src="assets/images/circle-text.svg" id="page-2-circular-text">
+              <div class="circular-stamp-arrow-container">
+                <img src="assets/images/circle-arrow.svg" id="page-2-circular-arrow">
+              </div>
+            </a>
           </div>
           <div id="a-a-text">
             <div class="full-width-container">AWARDS</div>
@@ -763,7 +1303,7 @@
           ABOUT ME ✦ 
         </div>
         <div id="page-3-text">
-          <span style="color: #F67C29;">Skilled product designer</span> striving to
+          <span data-text="Skilled product designer" id="page-3-colored-text" style="color: #F67C29;">Skilled product designer</span> striving to
           balance Art and Usability in crafting high-quality digital experiences.   
         </div>
       </div>
@@ -775,24 +1315,29 @@
         </div>
         <div id="page-4-selector-container">
           <div class="what-i-do-selector">
-            <div class="hover-highlight"> User Flows/ Information Architecture</div>
             <div class="what-i-do-text">WIREFRAME</div>
+            <div class="hover-highlight"> After understanding users' and company's needs,<br>I come up with the UX after multiple ideations</div>
+            <div class="hover-aboslute-bg"></div>
           </div>
           <div class="what-i-do-selector">
-            <div class="hover-highlight"> User Flows/ Information Architecture</div>
             <div class="what-i-do-text">VISUAL</div>
+            <div class="hover-highlight"> After digging multiple sources on the internet for visual references,<br>I combine them to come up with my own designs</div>
+            <div class="hover-aboslute-bg"></div>
           </div>
           <div class="what-i-do-selector">
-            <div class="hover-highlight"> User Flows/ Information Architecture</div>
             <div class="what-i-do-text">MOTION</div>
+            <div class="hover-highlight"> I try to incorporate motion design wherever possible to enhance<br>my designs, I feel it adds the extra delight</div>
+            <div class="hover-aboslute-bg"></div>
           </div>
           <div class="what-i-do-selector">
-            <div class="hover-highlight"> User Flows/ Information Architecture</div>
             <div class="what-i-do-text">INTERACTION</div>
+            <div class="hover-highlight"> Finalising/ iterating on the interactions is my favourite part,<br>acts as the icing on the cake, without which the experience is not complete</div>
+            <div class="hover-aboslute-bg"></div>
           </div>
           <div class="what-i-do-selector">
-            <div class="hover-highlight"> User Flows/ Information Architecture</div>
             <div class="what-i-do-text">USER TESTING</div>
+            <div class="hover-highlight"> Following up with the relevant teams, user interviews or A/B testing to<br>understand how my designs performed in the hands of its users</div>
+            <div class="hover-aboslute-bg"></div>
           </div>
         </div>
       </div>
@@ -804,7 +1349,7 @@
           EXPERIENCE ✦ 
         </div>
         <div id="page-5-text">
-          With <span style="color: #F67C29;">3+ years</span> of experience
+          With <span data-text="3+ years" id="page-5-colored-text" style="color: #F67C29;">3+ years</span> of experience
           in Mobile & Web Interface design and thriving in high paced environments of Indian startups.  
         </div>
       </div>
@@ -898,12 +1443,14 @@
             <img src="assets/images/open_quotes.svg">
           </div>
           <div id="page-8-text-container">
-            <div id="page-8-main-text">Working with her is<br> inspiring, her energy is<br> contagious and she’s<br> always up for any<br> challenge!</div>
+            <div id="page-8-main-text">She has been a <br> standout member <br> of our team</div>
             <div id="page-8-name-text">
               Siddharth Seth
             </div>
-            <div id="page-8-role-text">
-              VP of Products<br>
+            <div id="page-8-role-text-1">
+              VP of Products
+            </div>
+            <div id="page-8-role-text-2">
               Flobiz
             </div>
             </div>
@@ -918,7 +1465,78 @@
               </div>
               <div class="feedback-selector-container">
                 <img class="feedback-arrow" id="shankar-arrow" style="display: none;" src="assets/images/left_arrow_selector.svg">
-                <img id="shankar-img" class="feedback-img" src="assets/images/kevin_inactive.svg">
+                <img id="shankar-img" class="feedback-img" src="assets/images/shankar_inactive.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page-9">
+        <div class="page-container" style="flex-direction: column;">
+          <div id="page-9-header">
+            ✦ MY MOTTO ✦ 
+          </div>
+          <div id="page-9-text">
+            Good Design is <br> thourough down <br> to the last detail    
+          </div>
+          <div id="page-9-footer">
+            - Dieter Rams
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page-10">
+        <div class="page-container" style="flex-direction: column; row-gap: 0;">
+          <div id="page-10-header">
+            FUN PROJECTS 
+          </div>
+          <div id="page-10-text">
+            MY PLAYGROUND    
+          </div>
+          <div id="page-10-gallery-container">
+            <div id="page-10-gallery">
+              <a href="https://dribbble.com/shots/18535381-Health-Medication-Tracker" class="page-10-video" target="_blank">
+                <video class="page-10-card-content" id="vid-1" autoplay loop muted>
+                  <source src="assets/videos/wellthy.mp4" type="video/mp4">
+                </video>
+              </a>
+              <a href="https://dribbble.com/shots/18543878-Ezsplit-Expense-sharing-App" class="page-10-video" target="_blank">
+                <video class="page-10-card-content" id="vid-2" autoplay loop muted> 
+                  <source src="assets/videos/ezsplit.mp4" type="video/mp4">
+                </video>
+              </a>
+              <a href="https://dribbble.com/shots/18544189-Hashhealth" class="page-10-video" target="_blank">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/hashhealth.png">
+              </a>
+              <a href="https://dribbble.com/shots/18515848-Campaign-Management-Platform" class="page-10-video" target="_blank">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/g5.png">
+              </a>
+              <a href="https://dribbble.com/shots/13921738-NYC-Skyline-Sketch" class="page-10-video" target="_blank">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/city_scape.png">
+              </a>
+              <a href="https://dribbble.com/shots/18534756-Utopia" class="page-10-video" target="_blank">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/utopia.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page-11">
+        <div class="page-container">
+          <div id="page-11-content">
+            <img src="assets/images/connect.svg" style="object-fit: cover; height: 100%;">
+          </div>
+          <div id="page-11-footer">
+            <div id="page-11-footer-left">
+              Say Hello
+            </div>
+            <div id="page-11-footer-right">
+              <div class="contact-info">
+                Email<br>
+                <span class="contact-text">namy.designwork@gmail.com</span>
+              </div>
+              <div class="contact-info" style="margin-left: 40px;">
+                Contact<br>
+                <span class="contact-text">+91 9956906247</span>
               </div>
             </div>
           </div>

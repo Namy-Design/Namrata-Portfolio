@@ -26,6 +26,7 @@
     }
 
     .scrollable-container {
+      display: none;
       position: relative;
       height: 100vh;
       width: 100vw;
@@ -395,15 +396,18 @@
 
     .hover-highlight {
       height: 100%;
+      margin-left: auto;
       padding-right: 10%;
       transition: height 0.3s;
       transition-timing-function: ease-in;
       font-family: 'Inter';
-      font-weight: 500;
+      font-weight: 600;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
+      text-align: left;
       font-size: 0;
       display: flex;
+      line-height: 145%;
       z-index: 1;
     }
 
@@ -418,7 +422,6 @@
       height: 9%;
       padding-top: 0.5%;
       padding-left: 10%;
-      padding-right: 25px;
       display: flex;
       align-items: center;
       letter-spacing: 0.4rem;
@@ -437,7 +440,7 @@
 
     .what-i-do-selector:hover > .hover-highlight {
       color: #2B2B2B;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     .what-i-do-selector:hover > .what-i-do-text {
@@ -501,6 +504,7 @@
     }
 
     .history-selector {
+      position: relative;
       width: 100%;
       height: 25%;
       cursor: pointer;
@@ -510,7 +514,6 @@
     }
 
     .history-text {
-      position: absolute;
       color: #E0DFBF;
       font-family: 'EulogyDemo-SemiBold';
       font-weight: 600;
@@ -518,43 +521,61 @@
       letter-spacing: 3.84px;
       transition: transform 0.3s ease;
       width: 80%;
-      height: 11%;
+      height: 100%;
       padding-left: 10%;
       padding-right: 10%;
       display: flex;
       align-items: center;
       padding-top: 1%;
       padding-bottom: 1%;
+      z-index: 1;
     }
 
     .history-text-date {
       width: 20%;
       height: 100%;
+      align-items: center;
+      display: flex;
     }
 
     .history-text-exp {
       width: 80%;
       height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
 
     .exp-text {
       width: 100%;
+      justify-content: flex-start;
     }
 
     .exp-desc {
+      width: 100%;
       font-family: 'Inter';
       font-size: 16px;
       font-weight: 300;
       color: #797979;
+      justify-content: flex-start;
     }
 
-    .history-selector:hover > .hover-highlight {
-      height: 100%;
-      background-color: #F67C29;
+    .exp-desc-hover {
+      width: 100%;
+      font-family: 'Inter';
+      font-size: 20px;
+      font-weight: 600;
       color: #2B2B2B;
+      justify-content: flex-start;
+      display: none;
+      letter-spacing: 0px;
+    }
+
+    .history-selector:hover > .hover-aboslute-bg {
+      height: 100%;
       transition: height 0.3s;
       transition-timing-function: ease-in;
-      font-size: 16px;
     }
 
     .history-selector:hover > .history-text {
@@ -562,8 +583,12 @@
       transition: transform 0.3s ease;
     }
 
-    .history-selector:hover .history-text .history-text-exp .exp-desc {
-      color: #282828;
+    .history-selector:hover .exp-desc {
+      display: none;
+    }
+
+    .history-selector:hover .exp-desc-hover {
+      display: flex;
     }
 
     #page-7 {
@@ -580,12 +605,43 @@
     }
 
     .page-7-container {
+      position: relative;
       display: flex;
       height: 100vh;
       width: 80vw;
       flex-wrap: wrap;
       padding-left: 10vw;
       padding-right: 10vw;
+    }
+
+    
+    .page-7-blurred-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      background-size: cover;
+      filter: blur(250px);
+      transition: filter 0.5s ease, opacity 0.5s ease;
+    }
+    
+    #page-7-blurred-bg-1 {
+      background-image: url('assets/images/e-invoice.png');
+    }
+    
+    #page-7-blurred-bg-2 {
+      background-image: url('assets/images/digi-gold.png');
+    }
+    
+    #page-7-blurred-bg-3 {
+      background-image: url('assets/images/delivery.png');
+    }
+    
+    #page-7-page-header {
+      z-index: 1;
+      margin-bottom: 5%;
     }
 
     .app-name-text {
@@ -605,9 +661,9 @@
     .app-image-container {
       height: 100%;
       width: 100%;
-      justify-content: flex-end;
+      justify-content: center;
       display: flex;
-      align-items: flex-start;
+      align-items: flex-end;
     }
 
     .app-image {
@@ -1009,6 +1065,7 @@
     }
 
     .header_menu {
+        display: none;
         position: fixed;
         right: 60px;
         top: 60px;
@@ -1147,6 +1204,16 @@
         100% {
             max-width: 100vw;
         }
+    }
+
+    @media (min-width: 1440px) {
+      .scrollable-container {
+        display: block; /* Display the element */
+      }
+
+      .header_menu {
+        display: block;
+      }
     }
 
   </style>
@@ -1335,7 +1402,7 @@
             <div class="hover-aboslute-bg"></div>
           </div>
           <div class="what-i-do-selector">
-            <div class="what-i-do-text">USER TESTING</div>
+            <div class="what-i-do-text">TESTING</div>
             <div class="hover-highlight"> Following up with the relevant teams, user interviews or A/B testing to<br>understand how my designs performed in the hands of its users</div>
             <div class="hover-aboslute-bg"></div>
           </div>
@@ -1361,77 +1428,81 @@
         </div>
         <div id="page-6-selector-container">
           <div class="history-selector">
-            <div class="hover-highlight"></div>
             <div class="history-text">
               <div class="history-text-date">Now</div>
               <div class="history-text-exp">
                 <div class="exp-text">PRODUCT DESIGNER 2</div>
                 <div class="exp-desc">Flobiz</div>
+                <div class="exp-desc-hover">Got to learn a lot working with a team of 6 designers</div>
               </div>
             </div>
+            <div class="hover-aboslute-bg"></div>
           </div>
           <div class="history-selector">
-            <div class="hover-highlight"></div>
             <div class="history-text">
               <div class="history-text-date">2021</div>
               <div class="history-text-exp">
                 <div class="exp-text">PRODUCT DESIGNER</div>
                 <div class="exp-desc">Goldsetu</div>
+                <div class="exp-desc-hover">Found an amazing mentor who helped me build a strong design foundation</div>
               </div>
             </div>
+            <div class="hover-aboslute-bg"></div>
           </div>
           <div class="history-selector">
-            <div class="hover-highlight"></div>
             <div class="history-text">
               <div class="history-text-date">2020</div>
               <div class="history-text-exp">
                 <div class="exp-text">UI/ UX DESIGNER</div>
                 <div class="exp-desc">Galleri5</div>
+                <div class="exp-desc-hover">Thankful to the founder who trusted a newbie with their product</div>
               </div>
             </div>
+            <div class="hover-aboslute-bg"></div>
           </div>
           <div class="history-selector">
-            <div class="hover-highlight"></div>
             <div class="history-text">
               <div class="history-text-date">2019</div>
               <div class="history-text-exp">
                 <div class="exp-text">STYLIST/ GRAPHIC DESIGNER</div>
                 <div class="exp-desc">Aditya Birla Fashion And Retail</div>
+                <div class="exp-desc-hover">Had my first experience working in a startup</div>
               </div>
             </div>
+            <div class="hover-aboslute-bg"></div>
           </div>
         </div>
       </div>
     </div>
     <div class="page" id="page-7">
-      <div class="page-7-container">
-        <div class="page-header">
+      <div class="page-7-container" id="page-7-container-1">
+        <div class="page-header" id="page-7-page-header">
           SELECTED CASE STUDIES ✦ 
         </div>
         <div class="page-7-content-container" id="e-invoice-content">
           <div class="app-image-container">
-            <img class="app-image" src="assets/images/e-invoice.png">
+            <img class="app-image" src="assets/images/e-invoice.svg">
           </div>
-          <div class="app-name-text">E-INVOICE / MYBILLBOOK</div>
         </div>
+        <div id="page-7-blurred-bg-1" class="page-7-blurred-bg"></div>
       </div>
-      <div class="page-7-container" style="align-items: center;">
+      <div class="page-7-container" id="page-7-container-2" style="align-items: center;" id="page-7-container-2">
         <div class="page-7-content-container" id="digi-gold-content">
           <div class="app-image-container">
-            <img class="app-image" src="assets/images/digi-gold.png">
+            <img class="app-image" src="assets/images/digi-gold.svg">
           </div>
-          <div class="app-name-text">DIGITAL GOLD / GOLDSETU</div>
         </div>
+        <div id="page-7-blurred-bg-2" class="page-7-blurred-bg"></div>
       </div>
-      <div class="page-7-container" style="align-items: center;">
+      <div class="page-7-container" id="page-7-container-3" style="align-items: center;" id="page-7-container-3">
         <div class="page-7-content-container" id="groc-content">
           <div class="app-image-container">
             <img class="app-image" src="assets/images/delivery.png">
           </div>
           <div class="app-name-text">GROCERIES / PERSONAL</div>
         </div>
+        <div id="page-7-blurred-bg-3" class="page-7-blurred-bg"></div>
       </div>
-      <div id="page-7-bg"></div>
     </div>
     <div class="page" id="page-8">
       <div class="page-container" style="position: absolute; top: 0; left: 0;">
@@ -1530,10 +1601,12 @@
               Say Hello
             </div>
             <div id="page-11-footer-right">
-              <div class="contact-info">
-                Email<br>
-                <span class="contact-text">namy.designwork@gmail.com</span>
-              </div>
+              <a href="mailto:namy.designwork@gmail.com" target="_blank" style="text-decoration: none;">
+                <div class="contact-info">
+                  Email<br>
+                  <span class="contact-text">namy.designwork@gmail.com <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></span>
+                </div>
+              </a>
               <div class="contact-info" style="margin-left: 40px;">
                 Contact<br>
                 <span class="contact-text">+91 9956906247</span>

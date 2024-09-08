@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: EulogyDemo-Regular;
+            src: url(assets/fonts/eulogy-demo/EulogyDemo-Regular.ttf);
+        }
         body {
             background-color: #FBFBFB;
-            margin-bottom: 100px;
-            margin-top: 0px;
-            margin-left: 0px;
-            margin-right: 0px;
+            margin: 0px;
         }
         .project-img {
             width: 100%;
@@ -23,6 +24,96 @@
         #page-2-video {
             height: 100%;
             width: 100%;
+        }
+        .footer {
+            height: 100vh;
+            width: 100%;
+            background-color: #171717;
+        }
+        .moving-text {
+            overflow-x: hidden;
+            display: flex;
+            width: 100%;
+            height: 14vh;
+            background-color: #49229F;
+            white-space: nowrap; /* Prevent text from wrapping */
+            box-sizing: border-box;
+        }
+        .revolving-text {
+            display: flex;
+            height: 100%;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .revolve-child-txt {
+            display: flex;
+            font-family: EulogyDemo-Regular;
+            white-space: nowrap; /* Prevent wrapping */
+            font-size: 500%; /* Font size for visibility */
+            color: #E0DFBF;
+            height: 10vh;
+            padding-top: 3vh;
+            padding-bottom: 1vh;
+            align-items: center;
+            scroll-snap-align: start;
+            margin-right: 2.5vw;
+        }
+        .moving-text[data-animated="true"] {
+            overflow: hidden;
+        }
+
+        .moving-text[data-animated="true"] .revolving-text {
+            width: max-content;
+            flex-wrap: nowrap;
+            animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+        }
+
+        .moving-text[data-direction="right"] {
+            --_animation-direction: reverse;
+        }
+
+        .moving-text[data-direction="left"] {
+            --_animation-direction: forwards;
+        }
+
+        .moving-text[data-speed="fast"] {
+            --_animation-duration: 20s;
+        }
+
+        .moving-text[data-speed="slow"] {
+            --_animation-duration: 60s;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translate(calc(-50% - 0.5rem));
+            }
+        }
+        .footer-header {
+            font-family: "Inter";
+            color: #797979;
+            letter-spacing: 19.2px;
+            line-height: 29px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            height: 30px;
+            padding-top: 24vh;
+            padding-bottom: 8vh;
+        }
+        .footer-img {
+            width: 80%;
+            height: calc(44vh - 30px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-bottom: 24vh;
+            cursor: url('assets/images/custom-cursor.svg'), auto;
         }
     </style>
 </head>
@@ -36,6 +127,30 @@
     <img class="project-img" src="assets/images/goldsetu_7.png">
     <img class="project-img" src="assets/images/goldsetu_8.png">
     <img class="project-img" src="assets/images/goldsetu_9.png">
-
+    <div class="moving-text">
+        <div class="revolving-text">
+            <div class="revolve-child-txt">
+                HOPE YOU LIKED IT
+            </div>
+            <div class="revolve-child-txt">
+                HOPE YOU LIKED IT
+            </div>
+            <div class="revolve-child-txt">
+                HOPE YOU LIKED IT
+            </div>
+            <div class="revolve-child-txt">
+                HOPE YOU LIKED IT
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-header">NEXT PROJECT</div>
+        <a href="./grocery.html">
+            <div class="footer-img">
+                <img style="height: 100%;" src="assets/images/delivery.png">
+            </div>
+        </a>
+    </div>
 </body>
+<script src="js/extra.js"></script>
 </html>

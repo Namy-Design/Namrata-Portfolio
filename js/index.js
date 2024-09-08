@@ -18,44 +18,6 @@ scrollableDiv.addEventListener('scroll', function() {
     // Move the top part up and the bottom part down based on scroll position
     topSlider.style.transform = 'translateY(' + (-scrollPosition / 2) + 'px)';
     bottomSlider.style.transform = 'translateY(' + (scrollPosition / 2) + 'px)';
-
-    // screen_height = window.innerHeight;
-    // activate_threshold = (0.09 * screen_height);
-    // deactivate_threshold = -(0.01 * screen_height)
-    
-    // var aboutTargetDiv = document.getElementById('about-list-btn');
-    // var aboutTriggerSection = document.getElementById('page-2');
-    // // Get the position of the trigger section
-    // var aboutTriggerPosition = aboutTriggerSection.getBoundingClientRect().top;
-    // if (aboutTriggerPosition <= activate_threshold & aboutTriggerPosition >= deactivate_threshold) {
-    //     aboutTargetDiv.querySelector('.header_menu_item_link__inactive').style.transform = 'translateY(-100%)';
-    //     aboutTargetDiv.querySelector('.header_menu_item_link__active').style.transform = 'translateY(0)';
-    // } else {
-    //     aboutTargetDiv.querySelector('.header_menu_item_link__inactive').style.transform = 'translateY(0)';
-    //     aboutTargetDiv.querySelector('.header_menu_item_link__active').style.transform = 'translateY(-100%)';
-    // }
-
-    // var workTargetDiv = document.getElementById('work-list-btn');
-    // var workTriggerSection = document.getElementById('page-7');
-    // // Get the position of the trigger section
-    // var workTriggerPosition = workTriggerSection.getBoundingClientRect().top;
-    // if (workTriggerPosition <= activate_threshold & workTriggerPosition >= deactivate_threshold) {
-    //     workTargetDiv.querySelector('.header_menu_item_link__inactive').style.transform = 'translateY(-100%)';
-    //     workTargetDiv.querySelector('.header_menu_item_link__active').style.transform = 'translateY(0)';
-    // } else {
-        
-    // }
-
-    // var contactTargetDiv = document.getElementById('contact-list-btn');
-    // var contactTriggerSection = document.getElementById('page-11');  
-    // // Get the position of the trigger section
-    // var contactTriggerPosition = contactTriggerSection.getBoundingClientRect().top;
-    // if (contactTriggerPosition <= activate_threshold & contactTriggerPosition >= deactivate_threshold) {
-    //     contactTargetDiv.querySelector('.header_menu_item_link__inactive').style.transform = 'translateY(-100%)';
-    //     contactTargetDiv.querySelector('.header_menu_item_link__active').style.transform = 'translateY(0)';
-    // } else {
-        
-    // }
     
 });
   
@@ -187,36 +149,92 @@ function addAnimation() {
 
 addAnimation();
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const page3textElement = document.querySelector('#page-3-colored-text');
+//     const page5textElement = document.querySelector('#page-5-colored-text')
+
+//     const page3observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 page3textElement.classList.add('animate');
+//             }
+//             else {
+//                 page3textElement.classList.remove('animate');
+//             }
+//         });
+//     }, {
+//         threshold: 0.2 // Trigger when at least 20% of the element is visible
+//     });
+
+//     const page5observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 page5textElement.classList.add('animate');
+//             }
+//             else {
+//                 page5textElement.classList.remove('animate');
+//             }
+//         });
+//     }, {
+//         threshold: 0.2 // Trigger when at least 20% of the element is visible
+//     });
+
+//     page3observer.observe(page3textElement);
+//     page5observer.observe(page5textElement);
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
-    const page3textElement = document.querySelector('#page-3-colored-text');
-    const page5textElement = document.querySelector('#page-5-colored-text')
+    const page7Container1Element = document.querySelector('#page-7-container-1');
+    const page7BlurredBackground1 = document.querySelector('#page-7-blurred-bg-1')
 
-    const page3observer = new IntersectionObserver((entries) => {
+    const page7Container1observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                page3textElement.classList.add('animate');
+                page7BlurredBackground1.style.opacity = 1;
             }
             else {
-                page3textElement.classList.remove('animate');
+                page7BlurredBackground1.style.opacity = 0;
             }
         });
     }, {
         threshold: 0.2 // Trigger when at least 20% of the element is visible
     });
 
-    const page5observer = new IntersectionObserver((entries) => {
+    page7Container1observer.observe(page7Container1Element);
+
+    const page7Container2Element = document.querySelector('#page-7-container-2');
+    const page7BlurredBackground2 = document.querySelector('#page-7-blurred-bg-2')
+
+    const page7Container2observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                page5textElement.classList.add('animate');
+                page7BlurredBackground2.style.opacity = 1;
             }
             else {
-                page5textElement.classList.remove('animate');
+                page7BlurredBackground2.style.opacity = 0;
             }
         });
     }, {
         threshold: 0.2 // Trigger when at least 20% of the element is visible
     });
 
-    page3observer.observe(page3textElement);
-    page5observer.observe(page5textElement);
+    page7Container2observer.observe(page7Container2Element);
+
+    const page7Container3Element = document.querySelector('#page-7-container-3');
+    const page7BlurredBackground3 = document.querySelector('#page-7-blurred-bg-3')
+
+    const page7Container3observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                page7BlurredBackground3.style.opacity = 1;
+            }
+            else {
+                page7BlurredBackground3.style.opacity = 0;
+            }
+        });
+    }, {
+        threshold: 0.2 // Trigger when at least 20% of the element is visible
+    });
+
+    page7Container3observer.observe(page7Container3Element);
 });

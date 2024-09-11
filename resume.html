@@ -15,8 +15,22 @@
         }
         body {
             background-color: #171717;
-            padding: 150px 30vw;
             margin: 0px;
+            overflow-x: hidden; /* Hide scrollbars */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+            position: relative;
+            justify-content: center;
+            line-height: 22px;
+        }
+
+        .resume-container {
+            width: 578px;
+            box-sizing: border-box; /* Include padding and border in element's total width */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+            margin-bottom: 150px;
         }
         
         .resume-timeline {
@@ -24,10 +38,11 @@
             height: 12%;
             display: flex;
             margin-bottom: 42px;
+            align-items: center;
         }
 
         .resume-dp {
-            height: 100%;
+            height: 120px;
             display: flex;
         }
 
@@ -105,7 +120,6 @@
         .resume-company-link {
             text-decoration: none;
             color: #909090;
-            height: 22px;
             align-items: center;
             margin-bottom: 12px;
             margin-top: 12px;
@@ -154,191 +168,280 @@
             display: none;
             margin-right: 10px;
         }
+
+        .for-interesting-people {
+            width: 100%;
+            height: 16px;
+            background-color: #F67C29;
+        }
+
+        @media (max-width: 480px) {
+            .resume-container {
+                width: 292px;
+                margin-top: 80px;
+                margin-bottom: 80px;
+            }
+            .resume-timeline {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .timeline-details {
+                margin-top: 30px;
+                margin-left: 0px;
+            }
+            .resume-content-container {
+                flex-direction: column;
+            }
+            .resume-title-content {
+                width: 100%;
+                margin-right: 0px;
+                margin-bottom: 8px;
+            }
+            .resume-content {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 834px) {
+            .resume-container {
+                width: 380px;
+                margin-top: 120px;
+                margin-bottom: 120px;
+            }
+            .resume-timeline {
+                flex-direction: row;
+                align-items: center;
+            }
+            .timeline-details {
+                margin-top: 0px;
+                margin-left: 30px;
+            }
+            .resume-content-container {
+                flex-direction: column;
+            }
+            .resume-title-content {
+                width: 100%;
+                margin-right: 0px;
+                margin-bottom: 8px;
+            }
+            .resume-content {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 835px) {
+            .resume-container {
+                width: 578px;
+                margin-top: 160px;
+                margin-bottom: 160px;
+            }
+            .resume-timeline {
+                flex-direction: row;
+                align-items: center;
+            }
+            .timeline-details {
+                margin-top: 0px;
+                margin-left: 30px;
+            }
+            .resume-content-container {
+                flex-direction: row;
+            }
+            .resume-title-content {
+               width: 110px;
+               margin-bottom: 0px;
+            }
+            .resume-content {
+                width: calc(100% - 140px);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="resume-download" id="download-btn">
         <img src="assets/images/resume_arrow.svg" style="transform: rotate(225deg);">
     </div>
-    <div class="resume-timeline">
-        <img src="assets/images/dp.svg" class="resume-dp">
-        <div class="timeline-details">
-            <div class="timeline-name">Namrata Jaiswal</div>
-            <div class="timeline-jd">Product Designer in India</div>
-            <a href="https://namy.design" style="text-decoration: none;" target="_blank">
-                <div class="timeline-web-url">
-                    namy.design
-                    <img src="assets/images/resume-page-arrow.svg" style="margin-left: 2px;">
+    <div class="resume-container">
+        <div class="resume-timeline">
+            <img src="assets/images/dp.svg" class="resume-dp">
+            <div class="timeline-details">
+                <div class="timeline-name">Namrata Jaiswal</div>
+                <div class="timeline-jd">Product Designer in India</div>
+                <a href="https://namy.design" style="text-decoration: none; width: fit-content;" target="_blank">
+                    <div class="timeline-web-url">
+                        namy.design
+                        <img src="assets/images/resume-page-arrow.svg" style="margin-left: 2px;">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="resume-heading">
+            About
+        </div>
+        <div class="resume-text">
+            A creative person on the verge of technology, design & fashion. Following design experiences in the Fashion Industry I ventured into the design realm of tech. <br>
+            Striving to balance Art and Usability in crafting high-quality digital experiences.
+        </div>
+        <div class="resume-heading">
+            Work Experience
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Jan’23 - Jan’24</div>
+            <div class="resume-content">
+                <div class="resume-heading" style="margin-bottom: 4px;">Product Designer 2</div>
+                <a href="https://flobiz.in/" class="resume-company-link" target="_blank">
+                    Flobiz <img src="assets/images/resume-arrow-small.svg">
+                </a>
+                <div class="resume-company-link">
+                    Skills: Figma, Adobe Creative Suite, User Research, Prototyping, Wireframing, Interaction Design, Motion Design, Illustrations, Design System
                 </div>
+                <ul class="resume-experience-list">
+                    <li class="resume-list-item"><span class="resume-highlight-text">Honoured</span> with the <span class="resume-highlight-text">Cultural Award</span> for <span class="resume-highlight-text">Focus on Delivering Results</span> in Q3 2023, <span class="resume-highlight-text">recognised personally by the founders for exceptional dedication</span> to achieving key outcomes</li>
+                    <li class="resume-list-item">Developed a <span class="resume-highlight-text">Centralised Design System</span> from the scratch, effectively <span class="resume-highlight-text">elevating team efficiency</span> and <span class="resume-highlight-text">ensuring design coherence</span> across our entire product suite</li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Spearheaded the redesign of entire Web Application</span>. Drawn on the learnings of the Web App User Experience Research in which I played an instrumental role. 
+                        This effort has <span class="resume-highlight-text">led to a 7% increase in user activation</span>, a <span class="resume-highlight-text">15% increase in click-through rates (CTR)</span> for "create" call-to-action (CTA) buttons, and a <span class="resume-highlight-text">25% increase in the discovery of deeper features</span> by users.
+                    </li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Crafted Sophisticated GST Compliance Features</span>, including e-invoice and e-way bill generation for Android/ iOS apps, exclusive to the enterprise plan. 
+                        <span class="resume-highlight-text">Adopted by</span> over <span class="resume-highlight-text">5,000 businesses</span>, leading to a 10% boost in enterprise plan revenue.
+                    </li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Revamped</span> the GST Partner <span class="resume-highlight-text">(GSP) Registration Process</span>, simplifying the user journey, leading to a <span class="resume-highlight-text">31% increase in successful registrations</span></li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Pioneered</span> the design of an <span class="resume-highlight-text">AI-Based Bill & Item Import System</span>, which <span class="resume-highlight-text">enhanced user activation metrics</span>, achieving a notable <span class="resume-highlight-text">12% increase in users generating 3 invoices</span> within the 
+                        <span class="resume-highlight-text">first 5 days of registration</span>
+                    </li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Redesigned</span> the <span class="resume-highlight-text">Bulk Upload Feature</span> on the Web Platform, <span class="resume-highlight-text">transitioning from traditional Excel uploads to an integrated Google Sheets-style interface</span>. This change has facilitated direct, 
+                        in-app inventory imports, resulting in an <span class="resume-highlight-text">14% increase in bulk imports</span>
+                    </li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Led the Design of the User Role Customisation Feature</span> on both Web and Mobile platforms. This critical upgrade has <span class="resume-highlight-text">improved user retention</span> by <span class="resume-highlight-text">enabling more personalised</span> and <span class="resume-highlight-text">secure user access controls</span>, 
+                        showcasing a deep understanding of user needs and security concerns
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Sep’21- Dec’22</div>
+            <div class="resume-content">
+                <div class="resume-heading" style="margin-bottom: 4px;">Associate Product Designer</div>
+                <a href="https://play.google.com/store/apps/details?id=com.buymyjewel.live&hl=en_IN" class="resume-company-link" target="_blank">
+                    Goldsetu <img src="assets/images/resume-arrow-small.svg">
+                </a>
+                <div class="resume-company-link">
+                    Skills: User Research, Prototyping, Wireframing, Interaction Design, Motion Design, Illustrations, Design System
+                </div>
+                <ul class="resume-experience-list">
+                    <li class="resume-list-item">
+                        Acquired <span class="resume-highlight-text">complete ownership</span> of the <span class="resume-highlight-text">customer facing PWA</span> pivotal to our core users, the jewellers. This encompassed the designing and implementation of the <span class="resume-highlight-text">Landing Page</span> & other features like <span class="resume-highlight-text">Orders Flow</span>, <span class="resume-highlight-text">Saving Plans</span>, and <span class="resume-highlight-text">Digital Gold</span>.
+                    </li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Collaborated</span> on designing the <span class="resume-highlight-text">marketing website</span> for Goldsetu with a senior designer
+                    </li>
+                    <li class="resume-list-item">
+                        Produced the <span class="resume-highlight-text">product’s explanatory videos</span> for company’s <span class="resume-highlight-text">Youtube channel</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Nov’21- Jan’22</div>
+            <div class="resume-content">
+                <div class="resume-heading" style="margin-bottom: 4px;">Multi Disciplinary Designer | Freelance</div>
+                <a href="https://www.behance.net/gallery/142349013/Doctors-Appointment-Booking-App" class="resume-company-link" target="_blank">
+                    Bytflakes, Medical Solution <img src="assets/images/resume-arrow-small.svg">
+                </a>
+                <div class="resume-company-link">
+                    Skills: Branding, Visual Design, Motion Design
+                </div>
+                <ul class="resume-experience-list">
+                    <li class="resume-list-item">
+                        Provided a <span class="resume-highlight-text">branding service</span> for the company. 
+                    </li>
+                    <li class="resume-list-item">
+                        Achieved <span class="resume-highlight-text">high fidelity designs</span> for the doctor’s and patient’s flow in a <span class="resume-highlight-text">very limited timeframe</span>. 
+                    </li>
+                    <li class="resume-list-item">
+                        <span class="resume-highlight-text">Produced app’s introductory video</span> for a entrepreneurial bootcamp.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Aug’20- Sep’21</div>
+            <div class="resume-content">
+                <div class="resume-heading" style="margin-bottom: 4px;">UI/UX Designer</div>
+                <a href="https://galleri5.com" class="resume-company-link" target="_blank">
+                    Galleri5 <img src="assets/images/resume-arrow-small.svg">
+                </a>
+                <div class="resume-company-link">
+                    Skills: High Fidelity, Illustrations, Graphics, Emailers, Packaging design
+                </div>
+                <ul class="resume-experience-list">
+                    <li class="resume-list-item">
+                        Spearheaded the <span class="resume-highlight-text">redesign of Brands’ & Influencers’ platform to increase respective user engagement & bring consistency</span>. Both the platform together led to the smooth campaign management by taking care of activities like <span class="resume-highlight-text">tracking influencer metrics, campaign budgeting, smooth payments, assigning/ approving deliverables</span>, etc. 
+                    </li>
+                    <li class="resume-list-item">
+                        Worked on a <span class="resume-highlight-text">micro app for HRX (a client)</span> to track fitness goals for a campaign. 
+                    </li>
+                    <li class="resume-list-item">
+                        Served with multitude of design horizons like <span class="resume-highlight-text">social media posts, email marketing templates, presentation slides for business pitch, packaging design for Myntra’s EORS campaign, image & video editing for influencer’s deliverables</span>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="resume-heading">
+            Education
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">2015 - 2019</div>
+            <div class="resume-content">
+                <div class="resume-heading" style="margin-bottom: 4px;">Bachelor in Designing </div>
+                <div class="resume-company-link">
+                    NIFT, Bangalore
+                </div>
+                <div class="resume-company-link">
+                    Textile Design | 8.5 GPA <br>
+                    Skills: Adobe Illustrator, Photoshop, Graphic Design
+                </div>
+            </div>
+        </div>
+        <div class="resume-heading">
+            Contact
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Email</div>
+            <a class="resume-content" href="mailto:namy.designwork@gmail.com" target="_blank">
+                <div class="resume-heading" style="margin-bottom: 4px;">namy.designwork@gmail.com <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
+            </a>
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">LinkedIn</div>
+            <a class="resume-content" href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank">
+                <div class="resume-heading" style="margin-bottom: 4px;">linkedin.com/in/namrata-jaiswal <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
+            </a>
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Behance</div>
+            <a class="resume-content" href="https://www.behance.net/namrata_jaiswal" target="_blank">
+                <div class="resume-heading" style="margin-bottom: 4px;">behance.net/namrata_jaiswal <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
+            </a>
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Dribbble</div>
+            <a class="resume-content" href="https://dribbble.com/Namrata_Jaiswal" target="_blank">
+                <div class="resume-heading" style="margin-bottom: 4px;">dribbble.com/Namrata_Jaiswal <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
+            </a>
+        </div>
+        <div class="resume-content-container">
+            <div class="resume-title-content">Website</div>
+            <a class="resume-content" href="https://namy.design" target="_blank">
+                <div class="resume-heading" style="margin-bottom: 4px;">namy.design <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
             </a>
         </div>
     </div>
-    <div class="resume-heading">
-        About
-    </div>
-    <div class="resume-text">
-        A creative person on the verge of technology, design & fashion. Following design experiences in the Fashion Industry I ventured into the design realm of tech. <br>
-        Striving to balance Art and Usability in crafting high-quality digital experiences.
-    </div>
-    <div class="resume-heading">
-        Work Experience
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Jan’23 - Jan’24</div>
-        <div class="resume-content">
-            <div class="resume-heading" style="margin-bottom: 4px;">Product Designer 2</div>
-            <a href="https://flobiz.in/" class="resume-company-link" target="_blank">
-                Flobiz <img src="assets/images/resume-arrow-small.svg">
-            </a>
-            <div class="resume-company-link">
-                Skills: Figma, Adobe Creative Suite, User Research, Prototyping, Wireframing, Interaction Design, Motion Design, Illustrations, Design System
-            </div>
-            <ul class="resume-experience-list">
-                <li class="resume-list-item"><span class="resume-highlight-text">Honoured</span> with the <span class="resume-highlight-text">Cultural Award</span> for <span class="resume-highlight-text">Focus on Delivering Results</span> in Q3 2023, <span class="resume-highlight-text">recognised personally by the founders for exceptional dedication</span> to achieving key outcomes</li>
-                <li class="resume-list-item">Developed a <span class="resume-highlight-text">Centralised Design System</span> from the scratch, effectively <span class="resume-highlight-text">elevating team efficiency</span> and <span class="resume-highlight-text">ensuring design coherence</span> across our entire product suite</li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Spearheaded the redesign of entire Web Application</span>. Drawn on the learnings of the Web App User Experience Research in which I played an instrumental role. 
-                    This effort has <span class="resume-highlight-text">led to a 7% increase in user activation</span>, a <span class="resume-highlight-text">15% increase in click-through rates (CTR)</span> for "create" call-to-action (CTA) buttons, and a <span class="resume-highlight-text">25% increase in the discovery of deeper features</span> by users.
-                </li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Crafted Sophisticated GST Compliance Features</span>, including e-invoice and e-way bill generation for Android/ iOS apps, exclusive to the enterprise plan. 
-                    <span class="resume-highlight-text">Adopted by</span> over <span class="resume-highlight-text">5,000 businesses</span>, leading to a 10% boost in enterprise plan revenue.
-                </li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Revamped</span> the GST Partner <span class="resume-highlight-text">(GSP) Registration Process</span>, simplifying the user journey, leading to a <span class="resume-highlight-text">31% increase in successful registrations</span></li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Pioneered</span> the design of an <span class="resume-highlight-text">AI-Based Bill & Item Import System</span>, which <span class="resume-highlight-text">enhanced user activation metrics</span>, achieving a notable <span class="resume-highlight-text">12% increase in users generating 3 invoices</span> within the 
-                    <span class="resume-highlight-text">first 5 days of registration</span>
-                </li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Redesigned</span> the <span class="resume-highlight-text">Bulk Upload Feature</span> on the Web Platform, <span class="resume-highlight-text">transitioning from traditional Excel uploads to an integrated Google Sheets-style interface</span>. This change has facilitated direct, 
-                    in-app inventory imports, resulting in an <span class="resume-highlight-text">14% increase in bulk imports</span>
-                </li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Led the Design of the User Role Customisation Feature</span> on both Web and Mobile platforms. This critical upgrade has <span class="resume-highlight-text">improved user retention</span> by <span class="resume-highlight-text">enabling more personalised</span> and <span class="resume-highlight-text">secure user access controls</span>, 
-                    showcasing a deep understanding of user needs and security concerns
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Sep’21- Dec’22</div>
-        <div class="resume-content">
-            <div class="resume-heading" style="margin-bottom: 4px;">Associate Product Designer</div>
-            <a href="https://play.google.com/store/apps/details?id=com.buymyjewel.live&hl=en_IN" class="resume-company-link" target="_blank">
-                Goldsetu <img src="assets/images/resume-arrow-small.svg">
-            </a>
-            <div class="resume-company-link">
-                Skills: User Research, Prototyping, Wireframing, Interaction Design, Motion Design, Illustrations, Design System
-            </div>
-            <ul class="resume-experience-list">
-                <li class="resume-list-item">
-                    Acquired <span class="resume-highlight-text">complete ownership</span> of the <span class="resume-highlight-text">customer facing PWA</span>↗ pivotal to our core users, the jewellers. This encompassed the designing and implementation of the <span class="resume-highlight-text">Landing Page</span> & other features like <span class="resume-highlight-text">Orders Flow</span>, <span class="resume-highlight-text">Saving Plans</span>, and <span class="resume-highlight-text">Digital Gold</span>.
-                </li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Collaborated</span> on designing the <span class="resume-highlight-text">marketing website</span> for Goldsetu with a senior designer
-                </li>
-                <li class="resume-list-item">
-                    Produced the <span class="resume-highlight-text">product’s explanatory videos</span> for company’s <span class="resume-highlight-text">Youtube channel</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Nov’21- Jan’22</div>
-        <div class="resume-content">
-            <div class="resume-heading" style="margin-bottom: 4px;">Multi Disciplinary Designer | Freelance</div>
-            <a href="https://www.behance.net/gallery/142349013/Doctors-Appointment-Booking-App" class="resume-company-link" target="_blank">
-                Bytflakes, Medical Solution <img src="assets/images/resume-arrow-small.svg">
-            </a>
-            <div class="resume-company-link">
-                Skills: Branding, Visual Design, Motion Design
-            </div>
-            <ul class="resume-experience-list">
-                <li class="resume-list-item">
-                    Provided a <span class="resume-highlight-text">branding service</span> for the company. 
-                </li>
-                <li class="resume-list-item">
-                    Achieved <span class="resume-highlight-text">high fidelity designs</span> for the doctor’s and patient’s flow in a <span class="resume-highlight-text">very limited timeframe</span>. 
-                </li>
-                <li class="resume-list-item">
-                    <span class="resume-highlight-text">Produced app’s introductory video</span> for a entrepreneurial bootcamp.
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Aug’20- Sep’21</div>
-        <div class="resume-content">
-            <div class="resume-heading" style="margin-bottom: 4px;">UI/UX Designer</div>
-            <a href="https://galleri5.com" class="resume-company-link" target="_blank">
-                Galleri5 <img src="assets/images/resume-arrow-small.svg">
-            </a>
-            <div class="resume-company-link">
-                Skills: High Fidelity, Illustrations, Graphics, Emailers, Packaging design
-            </div>
-            <ul class="resume-experience-list">
-                <li class="resume-list-item">
-                    Spearheaded the <span class="resume-highlight-text">redesign of Brands’ & Influencers’ platform to increase respective user engagement & bring consistency</span>. Both the platform together led to the smooth campaign management by taking care of activities like <span class="resume-highlight-text">tracking influencer metrics, campaign budgeting, smooth payments, assigning/ approving deliverables</span>, etc. 
-                </li>
-                <li class="resume-list-item">
-                    Worked on a <span class="resume-highlight-text">micro app for HRX (a client)</span> to track fitness goals for a campaign. 
-                </li>
-                <li class="resume-list-item">
-                    Served with multitude of design horizons like <span class="resume-highlight-text">social media posts, email marketing templates, presentation slides for business pitch, packaging design for Myntra’s EORS campaign, image & video editing for influencer’s deliverables</span>.
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="resume-heading">
-        Education
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">2015 - 2019</div>
-        <div class="resume-content">
-            <div class="resume-heading" style="margin-bottom: 4px;">Bachelor in Designing </div>
-            <div class="resume-company-link">
-                NIFT, Bangalore
-            </div>
-            <div class="resume-company-link">
-                Textile Design | 8.5 GPA <br>
-                Skills: Adobe Illustrator, Photoshop, Graphic Design
-            </div>
-        </div>
-    </div>
-    <div class="resume-heading">
-        Contact
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Email</div>
-        <a class="resume-content" href="mailto:namy.designwork@gmail.com" target="_blank">
-            <div class="resume-heading" style="margin-bottom: 4px;">namy.designwork@gmail.com <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
-        </a>
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">LinkedIn</div>
-        <a class="resume-content" href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank">
-            <div class="resume-heading" style="margin-bottom: 4px;">linkedin.com/in/namrata-jaiswal <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
-        </a>
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Behance</div>
-        <a class="resume-content" href="https://www.behance.net/namrata_jaiswal" target="_blank">
-            <div class="resume-heading" style="margin-bottom: 4px;">behance.net/namrata_jaiswal <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
-        </a>
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Dribbble</div>
-        <a class="resume-content" href="https://dribbble.com/Namrata_Jaiswal" target="_blank">
-            <div class="resume-heading" style="margin-bottom: 4px;">dribbble.com/Namrata_Jaiswal <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
-        </a>
-    </div>
-    <div class="resume-content-container">
-        <div class="resume-title-content">Website</div>
-        <a class="resume-content" href="https://namy.design" target="_blank">
-            <div class="resume-heading" style="margin-bottom: 4px;">namy.design <img src="assets/images/resume-page-arrow.svg" style="margin-left: 4px;"></div>
-        </a>
-    </div>
+    <div class="for-interesting-people"></div>
 </body>
 <script>
     document.getElementById('download-btn').addEventListener('click', function () {

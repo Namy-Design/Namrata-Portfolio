@@ -16,6 +16,10 @@
       font-family: EulogyDemo-Medium;
       src: url(assets/fonts/eulogy-demo/EulogyDemo-Medium.ttf);
     }
+    @font-face {
+      font-family: EulogyDemo-Bold;
+      src: url(assets/fonts/eulogy-demo/EulogyDemo-Bold.ttf);
+    }
     body {
       margin: 0;
       padding: 0;
@@ -636,7 +640,7 @@
     }
     
     #page-7-blurred-bg-3 {
-      background-image: url('assets/images/delivery.png');
+      background-image: url('assets/images/group-order.png');
     }
     
     #page-7-page-header {
@@ -668,6 +672,7 @@
 
     .app-image {
       height: 90%;
+      cursor: url('assets/images/custom-cursor.svg'), auto;
     }
 
     #page-7-bg {
@@ -938,8 +943,8 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
-      cursor: pointer;
       border-radius: 12px;
+      cursor: url('assets/images/custom-cursor.svg'), auto;
     }
 
     #page-11-footer {
@@ -968,6 +973,7 @@
       display: flex;
       flex-direction: column;
       letter-spacing: 3.84px;
+      cursor: url('assets/images/custom-cursor.svg'), auto;
     }
 
     .contact-text {
@@ -1025,6 +1031,15 @@
       z-index: 1;
       width: 4vh;
       padding-left: 60px;
+      display: none;
+    }
+
+    .left-sticky-menu-2 {
+      position: fixed;
+      bottom: 107px;
+      left: 0px;
+      z-index: 1;
+      display: flex;
     }
 
     .left-sticky-logo {
@@ -1048,6 +1063,14 @@
       width: 5vh;
       height: 5vh;
       margin-top: 32px;
+      border-radius: 100px;
+      padding: 5px;
+    }
+
+    .side-bar-logo-container-2 {
+      width: 40px;
+      height: 40px;
+      margin-left: 40px;
       border-radius: 100px;
       padding: 5px;
     }
@@ -1162,40 +1185,11 @@
         color: #E0DFBF;
     }
 
-    /* #page-3-colored-text:before {
-        content: attr(data-text);
-        position: absolute;
-        overflow: hidden;
-        max-width: 0;
-        white-space: nowrap;
-        color: #E0DFBF;
-        transition: max-width 2s linear;
-    }
-
-    #page-3-colored-text.animate:before {
-        max-width: 100vw;
-        color: #F67C29;
-    } */
 
     #page-5-colored-text {
         position: relative; /* Ensure the pseudo-element is positioned correctly */
         color: #E0DFBF;
     }
-
-    /* #page-5-colored-text:before {
-        content: attr(data-text);
-        position: absolute;
-        overflow: hidden;
-        max-width: 0;
-        white-space: nowrap;
-        color: #E0DFBF;
-        transition: max-width 1s linear;
-    }
-
-    #page-5-colored-text.animate:before {
-        max-width: 100vw; 
-        color: #F67C29;
-    } */
 
     @keyframes loading {
         0% {
@@ -1206,6 +1200,48 @@
         }
     }
 
+    .small-screen-view {
+      height: 100vh;
+      width: 60vw;
+      display: flex;
+      background-color: #171717;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-left: 20vw;
+      padding-right: 20vw;
+    }
+
+    .small-screen-view-main-text {
+      font-family: 'EulogyDemo-Bold';
+      font-size: 64px;
+      text-align: left;
+      color: #E0DFBF;
+      font-weight: 700;
+      letter-spacing: 3.84px;
+      width: 100%;
+      padding-bottom: 8px;
+    }
+
+    .small-screen-view-small-text {
+      font-family: 'Inter';
+      font-size: 24px;
+      text-align: center;
+      color: #797979;
+      font-weight: 300;
+      text-align: left;
+      width: 100%;
+    }
+
+    @media (min-width: 835px) and (max-width: 1440px) {
+      .left-sticky-menu {
+        display: block;
+      }
+      .left-sticky-menu-2 {
+        display: none;
+      }
+    }
+
     @media (min-width: 1440px) {
       .scrollable-container {
         display: block; /* Display the element */
@@ -1213,6 +1249,16 @@
 
       .header_menu {
         display: block;
+      }
+
+      .small-screen-view {
+        display: none;
+      }
+      .left-sticky-menu {
+        display: block;
+      }
+      .left-sticky-menu-2 {
+        display: none;
       }
     }
 
@@ -1242,6 +1288,26 @@
         </a>
       </div>
       <div class="side-bar-logo-container">
+        <a href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank">
+          <img class="left-sticky-menu-img-inactive" src="assets/images/linkedin_inactive.svg">
+          <img class="left-sticky-menu-img-active" src="assets/images/linkedin_active.svg">
+        </a>
+      </div>
+  </div>
+  <div class="left-sticky-menu-2">
+    <div class="side-bar-logo-container-2">
+        <a href="https://dribbble.com/Namrata_Jaiswal" target="_blank">
+          <img class="left-sticky-menu-img-inactive" src="assets/images/dribble_inactive.svg">
+          <img class="left-sticky-menu-img-active" src="assets/images/dribble_active.svg">
+        </a>
+      </div>
+      <div class="side-bar-logo-container-2">
+        <a href="https://www.behance.net/namrata_jaiswal" target="_blank">
+          <img class="left-sticky-menu-img-inactive" src="assets/images/behance_inactive.svg">
+          <img class="left-sticky-menu-img-active" src="assets/images/behance_active.svg">
+        </a>
+      </div>
+      <div class="side-bar-logo-container-2">
         <a href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank">
           <img class="left-sticky-menu-img-inactive" src="assets/images/linkedin_inactive.svg">
           <img class="left-sticky-menu-img-active" src="assets/images/linkedin_active.svg">
@@ -1287,6 +1353,10 @@
         </a>
       </li>
     </ul>
+  </div>
+  <div class="small-screen-view">
+    <div class="small-screen-view-main-text">Life is larger than this screen!</div>
+    <div class="small-screen-view-small-text">Please move to a bigger screen</div>
   </div>
   <div class="scrollable-container" id="myScrollableDiv">
     <canvas id="mainCanvas"></canvas>
@@ -1481,7 +1551,9 @@
         </div>
         <div class="page-7-content-container" id="e-invoice-content">
           <div class="app-image-container">
-            <img class="app-image" src="assets/images/e-invoice.svg">
+            <a href="./mybillbook.html" target="_blank">
+              <img class="app-image" src="assets/images/e-invoice.svg">
+            </a>
           </div>
         </div>
         <div id="page-7-blurred-bg-1" class="page-7-blurred-bg"></div>
@@ -1489,7 +1561,9 @@
       <div class="page-7-container" id="page-7-container-2" style="align-items: center;" id="page-7-container-2">
         <div class="page-7-content-container" id="digi-gold-content">
           <div class="app-image-container">
-            <img class="app-image" src="assets/images/digi-gold.svg">
+            <a href="./goldsetu.html" target="_blank">
+              <img class="app-image" src="assets/images/digi-gold.svg">
+            </a>
           </div>
         </div>
         <div id="page-7-blurred-bg-2" class="page-7-blurred-bg"></div>
@@ -1497,9 +1571,10 @@
       <div class="page-7-container" id="page-7-container-3" style="align-items: center;" id="page-7-container-3">
         <div class="page-7-content-container" id="groc-content">
           <div class="app-image-container">
-            <img class="app-image" src="assets/images/delivery.png">
+            <a href="./group_orders.html" target="_blank">
+              <img class="app-image" src="assets/images/group-order.svg">
+            </a>
           </div>
-          <div class="app-name-text">GROCERIES / PERSONAL</div>
         </div>
         <div id="page-7-blurred-bg-3" class="page-7-blurred-bg"></div>
       </div>
@@ -1577,6 +1652,9 @@
               </a>
               <a href="https://dribbble.com/shots/18544189-Hashhealth" class="page-10-video" target="_blank">
                 <img class="page-10-card-content" id="vid-3" src="assets/images/hashhealth.png">
+              </a>
+              <a href="https://www.behance.net/gallery/149906219/Covet-Magical-Potions" class="page-10-video" target="_blank">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/magical potions.png">
               </a>
               <a href="https://dribbble.com/shots/18515848-Campaign-Management-Platform" class="page-10-video" target="_blank">
                 <img class="page-10-card-content" id="vid-3" src="assets/images/g5.png">

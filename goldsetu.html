@@ -19,7 +19,7 @@
         .project-img {
             width: 100%;
             margin-top: -1px;
-            margin-bottom: -1px;
+            margin-bottom: -4px;
         }
         #page-2-video {
             height: 100%;
@@ -35,7 +35,7 @@
             display: flex;
             width: 100%;
             height: 14vh;
-            background-color: #49229F;
+            background-color: #4F0E28;
             white-space: nowrap; /* Prevent text from wrapping */
             box-sizing: border-box;
         }
@@ -118,15 +118,16 @@
     </style>
 </head>
 <body>
-    <img class="project-img" src="assets/images/goldsetu_1.png">
-    <img class="project-img" src="assets/images/goldsetu_2.png">
-    <img class="project-img" src="assets/images/goldsetu_3.png">
-    <img class="project-img" src="assets/images/goldsetu_4.png">
-    <img class="project-img" src="assets/images/goldsetu_5.png">
-    <img class="project-img" src="assets/images/goldsetu_6.png">
-    <img class="project-img" src="assets/images/goldsetu_7.png">
-    <img class="project-img" src="assets/images/goldsetu_8.png">
-    <img class="project-img" src="assets/images/goldsetu_9.png">
+    <picture>
+        <source srcset="assets/images/Goldsetu_1_small.webp" media="(max-width: 1920px)">
+        <!-- Fallback image for larger screens -->
+        <img class="project-img" src="assets/images/Goldsetu_1_4K.webp">
+    </picture>
+    <picture>
+        <source srcset="assets/images/Goldsetu_2_small.jpg" media="(max-width: 1920px)">
+        <!-- Fallback image for larger screens -->
+        <img class="project-img" src="assets/images/Goldsetu_2_4K.webp">
+    </picture>
     <div class="moving-text">
         <div class="revolving-text">
             <div class="revolve-child-txt">
@@ -145,9 +146,9 @@
     </div>
     <div class="footer">
         <div class="footer-header">NEXT PROJECT</div>
-        <a href="./grocery.html">
+        <a href="./group_orders.html">
             <div class="footer-img">
-                <img style="height: 100%;" src="assets/images/delivery.png">
+                <img style="height: 100%;" src="assets/images/group-order.svg">
             </div>
         </a>
     </div>

@@ -19,7 +19,15 @@
         .project-img {
             width: 100%;
             margin-top: -1px;
-            margin-bottom: -1px;
+            margin-bottom: -4px;
+        }
+        .page-2-video-container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #CEC9FF;
         }
         #page-2-video {
             height: 100%;
@@ -118,22 +126,21 @@
     </style>
 </head>
 <body>
-    <img class="project-img" src="assets/images/mybillbook_1.png">
-    <img class="project-img" src="assets/images/mybillbook_2.png">
-    <img class="project-img" src="assets/images/mybillbook_3.png">
-    <img class="project-img" src="assets/images/mybillbook_4.png">
-    <img class="project-img" src="assets/images/mybillbook_5.png">
-    <img class="project-img" src="assets/images/mybillbook_6.png">
-    <img class="project-img" src="assets/images/mybillbook_7.png">
-    <img class="project-img" src="assets/images/mybillbook_8.png">
-    <img class="project-img" src="assets/images/mybillbook_9.png">
-    <video id="page-2-video" autoplay muted>
-        <source src="assets/videos/mybillbook_9.mp4" type="video/mp4">
-      </video>
-    <img class="project-img" src="assets/images/mybillbook_10.png">
-    <img class="project-img" src="assets/images/mybillbook_11.png">
-    <img class="project-img" src="assets/images/mybillbook_12.png">
-    <img class="project-img" src="assets/images/mybillbook_13.png">
+    <picture>
+        <source srcset="assets/images/mybillbook_1_small.jpg" media="(max-width: 1920px)">
+        <!-- Fallback image for larger screens -->
+        <img class="project-img" src="assets/images/mybillbook_1.jpg">
+    </picture>
+    <div class="page-2-video-container">
+        <video id="page-2-video" autoplay muted loop>
+            <source src="assets/videos/mybillbook_9.mp4" type="video/mp4">
+        </video>
+    </div>
+    <picture>
+        <source srcset="assets/images/mybillbook_2_small.webp" media="(max-width: 1920px)">
+        <!-- Fallback image for larger screens -->
+        <img class="project-img" src="assets/images/mybillbook_2.webp">
+    </picture>
     <div class="moving-text">
         <div class="revolving-text">
             <div class="revolve-child-txt">

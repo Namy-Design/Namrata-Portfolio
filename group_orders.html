@@ -125,22 +125,23 @@
         }
         .brainstorming-container {
             display: flex;
-            height: 76vh;
+            height: 180vh;
             width: 100%;
-            padding-top: 12vh;
-            padding-bottom: 12vh;
+            padding-top: 3vh;
+            padding-bottom: 3vh;
             align-items: center;
             justify-content: center;
             background-color: #171717;
         }
         .brain-bg-container {
             height: 100%;
-            width: 76vh;
+            width: 80%;
             background-image: url(assets/images/swiggy-bckground-img.png);
-            background-size: contain;  /* Scales the image to fit inside the div */
+            background-size:cover;  /* Scales the image to fit inside the div */
             background-repeat: no-repeat;  /* Prevents the image from repeating */
             background-position: center;
             justify-content: center;
+            border-radius: 60px;
         }
         .brain-storm-header {
             display: flex;
@@ -148,20 +149,20 @@
             align-items: center;
             justify-content: center;
             margin-top: 6vh;
-            height: 8vh;
+            height: 12vh;
             margin-bottom: 4.6vh;
         }
         .brain-storm-content {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            width: 58%;
-            height: 50vh;
-            padding-left: 21%;
-            padding-right: 21%;
+            width: 80%;
+            height: calc(100% - 22.6vh);
+            padding-left: 10%;
+            padding-right: 10%;
         }
         #brainstorm-video {
-            height: 80%;
+            height: 30%;
             border-radius: 20px;
         }
         .referencing-container {
@@ -176,7 +177,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 380px;
+            height: 20vh;
             width: 100%;
             background-color: #171717;
         }
@@ -184,7 +185,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: calc(100vh - 380px);
+            height: 80vh;
             width: 100%;
         }
         .prototype-video-container {
@@ -195,15 +196,15 @@
         }
         .referencing-cups {
             position: absolute;
-            top: 214px;
-            left: 30vw;
-            height: 320px;
+            top: 10vh;
+            left: 20vw;
+            height: 20vh;
         }
         .referencing-sushi {
             position: absolute;
-            top: 265px;
+            top: 10vh;
             left: 73.5vw;
-            height: 190px;
+            height: 20vh;
         }
     </style>
 </head>
@@ -224,7 +225,7 @@
                 <img src="assets/images/brainstorm-header.svg" style="height: 100%;">
             </div>
             <div class="brain-storm-content">
-                <img src="assets/images/brainstorm-content.svg" style="height: 100%;">
+                <img src="assets/images/brainstorm-content.svg" style="width: 70%;">
                 <video id="brainstorm-video" autoplay muted loop>
                     <source src="assets/videos/order-food.MP4" type="video/mp4">
                 </video>
@@ -239,13 +240,13 @@
     <div class="referencing-container">
         <img class="referencing-cups" src="assets/images/swiggy-cups.svg">
         <div class="referencing-header">
-            <img src="assets/images/referencing.svg" style="height: 30%;">
+            <img src="assets/images/referencing.svg" style="height: 80%;">
         </div>
         <div class="referencing-content">
-            <video style="height: 70%; margin-right: 30px; border-radius: 20px;" autoplay muted loop>
+            <video style="height: 80%; margin-right: 30px; border-radius: 20px;" autoplay muted loop>
                 <source src="assets/videos/splitwise.MP4" type="video/mp4">
             </video>
-            <video style="height: 70%; border-radius: 20px;" autoplay muted loop>
+            <video style="height: 80%; border-radius: 20px;" autoplay muted loop>
                 <source src="assets/videos/phonepe.MP4" type="video/mp4">
             </video>
         </div>
@@ -258,16 +259,16 @@
     <div class="referencing-container">
         <img class="referencing-sushi" src="assets/images/sushi.svg">
         <div class="referencing-header">
-            <img src="assets/images/prototype.svg" style="height: 30%;">
+            <img src="assets/images/prototype.svg" style="height: 80%;">
         </div>
         <div class="referencing-content" style="background-color: #FF7F00;">
             <div class="prototype-video-container" style="justify-content: flex-end;">
-                <video id="swiggy-prototype-video-1" style="height: 70%;" muted>
+                <video id="swiggy-prototype-video-1" style="height: 100%;" muted>
                     <source src="assets/videos/group_creator.mov" type="video/mp4">
                 </video>
             </div>
             <div class="prototype-video-container" style="justify-content: flex-start;">
-                <video id="swiggy-prototype-video-2" style="height: 70%;" muted>
+                <video id="swiggy-prototype-video-2" style="height: 100%;" muted>
                     <source src="assets/videos/group_visitor.mov" type="video/mp4">
                 </video>
             </div>

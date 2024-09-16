@@ -34,7 +34,7 @@ const main_ctx = main_canvas.getContext('2d');
 
 // Set canvas size
 main_canvas.width = window.innerWidth;
-main_canvas.height = 13.3 * window.innerHeight;
+main_canvas.height = 13.6 * window.innerHeight;
 
 // Function to draw horizontal and vertical lines
 function drawMesh(canvas, ctx) {

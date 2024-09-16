@@ -161,19 +161,15 @@
       position: absolute;
     }
 
-    .page-2-header-container {
-      height: 12%;
-      width: 90%;
-      padding-left: 5%;
-      padding-right: 5%;
-    }
-
     .page-2-content-container {
-      height: 88%;
-      width: 90%;
-      padding-left: 5%;
-      padding-right: 5%;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
       display: flex;
+      background-image: url("assets/images/intro_image_r.svg");
+      background-size: cover;
+      background-position: center;
     }
 
     .page-2-content-flex {
@@ -283,7 +279,7 @@
     #a-a-text {
       font-family: 'EulogyDemo-SemiBold';
       font-weight: 600;
-      font-size: 300%;
+      font-size: 4rem;
       color: #E0DFBF;
       width: 28%;
       height: 100%;
@@ -314,9 +310,11 @@
     }
 
     #awards-img {
-      width: 80%;
-      transform: translateY(-50%);
-      float: right;
+      position: absolute;
+      height: 35vh;
+      z-index: 1;
+      bottom: 10vh;
+      right: 10vw;
     }
 
     #page-3 {
@@ -405,7 +403,7 @@
       transition: height 0.3s;
       transition-timing-function: ease-in;
       font-family: 'Inter';
-      font-weight: 600;
+      font-weight: 300;
       align-items: center;
       justify-content: center;
       text-align: left;
@@ -413,6 +411,7 @@
       display: flex;
       line-height: 145%;
       z-index: 1;
+      letter-spacing: 0px;
     }
 
     .what-i-do-text {
@@ -559,17 +558,18 @@
     .exp-desc {
       width: 100%;
       font-family: 'Inter';
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 300;
       color: #797979;
       justify-content: flex-start;
+      letter-spacing: 0px;
     }
 
     .exp-desc-hover {
       width: 100%;
       font-family: 'Inter';
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 300;
       color: #2B2B2B;
       justify-content: flex-start;
       display: none;
@@ -645,7 +645,7 @@
     
     #page-7-page-header {
       z-index: 1;
-      margin-bottom: 5%;
+      margin-bottom: 6%;
     }
 
     .app-name-text {
@@ -673,6 +673,10 @@
     .app-image {
       height: 90%;
       cursor: url('assets/images/custom-cursor.svg'), auto;
+    }
+
+    .app-image-link {
+      height: 100%;
     }
 
     #page-7-bg {
@@ -954,6 +958,10 @@
       margin-top: auto;
     }
 
+    .project-img {
+      height: 100%;
+    }
+
     #page-11-footer-left {
       font-family: 'EulogyDemo-SemiBold';
       color: #2B2B2B;
@@ -1233,6 +1241,10 @@
       width: 100%;
     }
 
+    #page-4-filler {
+      height: 30vh;
+    }
+
     @media (min-width: 835px) and (max-width: 1440px) {
       .left-sticky-menu {
         display: block;
@@ -1259,6 +1271,33 @@
       }
       .left-sticky-menu-2 {
         display: none;
+      }
+    }
+
+    @media ((min-width: 1440px) and (max-width: 1919px)) {
+      #a-a-text {
+        font-size: 3rem;
+      }
+      .page-2-content-container {
+        background-image: url("assets/images/intro_image_xs.svg");
+      }
+    }
+
+    @media ((min-width: 1920px) and (max-width: 2499px)) {
+      #a-a-text {
+        font-size: 4rem;
+      }
+      .page-2-content-container {
+        background-image: url("assets/images/intro_image_s.svg");
+      }
+    }
+
+    @media (min-width: 2500) {
+      #a-a-text {
+        font-size: 6rem;
+      }
+      .page-2-content-container {
+        background-image: url("assets/images/intro_image_r.svg");
       }
     }
 
@@ -1373,47 +1412,17 @@
         <canvas id="meshCanvas"></canvas>
       </div>
       <div id="page-2-video-overlay-1">
-        <div class="page-2-header-container"></div>
         <div class="page-2-content-container">
-          <div class="page-2-content-flex" id="page-2-content-left">
-            <div class="page-2-left-top">
-              <img class="collage-1" src="assets/images/collage-1.png">
-            </div>
-            <div class="page-2-left-bottom">
-              <div class="full-width-container">
-                From Textile
-              </div>
-              <div class="full-width-container">
-                ✦ Designer to
-              </div>
-              <div class="full-width-container">
-                Product Designer
-              </div>
-            </div>
-          </div>
-          <div class="page-2-content-flex" id="page-2-content-middle">
-            <img class="collage-2" src="assets/images/collage-1.png">
-          </div>
-          <div class="page-2-content" id="page-2-content-right">
-            <div class="full-width-container">
-              Crafting
-            </div>
-            <div class="full-width-container">
-              ✦ Digital
-            </div>
-            <div class="full-width-container">
-              Experiences
-            </div>
-            <div class="full-width-container" style="font-size: 41% !important; margin-top: 20px;">
-              No matter what,
-            </div>
-            <div class="full-width-container" style="font-size: 41% !important;">
-              <s>Design</s> User always matters !
-            </div>  
-          </div>
+          <!-- <picture>
+            <source srcset="assets/images/intro_image_xs.svg" media="(max-width: 1919px)">
+            <source srcset="assets/images/intro_image_s.svg" media="((min-width: 1920px) and (max-width: 2560px))"> -->
+            <!-- Fallback image for larger screens -->
+            <!-- <img class="project-img" src="assets/images/intro_image_s.svg"> -->
+          <!-- </picture> -->
         </div>
       </div>
       <div id="page-2-video-overlay-2">
+        <img id="awards-img" src="assets/images/awards.svg">
         <div id="page-2-video-overlay-2-main-overlay"></div>
         <div class="page-2-video-overlay-2-content">
           <div class="circular-stamp-container" href="#page-6">
@@ -1427,9 +1436,6 @@
           <div id="a-a-text">
             <div class="full-width-container">AWARDS</div>
             <div class="full-width-container">/ ACHIEVEMENTS</div>
-          </div>
-          <div id="awards-container">
-            <img id="awards-img" src="assets/images/awards.svg">
           </div>
         </div>
       </div>
@@ -1468,7 +1474,7 @@
           </div>
           <div class="what-i-do-selector">
             <div class="what-i-do-text">INTERACTION</div>
-            <div class="hover-highlight"> Finalising/ iterating on the interactions is my favourite part,<br>acts as the icing on the cake, without which the experience is not complete</div>
+            <div class="hover-highlight"> Iterating on the interactions is my favourite part, <br>without which the experience is not complete</div>
             <div class="hover-aboslute-bg"></div>
           </div>
           <div class="what-i-do-selector">
@@ -1479,6 +1485,7 @@
         </div>
       </div>
     </div>
+    <div class="page" id="page-4-filler"></div>
     <div class="page" id="page-5">
       <!-- <div id="page-5-overlay"></div> -->
       <div class="page-container" style="position: absolute; top: 0; left: 0;">
@@ -1499,7 +1506,7 @@
         <div id="page-6-selector-container">
           <div class="history-selector">
             <div class="history-text">
-              <div class="history-text-date">Now</div>
+              <div class="history-text-date">2023</div>
               <div class="history-text-exp">
                 <div class="exp-text">PRODUCT DESIGNER 2</div>
                 <div class="exp-desc">Flobiz</div>
@@ -1512,7 +1519,7 @@
             <div class="history-text">
               <div class="history-text-date">2021</div>
               <div class="history-text-exp">
-                <div class="exp-text">PRODUCT DESIGNER</div>
+                <div class="exp-text">ASSOCIATE PRODUCT DESIGNER</div>
                 <div class="exp-desc">Goldsetu</div>
                 <div class="exp-desc-hover">Found an amazing mentor who helped me build a strong design foundation</div>
               </div>
@@ -1551,7 +1558,7 @@
         </div>
         <div class="page-7-content-container" id="e-invoice-content">
           <div class="app-image-container">
-            <a href="./mybillbook.html" target="_blank">
+            <a href="./mybillbook.html" class="app-image-link" target="_blank">
               <img class="app-image" src="assets/images/e-invoice.svg">
             </a>
           </div>
@@ -1561,7 +1568,7 @@
       <div class="page-7-container" id="page-7-container-2" style="align-items: center;" id="page-7-container-2">
         <div class="page-7-content-container" id="digi-gold-content">
           <div class="app-image-container">
-            <a href="./goldsetu.html" target="_blank">
+            <a href="./goldsetu.html" class="app-image-link" target="_blank">
               <img class="app-image" src="assets/images/digi-gold.svg">
             </a>
           </div>
@@ -1571,7 +1578,7 @@
       <div class="page-7-container" id="page-7-container-3" style="align-items: center;" id="page-7-container-3">
         <div class="page-7-content-container" id="groc-content">
           <div class="app-image-container">
-            <a href="./group_orders.html" target="_blank">
+            <a href="./group_orders.html" class="app-image-link" target="_blank">
               <img class="app-image" src="assets/images/group-order.svg">
             </a>
           </div>

@@ -87,7 +87,7 @@ const feedbackContentRoleTextDiv1 = document.getElementById('page-8-role-text-1'
 const feedbackContentRoleTextDiv2 = document.getElementById('page-8-role-text-2');
 
 hoverfeedbackSidImageDiv.addEventListener('mouseover', () => {
-    feedbackContentMainTextDiv.innerHTML = "She has been a <br> standout member <br> of our team";
+    feedbackContentMainTextDiv.innerHTML = "She has been a standout member of our team";
     feedbackContentNameTextDiv.innerHTML = "Siddharth Seth";
     feedbackContentRoleTextDiv1.innerHTML = "VP of Products";
     feedbackContentRoleTextDiv2.innerHTML = "Flobiz"
@@ -100,7 +100,7 @@ hoverfeedbackSidImageDiv.addEventListener('mouseover', () => {
 });
 
 hoverfeedbackKevImageDiv.addEventListener('mouseover', () => {
-    feedbackContentMainTextDiv.innerHTML = "Her energy is contagious <br> & she’s always up for <br> any challenge";
+    feedbackContentMainTextDiv.innerHTML = "Her energy is contagious & she’s always up for any challenge";
     feedbackContentNameTextDiv.innerHTML = "Kevin";
     feedbackContentRoleTextDiv1.innerHTML = "Senior Designer";
     feedbackContentRoleTextDiv2.innerHTML = "Flobiz"
@@ -113,7 +113,7 @@ hoverfeedbackKevImageDiv.addEventListener('mouseover', () => {
 });
 
 hoverfeedbackShankImageDiv.addEventListener('mouseover', () => {
-    feedbackContentMainTextDiv.innerHTML = "Exceptional problem solver <br> with a keen eye for detail";
+    feedbackContentMainTextDiv.innerHTML = "Exceptional problem solver with a keen eye for detail";
     feedbackContentNameTextDiv.innerHTML = "Shankar";
     feedbackContentRoleTextDiv1.innerHTML = "Founding Designer";
     feedbackContentRoleTextDiv2.innerHTML = "Goldsetu"

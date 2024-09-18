@@ -6,7 +6,8 @@
   <title>Namrata Jaiswal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <style>
     @font-face {
       font-family: EulogyDemo-SemiBold;
@@ -69,6 +70,35 @@
 
     .bottom-slider {
       bottom: 0;
+    }
+
+    .bottom-slider-img {
+      height: 16vh;
+      width: 100%;
+      display: flex;
+      margin-top: auto;
+      margin-bottom: 8vh;
+      position: relative;
+      justify-content: center;
+    }
+
+    .slide-down-arrow {
+      position: absolute;
+      height: 16vh;
+    }
+
+    .slide-down-text {
+      height: 16vh;
+      animation: rotate-slider-text 8s linear infinite;
+    }
+
+    @keyframes rotate-slider-text {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
     }
 
     .top-slider {
@@ -167,7 +197,7 @@
       align-items: center;
       justify-content: center;
       display: flex;
-      background-image: url("assets/images/intro_image_r.svg");
+      background-image: url("assets/images/intro_image_r.webp");
       background-size: cover;
       background-position: center;
     }
@@ -389,7 +419,6 @@
       position: relative;
       width: 100%;
       height: 6.85rem;
-      cursor: pointer;
       display: flex;
       align-items: center;
       width: 100%;
@@ -403,7 +432,7 @@
       transition: height 0.3s;
       transition-timing-function: ease-in;
       font-family: 'Inter';
-      font-weight: 300;
+      font-weight: 400;
       align-items: center;
       justify-content: center;
       text-align: left;
@@ -510,7 +539,6 @@
       position: relative;
       width: 100%;
       height: 25%;
-      cursor: pointer;
       display: flex;
       align-items: center;
       width: 100%;
@@ -569,7 +597,7 @@
       width: 100%;
       font-family: 'Inter';
       font-size: 20px;
-      font-weight: 300;
+      font-weight: 400;
       color: #2B2B2B;
       justify-content: flex-start;
       display: none;
@@ -886,7 +914,6 @@
       height: 50%;
       margin-left: -20%;
       margin-right: -20%;
-      margin-bottom: 80px;
       display: flex;
     }
     
@@ -988,7 +1015,7 @@
       font-family: "Inter";
       font-weight: 200;
       font-size: 1.2rem;
-      color: white;
+      color: #ABABAB;
       margin-top: 0px;
       margin-bottom: auto;
       letter-spacing: 1px;
@@ -1279,7 +1306,13 @@
         font-size: 3rem;
       }
       .page-2-content-container {
-        background-image: url("assets/images/intro_image_xs.svg");
+        background-image: url("assets/images/intro_image_xs.webp");
+      }
+      #page-8-text-container {
+        width: 70%;
+      }
+      #page-8-selector-container {
+        width: calc(30% - 100px);
       }
     }
 
@@ -1288,16 +1321,28 @@
         font-size: 4rem;
       }
       .page-2-content-container {
-        background-image: url("assets/images/intro_image_s.svg");
+        background-image: url("assets/images/intro_image_s.webp");
+      }
+      #page-8-text-container {
+        width: 60%;
+      }
+      #page-8-selector-container {
+        width: calc(60% - 100px);
       }
     }
 
-    @media (min-width: 2500) {
+    @media (min-width: 2500px) {
       #a-a-text {
         font-size: 6rem;
       }
       .page-2-content-container {
-        background-image: url("assets/images/intro_image_r.svg");
+        background-image: url("assets/images/intro_image_r.webp");
+      }
+      #page-8-text-container {
+        width: 40%;
+      }
+      #page-8-selector-container {
+        width: calc(60% - 100px);
       }
     }
 
@@ -1401,7 +1446,13 @@
     <canvas id="mainCanvas"></canvas>
     <div class="slider-screen-container">
       <div class="slider top-slider"><p class="landing-header" id="landing-header-top">NAMRATA</p></div>
-      <div class="slider bottom-slider"><p class="landing-header" id="landing-header-bottom">NAMRATA</p></div>
+      <div class="slider bottom-slider">
+        <p class="landing-header" id="landing-header-bottom">NAMRATA</p>
+        <div class="bottom-slider-img">
+          <img src="assets/images/scroll_text.svg" class="slide-down-text">
+          <img src="assets/images/scroll_arrow.svg" class="slide-down-arrow">
+        </div>
+      </div>
     </div>
     <div class="page" id="page-1"></div>
     <div class="page" id="page-2">
@@ -1413,16 +1464,10 @@
       </div>
       <div id="page-2-video-overlay-1">
         <div class="page-2-content-container">
-          <!-- <picture>
-            <source srcset="assets/images/intro_image_xs.svg" media="(max-width: 1919px)">
-            <source srcset="assets/images/intro_image_s.svg" media="((min-width: 1920px) and (max-width: 2560px))"> -->
-            <!-- Fallback image for larger screens -->
-            <!-- <img class="project-img" src="assets/images/intro_image_s.svg"> -->
-          <!-- </picture> -->
         </div>
       </div>
       <div id="page-2-video-overlay-2">
-        <img id="awards-img" src="assets/images/awards.svg">
+        <img id="awards-img" src="assets/images/awards.webp">
         <div id="page-2-video-overlay-2-main-overlay"></div>
         <div class="page-2-video-overlay-2-content">
           <div class="circular-stamp-container" href="#page-6">
@@ -1596,7 +1641,7 @@
             <img src="assets/images/open_quotes.svg">
           </div>
           <div id="page-8-text-container">
-            <div id="page-8-main-text">She has been a <br> standout member <br> of our team</div>
+            <div id="page-8-main-text">She has been a standout member of our team</div>
             <div id="page-8-name-text">
               Siddharth Seth
             </div>

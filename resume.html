@@ -6,8 +6,9 @@
     <title>Namrata Jaiswal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
     <script src="js/js-file-downloader.min.js"></script>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <style>
         @font-face {
             font-family: EulogyDemo-SemiBold;
@@ -135,7 +136,6 @@
             line-height: 22px;
         }
         .resume-text {
-            white-space: pre-line;
             font-family: "Inter";
             font-weight: 300;
             font-size: 14px;
@@ -166,7 +166,11 @@
             font-size: 1.5rem;
             letter-spacing: 3px;
             display: none;
-            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .resume-download:hover #resume-btn-text {
+            display: inline-block; /* Show the text on hover */
         }
 
         .for-interesting-people {
@@ -259,6 +263,7 @@
 <body>
     <div class="resume-download" id="download-btn">
         <img src="assets/images/resume_arrow.svg" style="transform: rotate(225deg);">
+        <div id="resume-btn-text">DOWNLOAD </div>
     </div>
     <div class="resume-container">
         <div class="resume-timeline">

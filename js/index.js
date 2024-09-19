@@ -1,24 +1,25 @@
-window.addEventListener('load', () => {
-    const progressBar = document.querySelector('.circular-loader');
-    const loaderText = document.querySelector('.loader-value');
-    const laderPage = document.querySelector('.loading-page')
+// window.addEventListener('load', () => {
+//     const progressBar = document.querySelector('.circular-loader');
+//     const loaderText = document.querySelector('.loader-value');
+//     const laderPage = document.querySelector('.loading-page')
+
+//     let loadedAssets = 0;
+//     const totalAssets = assets.length + 1; // +1 for the font
   
-    let progress = 10;
-    progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
-    loaderText.textContent = `${progress}%`;
+//     let progress = 0;
     
-    const updateProgress = setInterval(() => {
-      if (progress >= 100) {
-        clearInterval(updateProgress);
-        laderPage.style.display = 'none';
-        // progressBar.style.display = 'none';
-      } else {
-        progress += 1;
-        progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
-        loaderText.textContent = `${progress}%`;
-      }
-    }, 20); // Adjust the speed of loading by changing the interval duration
-  });
+//     const updateProgress = setInterval(() => {
+//       if (progress >= 100) {
+//         clearInterval(updateProgress);
+//         laderPage.style.display = 'none';
+//         // progressBar.style.display = 'none';
+//       } else {
+//         progress += 1;
+//         progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
+//         loaderText.textContent = `${progress}%`;
+//       }
+//     }, 20); // Adjust the speed of loading by changing the interval duration
+//   });
 
 
 var scrollableDiv = document.getElementById('myScrollableDiv');
@@ -259,4 +260,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     page7Container3observer.observe(page7Container3Element);
+
+    const progressBar = document.querySelector('.circular-loader');
+    const loaderText = document.querySelector('.loader-value');
+    const laderPage = document.querySelector('.loading-page');
+    const assets = document.querySelectorAll('.asset-tracker');
+
+    let loadedAssets = 0;
+    const totalAssets = 42; // +1 for the font
+
+    // Function to update the progress bar
+    function updateProgress() {
+        loadedAssets++;
+        // console.log(totalAssets);
+        // console.log(loadedAssets);
+        const progress = (loadedAssets / totalAssets) * 100;
+        progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
+        loaderText.textContent = `${progress}%`;
+        // Hide loading screen when all assets are loaded
+        if (loadedAssets === totalAssets) {
+            laderPage.style.display = 'none';
+        }
+    }
+    
+    // Check if the asset is already loaded (cached)
+    function checkAssetStatus(asset) {
+        if (asset.tagName === 'IMG' || asset.tagName === 'VIDEO') {
+            if (asset.complete) {
+                updateProgress();
+            } else {
+                asset.addEventListener('load', updateProgress);
+                asset.addEventListener('error', updateProgress); // Count errors as loaded to avoid stalling
+            }
+        }
+
+        if (asset.tagName === 'SCRIPT') {
+            if (asset.readyState === 'complete' || asset.readyState === 'loaded') {
+                updateProgress();
+            } else {
+                asset.addEventListener('load', updateProgress);
+            }
+        }
+    }
+
+    // Track when each asset is loaded or already cached
+    assets.forEach(asset => checkAssetStatus(asset));
+
+    // Track font loading using the FontFaceSet API
+    document.fonts.ready.then(function() {
+        updateProgress();  // Call this when fonts are ready
+    });
 });

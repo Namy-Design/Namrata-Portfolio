@@ -40,7 +40,7 @@
       background-color: #171717;
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none; /* Internet Explorer and Edge */
-      /* cursor: url('assets/images/namy_logo.svg'), auto; */
+      cursor: url('assets/images/default_cursor.png'), auto;
     }
 
     .scrollable-container::-webkit-scrollbar {
@@ -423,6 +423,7 @@
       align-items: center;
       width: 100%;
       padding-top: 1rem;
+      cursor: help;
     }
 
     .hover-highlight {
@@ -1271,6 +1272,16 @@
 
     #page-4-filler {
       height: 30vh;
+    }
+
+    @media (max-width: 834px) {
+      .small-screen-view-main-text {
+        font-size: 48px;
+      }
+      .small-screen-view {
+        padding-left: 60px;
+        width: calc(80vw - 60px);
+      }
     }
 
     @media (min-width: 835px) and (max-width: 1440px) {

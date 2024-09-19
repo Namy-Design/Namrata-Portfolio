@@ -3,7 +3,9 @@ window.addEventListener('load', () => {
     const loaderText = document.querySelector('.loader-value');
     const laderPage = document.querySelector('.loading-page')
   
-    let progress = 0;
+    let progress = 10;
+    progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
+    loaderText.textContent = `${progress}%`;
     
     const updateProgress = setInterval(() => {
       if (progress >= 100) {

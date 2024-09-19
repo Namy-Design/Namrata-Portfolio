@@ -40,6 +40,7 @@
       background-color: #171717;
       scrollbar-width: none; /* Firefox */
       -ms-overflow-style: none; /* Internet Explorer and Edge */
+      /* cursor: url('assets/images/namy_logo.svg'), auto; */
     }
 
     .scrollable-container::-webkit-scrollbar {
@@ -117,7 +118,7 @@
     }
 
     #page-2 {
-      height: 109vh;
+      height: 108.8vh;
     }
     
     #landing-header-top {
@@ -261,19 +262,18 @@
       width: 18vh;
       background-color: #F67C29;
       border-radius: 51%;
-      padding: 24px;
+      padding: 2vh;
       cursor: pointer;
       transform: translateY(-10vh);
-      margin-left: 12%;
+      margin-left: 12vw;
     }
 
     .circular-stamp-arrow-container {
       height: 18vh;
       width: 18vh;
       position: absolute;
-      top: 1vh;
-      left: 1vh;
-      margin: 12px;
+      top: 2vh;
+      left: 2vh;
       display: flex;
       align-items: center;
       text-align: center;
@@ -660,15 +660,15 @@
     }
     
     #page-7-blurred-bg-1 {
-      background-image: url('assets/images/e-invoice.png');
+      background-image: url('assets/images/e-invoice_bg.webp');
     }
     
     #page-7-blurred-bg-2 {
-      background-image: url('assets/images/digi-gold.png');
+      background-image: url('assets/images/digi-gold_bg.webp');
     }
     
     #page-7-blurred-bg-3 {
-      background-image: url('assets/images/group-order.png');
+      background-image: url('assets/images/group-order_bg.webp');
     }
     
     #page-7-page-header {
@@ -1083,6 +1083,7 @@
       left: 0px;
       z-index: 1;
       padding-left: 60px;
+      height: 6vh;
     }
 
     .left-sticky-menu-img-inactive {
@@ -1346,9 +1347,59 @@
       }
     }
 
+    .loading-page {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      z-index: 2;
+      background-color: #171717;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circular-loader {
+      position: relative;
+      height: 40vh;
+      width: 40vh;
+      background: conic-gradient(#F67C29 3.6deg, #171717 0deg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .circular-loader::before {
+      content: "";
+      position: absolute;
+      height: 39.5vh;
+      width: 39.5vh;
+      border-radius: 50%;
+      background-color: #171717;
+    }
+
+    .loader-value {
+      margin-bottom: auto;
+      font-family: "Inter";
+      color: #E0DFBF;
+      font-size: 1rem;
+      position: absolute;
+      margin-top: 30px;
+      top: 2vh;
+      font-weight: 200;
+    }
+
+
   </style>
 </head>
 <body>
+  <div class="loading-page">
+    <div class="circular-loader">
+      <div class="loader-value">0%</div>
+      <img src="assets/images/namy_logo.svg" style="height: 20%; position: relative;">
+    </div>
+  </div>
   <div class="view-resume">
     <a href="./resume.html" target="_blank">
       <div id="resume-btn-text">VIEW RESUME </div>
@@ -1356,7 +1407,7 @@
     </a>
   </div>
   <div class="left-sticky-logo">
-    <img src="assets/images/namy_logo.svg">
+    <img src="assets/images/namy_logo.svg" style="height: 100%;">
   </div>
   <div class="left-sticky-menu">
     <div class="side-bar-logo-container">
@@ -1604,7 +1655,7 @@
         <div class="page-7-content-container" id="e-invoice-content">
           <div class="app-image-container">
             <a href="./mybillbook.html" class="app-image-link" target="_blank">
-              <img class="app-image" src="assets/images/e-invoice.svg">
+              <img class="app-image" src="assets/images/e-invoice.webp">
             </a>
           </div>
         </div>
@@ -1614,7 +1665,7 @@
         <div class="page-7-content-container" id="digi-gold-content">
           <div class="app-image-container">
             <a href="./goldsetu.html" class="app-image-link" target="_blank">
-              <img class="app-image" src="assets/images/digi-gold.svg">
+              <img class="app-image" src="assets/images/digi-gold.webp">
             </a>
           </div>
         </div>
@@ -1624,7 +1675,7 @@
         <div class="page-7-content-container" id="groc-content">
           <div class="app-image-container">
             <a href="./group_orders.html" class="app-image-link" target="_blank">
-              <img class="app-image" src="assets/images/group-order.svg">
+              <img class="app-image" src="assets/images/group-order.webp">
             </a>
           </div>
         </div>
@@ -1703,10 +1754,10 @@
                 </video>
               </a>
               <a href="https://dribbble.com/shots/18544189-Hashhealth" class="page-10-video" target="_blank">
-                <img class="page-10-card-content" id="vid-3" src="assets/images/hashhealth.png">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/hashhealth.webp">
               </a>
               <a href="https://www.behance.net/gallery/149906219/Covet-Magical-Potions" class="page-10-video" target="_blank">
-                <img class="page-10-card-content" id="vid-3" src="assets/images/magical potions.png">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/magical_potions.webp">
               </a>
               <a href="https://dribbble.com/shots/18515848-Campaign-Management-Platform" class="page-10-video" target="_blank">
                 <img class="page-10-card-content" id="vid-3" src="assets/images/g5.png">
@@ -1715,7 +1766,7 @@
                 <img class="page-10-card-content" id="vid-3" src="assets/images/city_scape.png">
               </a>
               <a href="https://dribbble.com/shots/18534756-Utopia" class="page-10-video" target="_blank">
-                <img class="page-10-card-content" id="vid-3" src="assets/images/utopia.png">
+                <img class="page-10-card-content" id="vid-3" src="assets/images/utopia.webp">
               </a>
             </div>
           </div>

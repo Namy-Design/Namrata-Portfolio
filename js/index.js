@@ -1,3 +1,23 @@
+window.addEventListener('load', () => {
+    const progressBar = document.querySelector('.circular-loader');
+    const loaderText = document.querySelector('.loader-value');
+    const laderPage = document.querySelector('.loading-page')
+  
+    let progress = 0;
+    
+    const updateProgress = setInterval(() => {
+      if (progress >= 100) {
+        clearInterval(updateProgress);
+        laderPage.style.display = 'none';
+        // progressBar.style.display = 'none';
+      } else {
+        progress += 1;
+        progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
+        loaderText.textContent = `${progress}%`;
+      }
+    }, 20); // Adjust the speed of loading by changing the interval duration
+  });
+
 
 var scrollableDiv = document.getElementById('myScrollableDiv');
 

@@ -216,12 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loadedAssets++;
         // console.log(totalAssets);
         // console.log(loadedAssets);
-        const progress = Math.floor(loadedAssets / totalAssets) * 100;
+        const progress = Math.floor((loadedAssets / totalAssets) * 100);
         progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
         loaderText.textContent = `${progress}%`;
         // Hide loading screen when all assets are loaded
         if (loadedAssets === (totalAssets-2)) {
-            console.log("loaded")
             setTimeout(function() {
                 progressBar.style.background = `conic-gradient(#F67C29 360deg, #171717 0deg)`;
                 loaderText.textContent = `100%`;

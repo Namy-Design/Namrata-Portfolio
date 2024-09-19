@@ -1,27 +1,3 @@
-// window.addEventListener('load', () => {
-//     const progressBar = document.querySelector('.circular-loader');
-//     const loaderText = document.querySelector('.loader-value');
-//     const laderPage = document.querySelector('.loading-page')
-
-//     let loadedAssets = 0;
-//     const totalAssets = assets.length + 1; // +1 for the font
-  
-//     let progress = 0;
-    
-//     const updateProgress = setInterval(() => {
-//       if (progress >= 100) {
-//         clearInterval(updateProgress);
-//         laderPage.style.display = 'none';
-//         // progressBar.style.display = 'none';
-//       } else {
-//         progress += 1;
-//         progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
-//         loaderText.textContent = `${progress}%`;
-//       }
-//     }, 20); // Adjust the speed of loading by changing the interval duration
-//   });
-
-
 var scrollableDiv = document.getElementById('myScrollableDiv');
 
 scrollableDiv.addEventListener('scroll', function() {
@@ -172,40 +148,6 @@ function addAnimation() {
 
 addAnimation();
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const page3textElement = document.querySelector('#page-3-colored-text');
-//     const page5textElement = document.querySelector('#page-5-colored-text')
-
-//     const page3observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 page3textElement.classList.add('animate');
-//             }
-//             else {
-//                 page3textElement.classList.remove('animate');
-//             }
-//         });
-//     }, {
-//         threshold: 0.2 // Trigger when at least 20% of the element is visible
-//     });
-
-//     const page5observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 page5textElement.classList.add('animate');
-//             }
-//             else {
-//                 page5textElement.classList.remove('animate');
-//             }
-//         });
-//     }, {
-//         threshold: 0.2 // Trigger when at least 20% of the element is visible
-//     });
-
-//     page3observer.observe(page3textElement);
-//     page5observer.observe(page5textElement);
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
     const page7Container1Element = document.querySelector('#page-7-container-1');
     const page7BlurredBackground1 = document.querySelector('#page-7-blurred-bg-1')
@@ -263,23 +205,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const progressBar = document.querySelector('.circular-loader');
     const loaderText = document.querySelector('.loader-value');
-    const laderPage = document.querySelector('.loading-page');
+    const loaderPage = document.querySelector('.loading-page');
     const assets = document.querySelectorAll('.asset-tracker');
 
     let loadedAssets = 0;
-    const totalAssets = 42; // +1 for the font
+    const totalAssets = 44; // +1 for the font
 
     // Function to update the progress bar
     function updateProgress() {
         loadedAssets++;
         // console.log(totalAssets);
         // console.log(loadedAssets);
-        const progress = (loadedAssets / totalAssets) * 100;
+        const progress = Math.floor(loadedAssets / totalAssets) * 100;
         progressBar.style.background = `conic-gradient(#F67C29 ${progress * 3.6}deg, #171717 0deg)`;
         loaderText.textContent = `${progress}%`;
         // Hide loading screen when all assets are loaded
-        if (loadedAssets === totalAssets) {
-            laderPage.style.display = 'none';
+        if (loadedAssets === (totalAssets-2)) {
+            console.log("loaded")
+            setTimeout(function() {
+                progressBar.style.background = `conic-gradient(#F67C29 360deg, #171717 0deg)`;
+                loaderText.textContent = `100%`;
+            }, 1000);
+            setTimeout(function() {
+                loaderPage.style.display = 'none';
+            }, 1500);
         }
     }
     

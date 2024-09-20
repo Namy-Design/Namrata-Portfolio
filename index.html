@@ -1275,6 +1275,51 @@
       height: 30vh;
     }
 
+    
+    .loading-page {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      z-index: 2;
+      background-color: #171717;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .circular-loader {
+      position: relative;
+      height: 40vh;
+      width: 40vh;
+      background: conic-gradient(#F67C29 3.6deg, #171717 0deg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .circular-loader::before {
+      content: "";
+      position: absolute;
+      height: 39.5vh;
+      width: 39.5vh;
+      border-radius: 50%;
+      background-color: #171717;
+    }
+    
+    .loader-value {
+      margin-bottom: auto;
+      font-family: "Inter";
+      color: #E0DFBF;
+      font-size: 1rem;
+      position: absolute;
+      margin-top: 30px;
+      top: 2vh;
+      font-weight: 200;
+    }
+    
+    
     @media (max-width: 834px) {
       .small-screen-view-main-text {
         font-size: 48px;
@@ -1284,7 +1329,7 @@
         width: calc(80vw - 60px);
       }
     }
-
+    
     @media (min-width: 835px) and (max-width: 1440px) {
       .left-sticky-menu {
         display: block;
@@ -1292,17 +1337,21 @@
       .left-sticky-menu-2 {
         display: none;
       }
-    }
 
+      .loading-page {
+        display: none;
+      }
+    }
+    
     @media (min-width: 1440px) {
       .scrollable-container {
         display: block; /* Display the element */
       }
-
+    
       .header_menu {
         display: block;
       }
-
+    
       .small-screen-view {
         display: none;
       }
@@ -1313,7 +1362,7 @@
         display: none;
       }
     }
-
+    
     @media ((min-width: 1440px) and (max-width: 1919px)) {
       #a-a-text {
         font-size: 3rem;
@@ -1327,8 +1376,14 @@
       #page-8-selector-container {
         width: calc(30% - 100px);
       }
+      .exp-desc-hover {
+        font-size: 16px;
+      }
+      .what-i-do-selector:hover > .hover-highlight {
+        font-size: 16px;
+      }
     }
-
+    
     @media ((min-width: 1920px) and (max-width: 2499px)) {
       #a-a-text {
         font-size: 4rem;
@@ -1343,7 +1398,7 @@
         width: calc(60% - 100px);
       }
     }
-
+    
     @media (min-width: 2500px) {
       #a-a-text {
         font-size: 6rem;
@@ -1358,52 +1413,7 @@
         width: calc(60% - 100px);
       }
     }
-
-    .loading-page {
-      position: absolute;
-      height: 100vh;
-      width: 100vw;
-      z-index: 2;
-      background-color: #171717;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .circular-loader {
-      position: relative;
-      height: 40vh;
-      width: 40vh;
-      background: conic-gradient(#F67C29 3.6deg, #171717 0deg);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .circular-loader::before {
-      content: "";
-      position: absolute;
-      height: 39.5vh;
-      width: 39.5vh;
-      border-radius: 50%;
-      background-color: #171717;
-    }
-
-    .loader-value {
-      margin-bottom: auto;
-      font-family: "Inter";
-      color: #E0DFBF;
-      font-size: 1rem;
-      position: absolute;
-      margin-top: 30px;
-      top: 2vh;
-      font-weight: 200;
-    }
-
-
-  </style>
+    </style>
 </head>
 <body>
   <div class="loading-page">

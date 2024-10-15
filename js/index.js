@@ -86,7 +86,7 @@ const feedbackContentRoleTextDiv1 = document.getElementById('page-8-role-text-1'
 const feedbackContentRoleTextDiv2 = document.getElementById('page-8-role-text-2');
 
 hoverfeedbackSidImageDiv.addEventListener('mouseover', () => {
-    feedbackContentMainTextDiv.innerHTML = "She has been a standout member of our team";
+    feedbackContentMainTextDiv.innerHTML = "Her balance of creativity and practicality made her indespensable";
     feedbackContentNameTextDiv.innerHTML = "Siddharth Seth";
     feedbackContentRoleTextDiv1.innerHTML = "VP of Products";
     feedbackContentRoleTextDiv2.innerHTML = "Flobiz"

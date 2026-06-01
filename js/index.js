@@ -1,24 +1,120 @@
 var scrollableDiv = document.getElementById('myScrollableDiv');
 
-scrollableDiv.addEventListener('scroll', function() {
-    var scrollPosition = scrollableDiv.scrollTop;
+// ── Smooth scroll ──────────────────────────────────────────────────────────
+const lenis = new Lenis({
+    wrapper: scrollableDiv,
+    content: scrollableDiv,
+    duration: 1.4,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    smoothWheel: true,
+    smoothTouch: false,
+    syncTouch: false,
+    touchMultiplier: 2,
+});
+
+gsap.ticker.add((time) => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.defaults({ scroller: scrollableDiv });
+lenis.on('scroll', ScrollTrigger.update);
+// ───────────────────────────────────────────────────────────────────────────
+
+const scrollHighlightSections = [
+    { element: document.getElementById('page-3-text'), words: [] },
+    { element: document.getElementById('page-5-text'), words: [] }
+];
+
+function buildScrollHighlightWords(node, accentWord) {
+    if (node.nodeType === Node.TEXT_NODE) {
+        return node.textContent.match(/(\S+|\s+)/g).map((token) => {
+            if (/\s+/.test(token)) {
+                return document.createTextNode(token);
+            }
+
+            const word = document.createElement('span');
+            word.className = accentWord ? 'scroll-highlight-word scroll-highlight-accent' : 'scroll-highlight-word';
+            word.textContent = token;
+
+            return word;
+        });
+    }
+
+    if (node.nodeType === Node.ELEMENT_NODE) {
+        const isAccentWord = accentWord || node.classList.contains('scroll-highlight-accent');
+        return Array.from(node.childNodes).flatMap((childNode) => buildScrollHighlightWords(childNode, isAccentWord));
+    }
+
+    return [];
+}
+
+function setupScrollHighlightSection(section) {
+    if (!section.element) {
+        return;
+    }
+
+    const highlightLines = Array.from(section.element.querySelectorAll('.scroll-highlight-line'));
+
+    highlightLines.forEach((line) => {
+        const fragment = document.createDocumentFragment();
+        const wordNodes = Array.from(line.childNodes).flatMap((childNode) => buildScrollHighlightWords(childNode, false));
+
+        wordNodes.forEach((wordNode) => {
+            fragment.appendChild(wordNode);
+        });
+
+        line.replaceChildren(fragment);
+    });
+
+    section.words = Array.from(section.element.querySelectorAll('.scroll-highlight-word'));
+}
+
+function setupGSAPHighlight(section) {
+    if (!section.element || !section.words.length) return;
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: section.element,
+            start: 'top 82%',
+            end: 'top 22%',
+            scrub: true,
+        }
+    });
+
+    section.words.forEach((word) => {
+        tl.fromTo(word,
+            { '--word-progress': 0 },
+            { '--word-progress': 1, ease: 'none', duration: 1 }
+        );
+    });
+}
+
+var _currentScrollY = 0;
+
+function handleScrollEffects(scrollPosition) {
+    _currentScrollY = scrollPosition !== undefined ? scrollPosition : scrollableDiv.scrollTop;
     var topSlider = document.querySelector('.top-slider');
     var bottomSlider = document.querySelector('.bottom-slider');
     var sliderDiv = document.querySelector('.slider-screen-container');
     var windowHeight = window.innerHeight;
 
-    if (scrollPosition >= windowHeight) {
+    if (_currentScrollY >= windowHeight) {
         sliderDiv.style.zIndex = '0';
-    }
-    else {
+    } else {
         sliderDiv.style.zIndex = '1';
     }
 
-    // Move the top part up and the bottom part down based on scroll position
-    topSlider.style.transform = 'translateY(' + (-scrollPosition / 2) + 'px)';
-    bottomSlider.style.transform = 'translateY(' + (scrollPosition / 2) + 'px)';
-    
-});
+    topSlider.style.transform = 'translateY(' + (-_currentScrollY / 2) + 'px)';
+    bottomSlider.style.transform = 'translateY(' + (_currentScrollY / 2) + 'px)';
+
+}
+
+scrollHighlightSections.forEach(setupScrollHighlightSection);
+scrollHighlightSections.forEach(setupGSAPHighlight);
+
+// Drive slider parallax from Lenis so it runs on the smoothed position
+lenis.on('scroll', ({ scroll }) => handleScrollEffects(scroll));
   
 
 const canvas_page_1 = document.getElementById('meshCanvas');
@@ -72,6 +168,8 @@ window.addEventListener('resize', () => {
     main_canvas.height = scrollableDiv.style.height;
     drawMesh(main_canvas, main_ctx);
 });
+
+handleScrollEffects();
 
 
 const hoverfeedbackSidImageDiv = document.getElementById('sid-img');

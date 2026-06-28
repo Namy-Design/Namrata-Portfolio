@@ -548,7 +548,7 @@ export default function App() {
             <div id="page-8-header">WHAT THEY SAID</div>
             
             <div id="page-8-container">
-              <div id="page-8-quote-container">
+              <div id="page-8-quote-container" >
                 <img className="asset-tracker" src="assets/images/open_quotes.svg" alt="quote" />
               </div>
               
@@ -595,10 +595,48 @@ export default function App() {
         </div>
 
         <div className="page" id="page-9">
-          <div className="page-container" style={{ flexDirection: 'column' }}>
-            <div id="page-9-header">MY MOTTO ✦ </div>
-            <div id="page-9-text">Good design is thourough <br /> down to the last detail</div>
-            <div id="page-9-footer">- Dieter Rams</div>
+          <div id="page-9-header">MAKING OF ME ✦</div>
+          
+          <div className="page-container making-container">
+            <div className="making-grid">
+              
+              <div className="making-row-1">
+                <div className="img-wrapper">
+                  <img className="art-c asset-tracker" src="assets/images/creativity-art.webp" alt="Art" />
+                  <p className="making-text">Creativity</p>
+                </div>
+                
+                <div className="making-symbol hide-tab">×</div>
+
+                <div className="img-wrapper">
+                  <img className="art-ps asset-tracker" src="assets/images/psychology-art.webp" alt="Art" />
+                  <p className="making-text" >Psychology</p>
+                </div>
+
+                <div className="making-symbol">×</div>
+                
+
+                <div className="img-wrapper">
+                  <img className="art-pa asset-tracker" src="assets/images/patterns-art.webp" alt="Art" />
+                  <p className="making-text" >Patterns</p>
+                </div>
+              </div>
+              <div className="making-row-2" >
+                <p className="making-text">Creativity</p>
+                <div className="making-symbol">×</div>
+                <p className="making-text" >Psychology</p>
+                <div className="making-symbol">×</div>
+                <p className="making-text" >Patterns</p>
+              </div>
+              {/* Equation & Product Design */}
+              <div className="making-row-3">
+                <img className="art-vd asset-tracker hide-desktop hide-mobile" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
+                <div className="sym-eq making-symbol text-orange">=</div>
+                <div className="txt-pd making-text text-orange">Product Design</div>
+                <img className="art-vd asset-tracker hide-tab" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
+              </div>
+              
+            </div>
           </div>
         </div>
 

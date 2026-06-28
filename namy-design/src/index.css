@@ -20,6 +20,10 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+.hide-desktop{
+  display : none;
+}
+
 .scrollable-container {
   display: none;
   position: relative;
@@ -442,6 +446,10 @@ body {
   background-image: linear-gradient(90deg, #F67C29 0%, #F67C29 100%);
 }
 
+#page-4 {
+  height: auto !important;
+}
+
 #page-4-header {
   font-family: "Inter";
   font-weight: 500;
@@ -550,6 +558,11 @@ body {
   background-color: #070FCE;
 }
 
+#page-6 {
+  height : auto;
+  padding-top : 144px;
+}
+
 #page-6-header {
   font-family: "Inter";
   font-weight: 500;
@@ -591,7 +604,7 @@ body {
   padding-left: 10%;
   padding-right: 10%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 1%;
   padding-bottom: 1%;
   z-index: 1;
@@ -752,7 +765,18 @@ body {
   transition: background-image 0.2s ease;
 }
 
+#page-8{
+  height : auto !important;
+}
 
+#page-8 .page-container {
+  padding : 132px 10vw;
+  position: relative !important;
+  display: flex;
+  flex-direction: column;
+  gap : 132px;
+  width : auto;
+}
 
 #page-8-quote-container img {
   width: 100%;
@@ -779,7 +803,7 @@ body {
   height: calc(75% - 58px);
   margin: 0;
   padding: 0;
-  align-items: flex-end;
+  align-items: flex-start;
   display: flex;
   padding-top: 58px;
 }
@@ -787,6 +811,9 @@ body {
 #page-8-quote-container {
   width: 64px;
   height: 100%;
+  /* position : absolute;
+  top : 0px;
+  left : 0px; */
 }
 
 #page-8-text-container {
@@ -854,9 +881,148 @@ body {
   cursor: pointer;
 }
 
+#page-9 {
+  background-color: #070FCE;
+  background-image:
+    linear-gradient(#5F64E050 1px, transparent 1px),
+    linear-gradient(90deg, #5F64E050 1px, transparent 1px);
+  background-size: 20px 20px;
+  position: relative;
+  height: auto !important;
+  padding: 144px 0;
+}
+
+#page-9 .page-container {
+  position: relative !important;
+  display: flex;
+  flex-direction: column;
+  width : auto;
+  height : auto !important;
+  margin-top : 132px;
+}
+
+#page-9-header {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  color: #E0DFBF;
+  letter-spacing: 19.2px;
+  position: relative;
+  left: 10vw;
+  text-transform: uppercase;
+}
+
+.making-container {
+  width: auto;
+  height: auto !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.making-text {
+  font-family: 'EulogyDemo-SemiBold';
+  font-size: 72px;
+  color: #E0DFBF;
+  letter-spacing: 2px;
+}
+
+.making-symbol {
+  font-family: 'EulogyDemo-Bold';
+  font-size: 72px;
+  font-weight : 900;
+  color: #E0DFBF;
+}
+
+.text-orange {
+  color: #F67C29;
+  font-size: 64px;
+}
+
+.making-grid{
+  height : auto;
+  width : 100%;
+}
+
+.making-row-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end; 
+  justify-content: flex-start; 
+  gap:100px;
+  width: 100%;
+}
+
+.making-row-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center; 
+  gap: 25px;
+  width: 100%;
+}
+
+.making-row-1 img {
+  flex: 1;           
+  width: 100%;      
+  min-width: 0;      
+  height: auto; 
+  object-fit: contain;
+}
+
+.making-row-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;
+  gap : 70px; 
+}
+
+.making-row-3 img {
+  width: 100%;      
+  max-width: 300px;      
+  height: auto; 
+  object-fit: contain;
+}
+
+.img-wrapper {
+  flex: 1;         
+  min-width: 0;      
+  display: flex;
+  justify-content: center;
+  max-height : 500px;
+}
+
+.img-wrapper img {
+  width: 100%;      
+  height: auto;
+  object-fit: contain;
+}
+
+.making-row-1 .making-symbol, 
+.making-row-1 .making-text {
+  flex: 0 0 auto;    
+  width: auto;      
+  white-space: nowrap;
+}
+
+.making-row-1 .img-wrapper .making-text {
+    display : none;
+}
+
+.art-vd-small{
+  display : none;
+}
+
+
 
 /* TABLET STYLES */
 @media (min-width : 600px) and (max-width: 1100px) {
+
+  .hide-tab {
+    display : none;
+  }
 
   .left-sticky-logo{
     top: 48px !important;
@@ -894,6 +1060,7 @@ body {
 
   #page-3 .page-container {
     padding : 0 48px;
+    width: auto;
   }
 
   #page-3 .page-header {
@@ -1012,7 +1179,7 @@ body {
   }
 
   #page-8 {
-    height : auto;
+    height : auto !important;
   }
 
   #page-8 .page-container {
@@ -1037,11 +1204,11 @@ body {
   }
 
   #page-8-quote-container {
-    position: absolute; /* Pull quote out of flex flow to match the screenshots */
-    top: 0;
-    left: 0;
+    position: absolute; 
+    top: 0px;
+    left: 0px;
     width: 48px;
-    height: fit-content;
+    height : 100%;
   }
 
   #page-8-text-container {
@@ -1080,10 +1247,95 @@ body {
     height: 100%; /* Scale headshots down to fit */
   }
 
+  #page-9-header {
+    font-size: 16px;
+    letter-spacing: 12px;
+    left : 0;
+    padding-left : 48px; 
+  }
+
+  .making-container{
+    padding : 0 48px;
+    margin-top : 70px !important;
+  }
+
+  .making-row-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; 
+    flex-wrap : wrap !important;
+    justify-content: center; 
+    gap: 10px 60px;
+    width: auto;
+  }
+
+  .making-row-2{
+   display : none;
+  }
+
+  .making-row-1 .img-wrapper {
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+    align-items : flex-start;
+    justify-content : center;
+    gap : 32px;
+    min-width : 200px;
+    max-width : 300px;
+    
+  }
+  .making-row-1 .img-wrapper .making-text {
+    display : block;
+    font-size : 58px !important;
+    text-align : center;
+    width : 100%;
+    
+  }
+
+  .making-row-1 .making-symbol{
+    width : 100% !important;
+    text-align : center;
+  }
+
+  .making-row-3{
+    display : flex;
+    flex-wrap : wrap;
+  }
+
+  .art-vd-small{
+    display : block;
+  }
+
+  .art-vd-desktop {
+    display : none;
+  }
+
+  .making-grid{
+    display : flex;
+    flex-direction : column;
+    gap : 50px;
+  }
+
+  .making-row-3 .art-vd{
+    width : 100% !important;
+    max-width : 100%;
+    height : auto;
+    max-height : 300px;
+  }
+
+  .making-text{
+    margin : 0;
+  }
+  
 }
+
 
 /* MOBILE STYLES */
 @media (max-width : 600px) {
+
+  .hide-mobile{
+    display : none;
+  }
 
   .left-sticky-logo{
     top: 24px !important;
@@ -1330,60 +1582,103 @@ body {
     margin-right: 12px;
   }
 
+  #page-9{
+    height: auto !important;
+  }
+
+  #page-9-header {
+    font-size: 16px;
+    letter-spacing: 12px;
+    left : 0;
+    padding-left : 24px; 
+  }
+
+  .making-container{
+    padding : 0 24px;
+    margin-top : 70px !important;
+  }
+
+  .making-row-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; 
+    flex-wrap : wrap !important;
+    justify-content: flex-start; 
+    gap: 10px 60px;
+    width: auto;
+  }
+
+  .making-row-2{
+   display : none;
+  }
+
+  .making-row-1 .img-wrapper {
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+    align-items : flex-start;
+    justify-content : center;
+    gap : 32px;
+    min-width : 200px;
+    max-width : 300px;
+    
+  }
+  .making-row-1 .img-wrapper .making-text {
+    display : block;
+    font-size : 58px !important;
+    text-align : left;
+    width : 100%;
+    
+  }
+
+  .making-row-1 .making-symbol{
+    width : 100% !important;
+    text-align : left;
+  }
+
+  .making-row-3{
+    display : flex;
+    flex-wrap : wrap;
+    justify-content : flex-start;
+    align-items: flex-start;
+  }
+
+  .art-vd-small{
+    display : block;
+  }
+
+  .art-vd-desktop {
+    display : none;
+  }
+
+  .making-grid{
+    display : flex;
+    flex-direction : column;
+    gap : 50px;
+  }
+
+  .making-row-3 .art-vd{
+    width : auto;
+    max-width : 100%;
+    height : auto;
+    max-height : 250px;
+  }
+
+  .making-text{
+    margin : 0;
+    font-size : 40px;
+    text-align : left;
+  }
+
+  .text-orange {
+    color: #F67C29;
+    font-size: 58px;
+    width : 100%;
+    text-align : left;
+  }
+
 }
 
-
-#page-9 {
-  background-color: rgba(7, 15, 206, 0.5);
-}
-
-#page-9-header {
-  width: 100%;
-  height: 5%;
-  font-family: "Inter";
-  font-weight: 500;
-  font-size: 20px;
-  color: #ABABAB;
-  margin: 0;
-  padding: 0;
-  align-items: flex-end;
-  margin-bottom: 58px;
-  letter-spacing: 19.2px;
-  margin-top: auto;
-  justify-content: center;
-  text-align: left;
-}
-
-#page-9-text {
-  width: 100%;
-  font-family: "Inter";
-  font-weight: 500;
-  font-family: 'EulogyDemo-SemiBold';
-  font-weight: 600;
-  font-size: 64px;
-  color: #E0DFBF;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  letter-spacing: 3.84px;
-  margin-bottom: 40px;
-  letter-spacing: 0.6rem;
-  text-align: left;
-}
-
-#page-9-footer {
-  width: 100%;
-  height: 5%;
-  font-family: "Inter";
-  font-weight: 400;
-  font-size: 16px;
-  color: #ABABAB;
-  margin: 0;
-  padding: 0;
-  align-items: flex-end;
-  margin-bottom: auto;
-  text-align: left;
-}
 
 #page-10-header {
   width: 100%;

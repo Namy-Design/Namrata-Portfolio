@@ -440,7 +440,7 @@ export default function Home() {
                 <div className="history-text">
                   <div className="history-text-date">NOW</div>
                   <div className="history-text-exp">
-                    <div className="exp-text">PRODUCT DESIGNER</div>
+                    <div className="exp-text">Product Designer</div>
                     <div className="exp-desc">Ionic Wealth by AngelOne</div>
                     <div className="exp-desc-hover">Witnessed the AI breakthrough era here, alongside the team of 4</div>
                   </div>
@@ -452,7 +452,7 @@ export default function Home() {
                 <div className="history-text">
                   <div className="history-text-date">2023</div>
                   <div className="history-text-exp">
-                    <div className="exp-text">PRODUCT DESIGNER </div>
+                    <div className="exp-text">Product Designer </div>
                     <div className="exp-desc">Flobiz</div>
                     <div className="exp-desc-hover">Got to learn a lot working with a team of 6 designers</div>
                   </div>
@@ -464,7 +464,7 @@ export default function Home() {
                 <div className="history-text">
                   <div className="history-text-date">2021</div>
                   <div className="history-text-exp">
-                    <div className="exp-text">ASSOCIATE PRODUCT DESIGNER</div>
+                    <div className="exp-text">Associate Product Designer</div>
                     <div className="exp-desc">Goldsetu</div>
                     <div className="exp-desc-hover">Found an amazing mentor who helped me build a strong design foundation</div>
                   </div>
@@ -476,7 +476,7 @@ export default function Home() {
                 <div className="history-text">
                   <div className="history-text-date">2020</div>
                   <div className="history-text-exp">
-                    <div className="exp-text">UI/ UX DESIGNER</div>
+                    <div className="exp-text">UI/ UX Designer</div>
                     <div className="exp-desc">Galleri5</div>
                     <div className="exp-desc-hover">Thankful to the founder who trusted a newbie with their product</div>
                   </div>
@@ -488,7 +488,7 @@ export default function Home() {
                 <div className="history-text">
                   <div className="history-text-date">2019</div>
                   <div className="history-text-exp">
-                    <div className="exp-text">STYLIST/ GRAPHIC DESIGNER</div>
+                    <div className="exp-text">Stylist/ Graphic Designer</div>
                     <div className="exp-desc">Aditya Birla Fashion And Retail</div>
                     <div className="exp-desc-hover">Had my first experience working in a startup</div>
                   </div>

@@ -8,5 +8,4 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/Namrata-Portfolio/', // Keep your GitHub Pages base here
 })

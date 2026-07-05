@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Lenis from 'lenis';
 import './index.css'; 
+import { ScrollHighlight, Highlight } from './ScrollHighlight';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +17,6 @@ export default function Home() {
   const video1Ref = useRef<HTMLVideoElement>(null);
   const video2Ref = useRef<HTMLVideoElement>(null);
 
-  // States to replace your vanilla JS DOM manipulations
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [activeFeedback, setActiveFeedback] = useState<'sid' | 'kevin' | 'shankar'>('sid');
@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const assets = document.querySelectorAll('.asset-tracker') as NodeListOf<HTMLImageElement | HTMLVideoElement | HTMLScriptElement>;
     let loadedAssets = 0;
-    const totalAssets = 44; // Keeping your exact number (+1 for fonts handled below)
+    const totalAssets = 44;
 
     const updateProgress = () => {
       loadedAssets++;
@@ -62,7 +62,7 @@ export default function Home() {
     const lenis = new Lenis({
       wrapper: scrollableRef.current,
       content: scrollableRef.current,
-      duration: 1.4,
+      duration: 1. ,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       smoothWheel: true,
@@ -123,21 +123,6 @@ export default function Home() {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    // 4. GSAP Text Highlight
-    const sections = [document.getElementById('page-3-text'), document.getElementById('page-5-text')];
-    sections.forEach(section => {
-      if (!section) return;
-      const words = section.querySelectorAll('.scroll-highlight-word');
-      if (!words.length) return;
-
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: section, start: 'top 82%', end: 'top 22%', scrub: true }
-      });
-
-      words.forEach((word) => {
-        tl.fromTo(word, { '--word-progress': 0 }, { '--word-progress': 1, ease: 'none', duration: 1 });
-      });
-    });
 
     // 5. Page 7 Blurred Backgrounds
     const observeBlur = (containerId: string, bgId: string) => {
@@ -208,15 +193,14 @@ export default function Home() {
 
   // ── Helper for Scroll Highlight Text ───────────────────────────────────────
   const renderHighlightText = (text: string, isAccent = false, customId?: string) => {
-    return text.split(/(\s+)/).map((word, i) => {
-      if (/\s+/.test(word)) return <span key={i}>{word}</span>;
+    return text.split('').map((char, i) => {
       return (
         <span 
           key={i} 
           id={customId && i === 0 ? customId : undefined} 
-          className={`scroll-highlight-word ${isAccent ? 'scroll-highlight-accent' : ''}`}
+          className={`scroll-highlight-char ${isAccent ? 'scroll-highlight-accent' : ''}`}
         >
-          {word}
+          {char}
         </span>
       );
     });
@@ -368,46 +352,105 @@ export default function Home() {
 
         <div className="page" id="page-3">
           <div className="page-container">
-            <div className="page-header">ABOUT ME ✦ </div>
-            <div id="page-3-text">
-              <span className="scroll-highlight-line">
-                {renderHighlightText("I'm a ")}
-                {renderHighlightText("Product designer", true, "page-3-colored-text")}
-                {renderHighlightText(",")}
-              </span>
-              <span className="scroll-highlight-line">{renderHighlightText("selectively skilled & intentionally")}</span>
-              <span className="scroll-highlight-line">{renderHighlightText("thorough because pretty without")}</span>
-              <span className="scroll-highlight-line">{renderHighlightText("purpose is just wallpaper")}</span>
+            <div className="page-header">ABOUT ME✦ </div>
+            <div className="page-3-text">
+              <ScrollHighlight
+                start="top 90%"
+                end="bottom 60%"
+                scrub={0.5}
+                activeColor="#E0DFBF"
+                inactiveColor="rgba(224, 223, 191, 0.16)"
+                inlineHighlightColor="#F67C29"
+                className="page-3-text"
+                scroller="#myScrollableDiv"
+              >
+                I am a <Highlight>Product Designer</Highlight>, selectively skilled & intentionally thorough because pretty without purpose is just wallpaper.
+              </ScrollHighlight>
             </div>
           </div>
         </div>
 
         <div className="page" id="page-4">
-          <div className="page-container" style={{ padding: '0px', width: '100%' }}>
-            <div id="page-4-header">WHAT I DO </div>
+          <div className="page-container" style={{ padding: '0px', width: '100%', paddingBottom : '30vh' }}>
+            <div id="page-4-header">WHAT I DO✦ </div>
             <div id="page-4-selector-container">
               <div className="what-i-do-selector">
-                <div className="what-i-do-text">WIREFRAME</div>
+                <ScrollHighlight
+                  start="top 80%"
+                  end="bottom 60%"
+                  scrub={0.5}
+                  activeColor="#E0DFBF"
+                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inlineHighlightColor="#F67C29"
+                  className="what-i-do-text"
+                  scroller="#myScrollableDiv"
+                >
+                  WIREFRAME
+              </ScrollHighlight>
                 <div className="hover-highlight"> Now AI does the digging, competitors, patterns, user data. I do the thinking. Surprisingly, prompts can't replace that yet</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
               <div className="what-i-do-selector">
-                <div className="what-i-do-text">VISUAL</div>
+                <ScrollHighlight
+                  start="top 80%"
+                  end="bottom 60%"
+                  scrub={0.5}
+                  activeColor="#E0DFBF"
+                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inlineHighlightColor="#F67C29"
+                  className="what-i-do-text"
+                  scroller="#myScrollableDiv"
+                >
+                  VISUAL
+                </ScrollHighlight>
                 <div className="hover-highlight"> Moodboards consumed, references digested, trends ignored. What comes out is mine, not a Dribbble copy with a new color palette</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
               <div className="what-i-do-selector">
-                <div className="what-i-do-text">MOTION</div>
+                <ScrollHighlight
+                  start="top 80%"
+                  end="bottom 60%"
+                  scrub={0.5}
+                  activeColor="#E0DFBF"
+                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inlineHighlightColor="#F67C29"
+                  className="what-i-do-text"
+                  scroller="#myScrollableDiv"
+                >
+                  MOTION
+                </ScrollHighlight>
                 <div className="hover-highlight"> Motion isn't decoration. It's the difference<br />between a screen that works and one that feels alive</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
               <div className="what-i-do-selector">
-                <div className="what-i-do-text">EXPERIENCE</div>
-                <div className="hover-highlight"> The first interaction is never the right one. I iterate<br />until it feels like it couldn't have existed any other way</div>
+                <ScrollHighlight
+                  start="top 80%"
+                  end="bottom 60%"
+                  scrub={0.5}
+                  activeColor="#E0DFBF"
+                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inlineHighlightColor="#F67C29"
+                  className="what-i-do-text"
+                  scroller="#myScrollableDiv"
+                >
+                  INTERACTION
+                </ScrollHighlight>
+                <div className="hover-highlight"> The first interaction is never the right one. I iterate until it feels like it couldn't have existed any other way</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
               <div className="what-i-do-selector">
-                <div className="what-i-do-text">VALIDATE</div>
+                <ScrollHighlight
+                  start="top 80%"
+                  end="bottom 60%"
+                  scrub={0.5}
+                  activeColor="#E0DFBF"
+                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inlineHighlightColor="#F67C29"
+                  className="what-i-do-text"
+                  scroller="#myScrollableDiv"
+                >
+                  USER TESTING
+                </ScrollHighlight>
                 <div className="hover-highlight"> Shipped isn't done. User interviews, A/B tests, dev & PM follow-ups. I stick around until the numbers have something to say</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
@@ -415,25 +458,29 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="page" id="page-4-filler"></div>
-
         <div className="page" id="page-5">
-          <div className="page-container" style={{ position: 'absolute', top: 0, left: 0 }}>
-            <div className="page-header">EXPERIENCE✦ </div>
+          <div className="page-container" >
+            <div className="page-header" style={{ color: '#ABABAB' }}>EXPERIENCE✦ </div>
             <div id="page-5-text">
-              <span className="scroll-highlight-line">
-                {renderHighlightText("5+ years", true, "page-5-colored-text")}
-                {renderHighlightText(" of shaping digital ")}
-              </span>
-              <span className="scroll-highlight-line">{renderHighlightText("products while navigating the")}</span>
-              <span className="scroll-highlight-line">{renderHighlightText("beautiful mess of Indian startups")}</span>
+              <ScrollHighlight
+                start="top 90%"
+                end="bottom 60%"
+                scrub={0.5}
+                activeColor="#E0DFBF"
+                inactiveColor="rgba(224, 223, 191, 0.16)"
+                inlineHighlightColor="#F67C29"
+                className="page-5-text"
+                scroller="#myScrollableDiv"
+              >
+                <Highlight>5+ years</Highlight> of shaping digital products while navigating the beautiful mess of Indian startups
+              </ScrollHighlight>
             </div>
           </div>
         </div>
 
         <div className="page" id="page-6">
-          <div className="page-container" style={{ padding: '0px', width: '100%' }}>
-            <div id="page-6-header">HISTORY</div>
+          <div className="page-container" >
+            <div id="page-6-header">HISTORY✦</div>
             <div id="page-6-selector-container">
               {/* History Item 1 */}
               <div className="history-selector">
@@ -454,7 +501,7 @@ export default function Home() {
                   <div className="history-text-exp">
                     <div className="exp-text">Product Designer </div>
                     <div className="exp-desc">Flobiz</div>
-                    <div className="exp-desc-hover">Got to learn a lot working with a team of 6 designers</div>
+                    <div className="exp-desc-hover">First time experience working with an organised product team</div>
                   </div>
                 </div>
                 <div className="hover-aboslute-bg"></div>
@@ -466,7 +513,7 @@ export default function Home() {
                   <div className="history-text-exp">
                     <div className="exp-text">Associate Product Designer</div>
                     <div className="exp-desc">Goldsetu</div>
-                    <div className="exp-desc-hover">Found an amazing mentor who helped me build a strong design foundation</div>
+                    <div className="exp-desc-hover">Worked alongside an amazing designer who helped me build a strong design foundation</div>
                   </div>
                 </div>
                 <div className="hover-aboslute-bg"></div>
@@ -478,7 +525,7 @@ export default function Home() {
                   <div className="history-text-exp">
                     <div className="exp-text">UI/ UX Designer</div>
                     <div className="exp-desc">Galleri5</div>
-                    <div className="exp-desc-hover">Thankful to the founder who trusted a newbie with their product</div>
+                    <div className="exp-desc-hover">Grateful to the founder who trusted a newbie with their product, worked closely with the CTO</div>
                   </div>
                 </div>
                 <div className="hover-aboslute-bg"></div>
@@ -490,7 +537,7 @@ export default function Home() {
                   <div className="history-text-exp">
                     <div className="exp-text">Stylist/ Graphic Designer</div>
                     <div className="exp-desc">Aditya Birla Fashion And Retail</div>
-                    <div className="exp-desc-hover">Had my first experience working in a startup</div>
+                    <div className="exp-desc-hover">First experience with a startup, the merging point</div>
                   </div>
                 </div>
                 <div className="hover-aboslute-bg"></div>
@@ -552,7 +599,7 @@ export default function Home() {
 
         <div className="page" id="page-8">
           <div className="page-container" style={{ position: 'absolute', top: 0, left: 0 }}>
-            <div id="page-8-header">WHAT THEY SAID</div>
+            <div id="page-8-header">WHAT THEY SAID✦</div>
             
             <div id="page-8-container">
               <div id="page-8-quote-container" >
@@ -561,9 +608,48 @@ export default function Home() {
               
               <div id="page-8-text-container">
                 <div id="page-8-main-text">
-                  {activeFeedback === 'sid' && "Her balance of creativity and practicality made her indespensable"}
-                  {activeFeedback === 'kevin' && "Her energy is contagious & she’s always up for any challenge"}
-                  {activeFeedback === 'shankar' && "Exceptional problem solver with a keen eye for detail"}
+                  {activeFeedback === 'sid' && (
+                    <ScrollHighlight
+                      start="top 90%"
+                      end="bottom 70%"
+                      scrub={0.5}
+                      activeColor="#E0DFBF"
+                      inactiveColor="rgba(224, 223, 191, 0.16)"
+                      inlineHighlightColor="#F67C29"
+                      className="page-5-text"
+                      scroller="#myScrollableDiv"
+                    >
+                      Her balance of creativity and practicality made her indespensable
+                    </ScrollHighlight>
+                    )}
+                  {activeFeedback === 'kevin' && (
+                    <ScrollHighlight
+                      start="top 90%"
+                      end="bottom 70%"
+                      scrub={0.5}
+                      activeColor="#E0DFBF"
+                      inactiveColor="rgba(224, 223, 191, 0.16)"
+                      inlineHighlightColor="#F67C29"
+                      className="page-5-text"
+                      scroller="#myScrollableDiv"
+                    >
+                      Her energy is contagious & she’s always up for any challenge
+                    </ScrollHighlight>
+                    )}
+                  {activeFeedback === 'shankar' && (
+                    <ScrollHighlight
+                      start="top 90%"
+                      end="bottom 70%"
+                      scrub={0.5}
+                      activeColor="#E0DFBF"
+                      inactiveColor="rgba(224, 223, 191, 0.16)"
+                      inlineHighlightColor="#F67C29"
+                      className="page-5-text"
+                      scroller="#myScrollableDiv"
+                    >
+                      Exceptional problem solver with a keen eye for detail
+                    </ScrollHighlight>
+                    )}
                 </div>
                 <div id="page-8-name-text">
                   {activeFeedback === 'sid' && "Siddharth Seth"}
@@ -602,9 +688,9 @@ export default function Home() {
         </div>
 
         <div className="page" id="page-9">
-          <div id="page-9-header">MAKING OF ME ✦</div>
           
           <div className="page-container making-container">
+          <div id="page-9-header">MAKING OF ME ✦</div>
             <div className="making-grid">
               
               <div className="making-row-1">
@@ -613,14 +699,14 @@ export default function Home() {
                   <p className="making-text">Creativity</p>
                 </div>
                 
-                <div className="making-symbol hide-tab">×</div>
+                <div className="making-symbol hide-tab hide-desktop">×</div>
 
                 <div className="img-wrapper">
                   <img className="art-ps asset-tracker" src="assets/images/psychology-art.webp" alt="Art" />
                   <p className="making-text" >Psychology</p>
                 </div>
 
-                <div className="making-symbol">×</div>
+                <div className="making-symbol hide-desktop">×</div>
                 
 
                 <div className="img-wrapper">
@@ -637,10 +723,10 @@ export default function Home() {
               </div>
               {/* Equation & Product Design */}
               <div className="making-row-3">
-                <img className="art-vd asset-tracker hide-desktop hide-mobile" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
-                <div className="sym-eq making-symbol text-orange">=</div>
-                <div className="txt-pd making-text text-orange">Product Design</div>
-                <img className="art-vd asset-tracker hide-tab" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
+                <img className="asset-tracker hide-desktop hide-mobile" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
+                <div className="making-symbol text-orange">=</div>
+                <div className="making-text text-orange">Product Design</div>
+                <img className="asset-tracker hide-tab" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
               </div>
               
             </div>
@@ -649,7 +735,7 @@ export default function Home() {
 
         <div className="page" id="page-10">
           <div className="page-container" style={{ flexDirection: 'column', rowGap: 0 }}>
-            <div id="page-10-header">FUN PROJECTS </div>
+            <div id="page-10-header">EXPLORATIONS✦</div>
             <div id="page-10-text">MY PLAYGROUND </div>
             <div id="page-10-gallery-container" data-animated="true">
               <div id="page-10-gallery">

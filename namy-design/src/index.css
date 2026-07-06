@@ -522,8 +522,12 @@ body {
   z-index: 0;
 }
 
+.what-i-do-text:hover .scroll-word-active{
+  color: #2B2B2B !important;
+}
+
 .what-i-do-text:hover + .hover-highlight {
-  color: #2B2B2B;
+  color: #2B2B2B !important;
   font-size: 20px;
 }
 
@@ -1121,6 +1125,118 @@ body {
   object-fit: cover;
   border-radius: 12px;
   cursor: url('assets/images/custom-cursor.svg'), auto;
+}
+
+
+/* ── Modified Container ──────────────────────────────────────────────────── */
+.page-10-video {
+  position: relative; /* Added to contain the absolute overlay */
+  aspect-ratio: 5/4;
+  height: 80%;
+  display: flex;
+  margin-left: 16px;
+  margin-right: 16px;
+  scroll-snap-align: start;
+  border-radius: 12px; /* Moved border-radius here to clip the overlay */
+  overflow: hidden;    /* Clips overlay to rounded corners */
+  transition: height 0.5s ease;
+  text-decoration: none;
+  cursor: url('assets/images/custom-cursor.svg'), auto;
+}
+
+.page-10-video:hover {
+  height: 100%;
+}
+
+.page-10-card-content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* border-radius removed from here since parent now handles clipping */
+}
+
+/* ── Premium Gradient Overlay ────────────────────────────────────────────── */
+.page-10-overlay {
+  position: absolute;
+  inset: 0; /* Covers entire card */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.9) 0%,
+    rgba(0,0,0,.55) 40%,
+    rgba(0,0,0,.15) 70%,
+    rgba(0,0,0,0) 100%
+  );
+  opacity: 0;
+  pointer-events: none; /* Prevents overlay from interfering with interactions */
+  transition: opacity 0.4s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity;
+}
+
+/* ── Text Elements & Base States ─────────────────────────────────────────── */
+.p10-meta, 
+.p10-title, 
+.p10-skills {
+  margin: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.4s cubic-bezier(.22,.61,.36,1);
+  will-change: transform, opacity;
+}
+
+.p10-meta {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.p10-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.p10-skills {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Hover Trigger Animations ────────────────────────────────────────────── */
+/* 1. Show Overlay */
+.page-10-video:hover .page-10-overlay,
+.page-10-video:focus-visible .page-10-overlay {
+  opacity: 1;
+}
+
+/* 2. Staggered Text Cascades */
+.page-10-video:hover .p10-meta,
+.page-10-video:focus-visible .p10-meta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.page-10-video:hover .p10-title,
+.page-10-video:focus-visible .p10-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.page-10-video:hover .p10-skills,
+.page-10-video:focus-visible .p10-skills {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
 }
 
 #page-11 .page-container {
@@ -1931,6 +2047,13 @@ body {
     height : 450px;
   }
 
+  .page-10-overlay {
+    padding: 20px;
+  }
+  .p10-title {
+    font-size: 1.25rem;
+  }
+
   #page-11 {
     display : flex;
     height : auto !important;
@@ -2439,6 +2562,17 @@ body {
     aspect-ratio: 4/5;
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .page-10-overlay {
+    padding: 16px;
+  }
+  .p10-title {
+    font-size: 1.15rem;
+  }
+  .p10-meta, 
+  .p10-skills {
+    font-size: 0.75rem;
   }
 
   #page-11 {

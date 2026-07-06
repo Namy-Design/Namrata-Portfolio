@@ -739,35 +739,144 @@ export default function Home() {
             <div id="page-10-text">MY PLAYGROUND </div>
             <div id="page-10-gallery-container" data-animated="true">
               <div id="page-10-gallery">
-                {/* Instead of document.cloneNode() in JS, we just render the gallery list twice in React 
-                  to achieve the exact same infinite CSS scroll effect 
-                */}
                 {[1, 2].map((iteration) => (
                   <Fragment key={iteration}>
+                    {/* 1. Ezsplit */}
+                    <a href="https://www.behance.net/gallery/146569409/Expense-Sharing-App" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/ezsplit.mp4" type="video/mp4" />
+                      </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Jan '20 &bull;</span>
+                        <h3 className="p10-title">Expense Sharing App</h3>
+                        <span className="p10-skills">Visual &bull; UI/UX &bull; Experience</span>
+                      </div>
+                    </a>
+
+                    {/* 2. Ionic Wealth */}
+                    <a href="https://ionic.in/" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/ionic_wealth.mp4" type="video/mp4" />
+                      </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Jun '25 &bull;</span>
+                        <h3 className="p10-title">Fintech Marketing Webpage</h3>
+                        <span className="p10-skills">UI &bull; IA &bull; Interaction &bull; Motion &bull; Responsive</span>
+                      </div>
+                    </a>
+
+                    {/* 3. Flobiz */}
+                    <a href="https://www.figma.com/design/HnD750utdXv8PfigcrKYRQ/Flobiz-Revamp" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/flobiz.mp4" type="video/mp4" />
+                      </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Aug '23 &bull;</span>
+                        <h3 className="p10-title">SME Business Management WebApp</h3>
+                        <span className="p10-skills">Visual Identity &bull; UI/UX &bull; Illustration &bull; Design System &bull; IA</span>
+                      </div>
+                    </a>
+
+                    {/* 4. Wellness Pro */}
+                    <a href="https://www.figma.com/design/agglKv6liBYos4tO16qwXt/Wellness-PRO?node-id=0-1&t=hfR1BUu1OPb5oBzS-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/wellnesspro.mp4" type="video/mp4" />
+                      </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Oct '24 &bull;</span>
+                        <h3 className="p10-title">Fitness App Marketing Webpage</h3>
+                        <span className="p10-skills">Visual Identity &bull; UI &bull; IA &bull; Motion &bull; Prototype</span>
+                      </div>
+                    </a>
+
+                    {/* 5. Goldsetu */}
+                    <a href="https://www.figma.com/design/IRoViMR4f9QFnIeGtw4dp7/Goldsetu-Website-Design--Resume-Link?node-id=0-1&t=EK7WVK1WmZ3Pu3JL-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/goldsetu.mp4" type="video/mp4" />
+                      </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Nov '21 &bull;</span>
+                        <h3 className="p10-title">SaaS Marketing Webpage</h3>
+                        <span className="p10-skills">UI &bull; IA &bull; Responsive &bull; Design System</span>
+                      </div>
+                    </a>
+
+                    {/* 6. Galleri5 */}
+                    <a href="https://dribbble.com/shots/18515848-Campaign-Management-Platform" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <img className="page-10-card-content asset-tracker" src="assets/images/g5.png" alt="Galleri5" />
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Jul '20 &bull;</span>
+                        <h3 className="p10-title">Influencer Management Platform</h3>
+                        <span className="p10-skills">UI/UX &bull; IA</span>
+                      </div>
+                    </a>
+
+                    {/* 7. Get Fit */}
+                    <a href="https://www.figma.com/design/jv3VP6AdVlLa3szqqB7G8y/Get-fit?node-id=0-1&t=U4um4kw8KIAv81r9-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/getfit.mp4" type="video/mp4" />
+                      </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Oct '24 &bull;</span>
+                        <h3 className="p10-title">Fitness App</h3>
+                        <span className="p10-skills">Visual Identity &bull; UI/UX</span>
+                      </div>
+                    </a>
+
+                    {/* 8. Wellthy */}
                     <a href="https://dribbble.com/shots/18535381-Health-Medication-Tracker" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker" autoPlay loop muted>
                         <source src="assets/videos/wellthy.mp4" type="video/mp4" />
                       </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Aug '20 &bull;</span>
+                        <h3 className="p10-title">Healthcare Mobile App</h3>
+                        <span className="p10-skills">Visual Identity &bull; IA &bull; UI/UX &bull; Motion &bull; Prototype</span>
+                      </div>
                     </a>
-                    <a href="https://dribbble.com/shots/18543878-Ezsplit-Expense-sharing-App" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
-                      <video className="page-10-card-content asset-tracker" autoPlay loop muted> 
-                        <source src="assets/videos/ezsplit.mp4" type="video/mp4" />
+
+                    {/* 9. Fraple */}
+                    <a href="https://www.behance.net/gallery/147704601/Mobile-App-Design" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/fraple.mp4" type="video/mp4" />
                       </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Dec '22 &bull;</span>
+                        <h3 className="p10-title">Grocery Delivery App</h3>
+                        <span className="p10-skills">Visual Identity &bull; IA &bull; UI/UX &bull; Prototype</span>
+                      </div>
                     </a>
-                    <a href="https://dribbble.com/shots/18544189-Hashhealth" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
-                      <img className="page-10-card-content asset-tracker" src="assets/images/hashhealth.webp" alt="hashhealth" />
-                    </a>
+
+                    {/* 10. Covet */}
                     <a href="https://www.behance.net/gallery/149906219/Covet-Magical-Potions" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
-                      <img className="page-10-card-content asset-tracker" src="assets/images/magical_potions.webp" alt="potions" />
+                      <img className="page-10-card-content asset-tracker" src="assets/images/magical_potions.webp" alt="Covet" />
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Aug '22 &bull;</span>
+                        <h3 className="p10-title">E-commerce Webpage</h3>
+                        <span className="p10-skills">Visual Identity &bull; IA &bull; UI/UX</span>
+                      </div>
                     </a>
-                    <a href="https://dribbble.com/shots/18515848-Campaign-Management-Platform" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
-                      <img className="page-10-card-content asset-tracker" src="assets/images/g5.png" alt="campaign" />
+
+                    {/* 11. Bytflakes (Hashhealth) */}
+                    <a href="https://dribbble.com/shots/18544189-Hashhealth" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
+                      <video className="page-10-card-content asset-tracker" autoPlay loop muted>
+                        <source src="assets/videos/bytflakes.mp4" type="video/mp4" />
+                      </video>
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Oct '21 &bull;</span>
+                        <h3 className="p10-title">Healthcare Appointment App</h3>
+                        <span className="p10-skills">Visual Identity &bull; IA &bull; UI/UX</span>
+                      </div>
                     </a>
+
+                    {/* 12. NYC Skyline */}
                     <a href="https://dribbble.com/shots/13921738-NYC-Skyline-Sketch" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
-                      <img className="page-10-card-content asset-tracker" src="assets/images/city_scape.png" alt="skyline" />
-                    </a>
-                    <a href="https://dribbble.com/shots/18534756-Utopia" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
-                      <img className="page-10-card-content asset-tracker" src="assets/images/utopia.webp" alt="utopia" />
+                      <img className="page-10-card-content asset-tracker" src="assets/images/city_scape.png" alt="NYC Skyline" />
+                      <div className="page-10-overlay">
+                        <span className="p10-meta">&bull; Jun '21 &bull;</span>
+                        <h3 className="p10-title">NYC Skyline</h3>
+                        <span className="p10-skills">Illustration</span>
+                      </div>
                     </a>
                   </Fragment>
                 ))}

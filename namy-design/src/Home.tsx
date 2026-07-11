@@ -212,7 +212,7 @@ export default function Home() {
          <div className="loading-page">
             <div className="circular-loader" style={{ background: `conic-gradient(#F67C29 ${loadingProgress * 3.6}deg, #171717 0deg)` }} >
             <div className="loader-value">{loadingProgress}%</div>
-            <img src="assets/images/namy_logo.svg" style={{ height: '20%', position: 'relative' }} alt="logo" />
+            <img src="assets/images/namy_logo.svg" style={{ height: '20%', position: 'relative', zIndex: 10001 }} alt="logo" />
             </div>
         </div>
       )}
@@ -352,7 +352,7 @@ export default function Home() {
 
         <div className="page" id="page-3">
           <div className="page-container">
-            <div className="page-header">ABOUT ME✦ </div>
+            <div className="page-header">ABOUT ME<span className="page-header-symbol">✦</span> </div>
             <div className="page-3-text">
               <ScrollHighlight
                 start="top 95%"
@@ -372,7 +372,7 @@ export default function Home() {
 
         <div className="page" id="page-4">
           <div className="page-container" style={{ padding: '0px', width: '100%', paddingBottom : '30vh' }}>
-            <div id="page-4-header">WHAT I DO✦ </div>
+            <div id="page-4-header">WHAT I DO<span className="page-header-symbol">✦</span> </div>
             <div id="page-4-selector-container">
               <div className="what-i-do-selector">
                 <ScrollHighlight
@@ -460,14 +460,14 @@ export default function Home() {
 
         <div className="page" id="page-5">
           <div className="page-container" >
-            <div className="page-header" style={{ color: '#ABABAB' }}>EXPERIENCE✦ </div>
+            <div className="page-header" style={{ color: '#ABABAB' }}>EXPERIENCE<span className="page-header-symbol">✦</span> </div>
             <div id="page-5-text">
               <ScrollHighlight
                 start="top 95%"
                 end="bottom 90%"
                 scrub={0.5}
                 activeColor="#E0DFBF"
-                inactiveColor="red"
+                inactiveColor="rgba(224, 223, 191, 0.16)"
                 inlineHighlightColor="#F67C29"
                 className="page-5-text"
                 scroller="#myScrollableDiv"
@@ -480,7 +480,7 @@ export default function Home() {
 
         <div className="page" id="page-6">
           <div className="page-container" >
-            <div id="page-6-header">HISTORY✦</div>
+            <div id="page-6-header">HISTORY<span className="page-header-symbol">✦</span></div>
             <div id="page-6-selector-container">
               {/* History Item 1 */}
               <div className="history-selector">
@@ -548,7 +548,7 @@ export default function Home() {
 
        <div className="page" id="page-7">
           <div className="page-7-container" id="page-7-container-1">
-            <div className="page-header" id="page-7-page-header">CASE STUDIES✦ </div>
+            <div className="page-header" id="page-7-page-header">CASE STUDIES<span className="page-header-symbol">✦</span> </div>
             <div className="page-7-content-container" id="e-invoice-content">
               <div className="app-image-container">
                 <a href="./mybillbook" className="app-image-link" target="_blank" rel="noreferrer">
@@ -599,7 +599,7 @@ export default function Home() {
 
         <div className="page" id="page-8">
           <div className="page-container" style={{ position: 'absolute', top: 0, left: 0 }}>
-            <div id="page-8-header">WHAT THEY SAID✦</div>
+            <div id="page-8-header">WHAT THEY SAID<span className="page-header-symbol">✦</span></div>
             
             <div id="page-8-container">
               <div id="page-8-quote-container" >
@@ -690,7 +690,7 @@ export default function Home() {
         <div className="page" id="page-9">
           
           <div className="page-container making-container">
-          <div id="page-9-header">MAKING OF ME ✦</div>
+          <div id="page-9-header">MAKING OF ME <span className="page-header-symbol">✦</span></div>
             <div className="making-grid">
               
               <div className="making-row-1">
@@ -735,7 +735,7 @@ export default function Home() {
 
         <div className="page" id="page-10">
           <div className="page-container" style={{ flexDirection: 'column', rowGap: 0 }}>
-            <div id="page-10-header">EXPLORATIONS✦</div>
+            <div id="page-10-header">EXPLORATIONS<span className="page-header-symbol">✦</span></div>
             <div id="page-10-text">MY PLAYGROUND </div>
             <div id="page-10-gallery-container" data-animated="true">
               <div id="page-10-gallery">
@@ -849,7 +849,7 @@ export default function Home() {
 
                     {/* 10. Covet */}
                     <a href="https://www.behance.net/gallery/149906219/Covet-Magical-Potions" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
-                      <img className="page-10-card-content asset-tracker" src="assets/images/magical_potions.webp" alt="Covet" />
+                      <img className="page-10-card-content asset-tracker" src="assets/images/covet.png" alt="Covet" />
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '22 &bull;</span>
                         <h3 className="p10-title">E-commerce Webpage</h3>

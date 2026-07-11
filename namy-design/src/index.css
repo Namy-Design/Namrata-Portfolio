@@ -22,6 +22,8 @@ body {
   display : none;
 }
 
+
+
 .scrollable-container {
   display: none;
   position: relative;
@@ -374,11 +376,18 @@ body {
   color: #797979;
   margin: 0;
   padding: 0;
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   margin-bottom: 58px;
   letter-spacing: 19.2px;
   margin-top: auto;
+}
+
+.page-header-symbol{
+  font-size : 32px;
+  line-height: 32px;
+  width : 32px;
+  color : #E0DFBF;
 }
 
 .page-3-text {
@@ -526,7 +535,7 @@ body {
   z-index: 0;
 }
 
-.what-i-do-text:hover .scroll-word-active, .scroll-word-inactive {
+.what-i-do-text:hover .scroll-word-active, .what-i-do-text:hover .scroll-word-inactive {
   color: #2B2B2B !important;
 }
 
@@ -637,7 +646,6 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-
 
 
 .exp-desc {
@@ -1725,6 +1733,13 @@ body {
     z-index: 100;
   }
 
+  .page-header-symbol{
+    font-size : 24px;
+    line-height: 24px;
+    width : 24px;
+    color : #E0DFBF;
+  }
+
   .landing-header {
     font-size: 150px;
   }
@@ -1740,6 +1755,7 @@ body {
   .left-sticky-logo{
     top: 48px !important;
     padding-left: 48px !important;
+    z-index: 100;
   }
 
   .page-2-content-container {
@@ -1861,6 +1877,7 @@ body {
     flex-direction: column;
     gap : 40px;
   }
+
 
   .history-text-date {
     min-width: 200px;
@@ -2082,6 +2099,13 @@ body {
 
   .page-10-overlay {
     padding: 20px;
+    opacity: 1 !important;
+  }
+  .p10-meta,
+  .p10-title,
+  .p10-skills {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
   .p10-title {
     font-size: 1.25rem;
@@ -2152,6 +2176,13 @@ body {
     gap : 16px;
   }
 
+  .page-header-symbol{
+    font-size : 24px;
+    line-height: 20px;
+    width : 24px;
+    color : #E0DFBF;
+  }
+
   .has-tag-handle{
     font-size: 1rem;
   }
@@ -2199,6 +2230,7 @@ body {
   .left-sticky-logo{
     top: 24px !important;
     padding-left: 24px !important;
+    z-index: 100;
   }
 
   .page-2-content-container {
@@ -2324,6 +2356,10 @@ body {
     padding : 172px 0;
   }
 
+  #page-6-selector-container{
+    gap : 0px;
+  }
+
   #page-6 .page-container {
     padding : 0 ;
     position: relative !important;
@@ -2344,8 +2380,8 @@ body {
   }
 
   .history-text-date {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 30%;
+    max-width: 30%;
   }
 
   .exp-desc{
@@ -2354,16 +2390,25 @@ body {
 
   .history-text-exp{
     gap : 8px;
+    min-width: 70%;
+    max-width: 70%;
   }
 
   .history-text {
     font-size: 1.25rem;
     padding : 8px 24px;
-    width: 100%;
+    width: calc(100% - 48px);
   }
 
   .exp-desc , .exp-desc-hover {
     font-size: 1rem;
+  }
+
+  .exp-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
    #page-7 {
@@ -2527,6 +2572,7 @@ body {
     min-width : 200px;
     max-width : 300px;
     height : fit-content;
+    max-height : 500px;
     
   }
   .making-row-1 .img-wrapper .making-text {
@@ -2630,6 +2676,13 @@ body {
 
   .page-10-overlay {
     padding: 16px;
+    opacity: 1 !important;
+  }
+  .p10-meta,
+  .p10-title,
+  .p10-skills {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
   .p10-title {
     font-size: 1.15rem;

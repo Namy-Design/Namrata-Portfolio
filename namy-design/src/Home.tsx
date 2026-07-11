@@ -276,7 +276,7 @@ export default function Home() {
       <div className="header_menu">
         <ul className="header_menu_list ul__reset">
           <li className="header_menu_item js-cursor-contract" id="about-list-btn">
-            <a href="#page-2" className="desc text-uppercase has-tag-handle">
+            <a href="#page-2" className="text-uppercase has-tag-handle">
               <span className="header_menu_item_inner">
                 <span className="header_menu_item_link header_menu_item_link__inactive">About</span>
                 <span className="header_menu_item_link header_menu_item_link__active">About</span>
@@ -284,7 +284,7 @@ export default function Home() {
             </a>
           </li>
           <li className="header_menu_item js-cursor-contract" id="work-list-btn">
-            <a href="#page-7" className="desc text-uppercase has-tag-handle">
+            <a href="#page-7" className="text-uppercase has-tag-handle">
               <span className="header_menu_item_inner">
                 <span className="header_menu_item_link header_menu_item_link__inactive">Work</span>
                 <span className="header_menu_item_link header_menu_item_link__active">Work</span>
@@ -292,7 +292,7 @@ export default function Home() {
             </a>
           </li>
           <li className="header_menu_item js-cursor-contract" id="contact-list-btn">
-            <a href="#page-11" className="desc text-uppercase has-tag-handle">
+            <a href="#page-11" className="text-uppercase has-tag-handle">
               <span className="header_menu_item_inner">
                 <span className="header_menu_item_link header_menu_item_link__inactive">Contact</span>
                 <span className="header_menu_item_link header_menu_item_link__active">Contact</span>
@@ -355,8 +355,8 @@ export default function Home() {
             <div className="page-header">ABOUT ME✦ </div>
             <div className="page-3-text">
               <ScrollHighlight
-                start="top 90%"
-                end="bottom 60%"
+                start="top 95%"
+                end="bottom 90%"
                 scrub={0.5}
                 activeColor="#E0DFBF"
                 inactiveColor="rgba(224, 223, 191, 0.16)"
@@ -364,7 +364,7 @@ export default function Home() {
                 className="page-3-text"
                 scroller="#myScrollableDiv"
               >
-                I am a <Highlight>Product Designer</Highlight>, selectively skilled & intentionally thorough because pretty without purpose is just wallpaper.
+                I am a <Highlight>Product Designer,</Highlight> selectively skilled & intentionally thorough because pretty without purpose is just a wallpaper
               </ScrollHighlight>
             </div>
           </div>
@@ -376,8 +376,8 @@ export default function Home() {
             <div id="page-4-selector-container">
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 80%"
-                  end="bottom 60%"
+                  start="top 95%"
+                  end="bottom 90%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
                   inactiveColor="rgba(224, 223, 191, 0.16)"
@@ -392,8 +392,8 @@ export default function Home() {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 80%"
-                  end="bottom 60%"
+                  start="top 95%"
+                  end="bottom 90%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
                   inactiveColor="rgba(224, 223, 191, 0.16)"
@@ -408,8 +408,8 @@ export default function Home() {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 80%"
-                  end="bottom 60%"
+                  start="top 95%"
+                  end="bottom 90%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
                   inactiveColor="rgba(224, 223, 191, 0.16)"
@@ -424,8 +424,8 @@ export default function Home() {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 80%"
-                  end="bottom 60%"
+                  start="top 95%"
+                  end="bottom 90%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
                   inactiveColor="rgba(224, 223, 191, 0.16)"
@@ -440,8 +440,8 @@ export default function Home() {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 80%"
-                  end="bottom 60%"
+                  start="top 95%"
+                  end="bottom 90%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
                   inactiveColor="rgba(224, 223, 191, 0.16)"
@@ -463,11 +463,11 @@ export default function Home() {
             <div className="page-header" style={{ color: '#ABABAB' }}>EXPERIENCE✦ </div>
             <div id="page-5-text">
               <ScrollHighlight
-                start="top 90%"
-                end="bottom 60%"
+                start="top 95%"
+                end="bottom 90%"
                 scrub={0.5}
                 activeColor="#E0DFBF"
-                inactiveColor="rgba(224, 223, 191, 0.16)"
+                inactiveColor="red"
                 inlineHighlightColor="#F67C29"
                 className="page-5-text"
                 scroller="#myScrollableDiv"
@@ -521,7 +521,7 @@ export default function Home() {
               {/* History Item 4 */}
               <div className="history-selector">
                 <div className="history-text">
-                  <div className="history-text-date">2020</div>
+                  <div className="history-text-date" style={{ paddingTop : '6px' }}>2020</div>
                   <div className="history-text-exp">
                     <div className="exp-text">UI/ UX Designer</div>
                     <div className="exp-desc">Galleri5</div>
@@ -533,7 +533,7 @@ export default function Home() {
               {/* History Item 5 */}
               <div className="history-selector">
                 <div className="history-text">
-                  <div className="history-text-date">2019</div>
+                  <div className="history-text-date"  style={{ paddingTop : '6px' }}>2019</div>
                   <div className="history-text-exp">
                     <div className="exp-text">Stylist/ Graphic Designer</div>
                     <div className="exp-desc">Aditya Birla Fashion And Retail</div>
@@ -610,8 +610,8 @@ export default function Home() {
                 <div id="page-8-main-text">
                   {activeFeedback === 'sid' && (
                     <ScrollHighlight
-                      start="top 90%"
-                      end="bottom 70%"
+                      start="top 95%"
+                      end="bottom 90%"
                       scrub={0.5}
                       activeColor="#E0DFBF"
                       inactiveColor="rgba(224, 223, 191, 0.16)"

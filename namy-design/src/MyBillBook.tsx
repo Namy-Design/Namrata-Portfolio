@@ -54,8 +54,8 @@ export default function MyBillBook() {
   return (
     <div className="mybillbook-page">
       <picture>
-        <source srcSet="assets/images/mybillbook_1.jpg" media="(max-width: 1920px)" />
-        <img className="project-img" src="assets/images/mybillbook_1.jpg" alt="MyBillBook Intro" />
+        <source srcSet="/assets/images/mybillbook_1.jpg" media="(max-width: 1920px)" />
+        <img className="project-img" src="/assets/images/mybillbook_1.jpg" alt="MyBillBook Intro" />
       </picture>
 
       <div className="page-2-video-container">
@@ -66,13 +66,13 @@ export default function MyBillBook() {
           loop 
           playsInline
         >
-          <source src="assets/videos/mybillbook_9.mp4" type="video/mp4" />
+          <source src="/assets/videos/mybillbook_9.mp4" type="video/mp4" />
         </video>
       </div>
 
       <picture>
-        <source srcSet="assets/images/mybillbook_2_small.webp" media="(max-width: 1920px)" />
-        <img className="project-img" src="assets/images/mybillbook_2.webp" alt="MyBillBook Details" />
+        <source srcSet="/assets/images/mybillbook_2_small.webp" media="(max-width: 1920px)" />
+        <img className="project-img" src="/assets/images/mybillbook_2.webp" alt="MyBillBook Details" />
       </picture>
 
       {/* React-based Infinite Marquee */}
@@ -95,9 +95,9 @@ export default function MyBillBook() {
           <div className="footer-img">
             <picture>
               {/* Image for Mobile/Tablet */}
-              <source media="(max-width: 600px)" srcSet="assets/images/GoldSetu.webp" />
+              <source media="(max-width: 600px)" srcSet="/assets/images/GoldSetu.webp" />
               {/* Default Image for Desktop */}
-              <img className="app-image asset-tracker" src="assets/images/digi-gold.webp" alt="group-order" />
+              <img className="app-image asset-tracker" src="/assets/images/digi-gold.webp" alt="group-order" />
             </picture>
           </div>
         </Link>

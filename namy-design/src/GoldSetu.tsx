@@ -21,14 +21,14 @@ export default function GoldSetu() {
     <div className="goldsetu-page">
       {/* Intro Image */}
       <picture>
-        <source srcSet="assets/images/Goldsetu_1_small.webp" media="(max-width: 1920px)" />
-        <img className="project-img" src="assets/images/Goldsetu_1_4K.webp" alt="GoldSetu Intro" />
+        <source srcSet="/assets/images/Goldsetu_1_small.webp" media="(max-width: 1920px)" />
+        <img className="project-img" src="/assets/images/Goldsetu_1_4K.webp" alt="GoldSetu Intro" />
       </picture>
 
       {/* Details Image */}
       <picture>
-        <source srcSet="assets/images/Goldsetu_2_small.jpg" media="(max-width: 1920px)" />
-        <img className="project-img" src="assets/images/Goldsetu_2_4K.webp" alt="GoldSetu Details" />
+        <source srcSet="/assets/images/Goldsetu_2_small.jpg" media="(max-width: 1920px)" />
+        <img className="project-img" src="/assets/images/Goldsetu_2_4K.webp" alt="GoldSetu Details" />
       </picture>
 
       {/* React-based Infinite Marquee */}
@@ -52,9 +52,9 @@ export default function GoldSetu() {
           <div className="goldsetu-footer-img">
             <picture>
                 {/* Image for Mobile/Tablet */}
-                <source media="(max-width: 600px)" srcSet="assets/images/Personal.webp" />
+                <source media="(max-width: 600px)" srcSet="/assets/images/Personal.webp" />
                 {/* Default Image for Desktop */}
-                <img className="app-image asset-tracker" src="assets/images/group-order.webp" alt="group-order" />
+                <img className="app-image asset-tracker" src="/assets/images/group-order.webp" alt="group-order" />
             </picture>
           </div>
         </Link>

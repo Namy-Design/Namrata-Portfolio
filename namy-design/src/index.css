@@ -1,14 +1,14 @@
 @font-face {
   font-family: EulogyDemo-SemiBold;
-  src: url(assets/fonts/eulogy-demo/EulogyDemo-SemiBold.ttf);
+  src: url(/assets/fonts/eulogy-demo/EulogyDemo-SemiBold.ttf);
 }
 @font-face {
   font-family: EulogyDemo-Medium;
-  src: url(assets/fonts/eulogy-demo/EulogyDemo-Medium.ttf);
+  src: url(/assets/fonts/eulogy-demo/EulogyDemo-Medium.ttf);
 }
 @font-face {
   font-family: EulogyDemo-Bold;
-  src: url(assets/fonts/eulogy-demo/EulogyDemo-Bold.ttf);
+  src: url(/assets/fonts/eulogy-demo/EulogyDemo-Bold.ttf);
 } 
 
 body {
@@ -35,7 +35,7 @@ body {
   background-color: #171717;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer and Edge */
-  cursor: url('assets/images/default_cursor.png'), auto;
+  cursor: url('/assets/images/default_cursor.png'), auto;
 }
 
 .scrollable-container::-webkit-scrollbar {
@@ -107,7 +107,7 @@ body {
   position: relative;
   height: auto;
   transition: transform 0.5s ease;
-  cursor: url('assets/images/default_cursor.png'), auto;
+  cursor: url('/assets/images/default_cursor.png'), auto;
 }
 
 .page-container {
@@ -238,7 +238,7 @@ body {
   align-items: center;
   justify-content: center;
   /* max-width: 1400px; */
-  background-image: url("assets/images/intro_image_r.webp");
+  background-image: url("/assets/images/intro_image_r.webp");
   object-fit: contain;
   background-size: contain;
   background-position: center;
@@ -735,15 +735,15 @@ body {
 }
 
 #page-7-blurred-bg-1 {
-  background-image: url('assets/images/e-invoice_bg.webp');
+  background-image: url('/assets/images/e-invoice_bg.webp');
 }
 
 #page-7-blurred-bg-2 {
-  background-image: url('assets/images/digi-gold_bg.webp');
+  background-image: url('/assets/images/digi-gold_bg.webp');
 }
 
 #page-7-blurred-bg-3 {
-  background-image: url('assets/images/group-order_bg.webp');
+  background-image: url('/assets/images/group-order_bg.webp');
 }
 
 #page-7-page-header {
@@ -776,7 +776,7 @@ body {
 .app-image {
   width : 100%;
   height : auto;
-  cursor: url('assets/images/custom-cursor.svg'), auto;
+  cursor: url('/assets/images/custom-cursor.svg'), auto;
 }
 
 .app-image-link {
@@ -1162,7 +1162,7 @@ body {
   width: 100%;
   object-fit: cover;
   border-radius: 12px;
-  cursor: url('assets/images/custom-cursor.svg'), auto;
+  cursor: url('/assets/images/custom-cursor.svg'), auto;
 }
 
 
@@ -1179,7 +1179,7 @@ body {
   overflow: hidden;    /* Clips overlay to rounded corners */
   transition: height 0.5s ease;
   text-decoration: none;
-  cursor: url('assets/images/custom-cursor.svg'), auto;
+  cursor: url('/assets/images/custom-cursor.svg'), auto;
 }
 
 .page-10-video:hover {
@@ -1336,7 +1336,7 @@ body {
   display: flex;
   flex-direction: column;
   letter-spacing: 3.84px;
-  cursor: url('assets/images/custom-cursor.svg'), auto;
+  cursor: url('/assets/images/custom-cursor.svg'), auto;
 }
 
 .contact-text {
@@ -1716,7 +1716,7 @@ body {
 
   .page-2-content-container {
     width : 80%;
-    background-image: url("assets/images/intro_image_xs.webp");
+    background-image: url("/assets/images/intro_image_xs.webp");
   }
   #page-8-text-container {
     width: 70%;
@@ -1743,7 +1743,7 @@ body {
   }
   
   .page-2-content-container {
-    background-image: url("assets/images/intro_image_xs.webp");
+    background-image: url("/assets/images/intro_image_xs.webp");
   }
   #page-8-text-container {
     width: 60%;
@@ -1758,7 +1758,7 @@ body {
     font-size: 6rem;
   }
   .page-2-content-container {
-    background-image: url("assets/images/intro_image_r.webp");
+    background-image: url("/assets/images/intro_image_r.webp");
   }
   #page-8-text-container {
     width: 40%;
@@ -1812,7 +1812,7 @@ body {
 
   .page-2-content-container {
     margin : 64px 48px;
-    background-image: url("assets/images/intro-image-tablet.webp");
+    background-image: url("/assets/images/intro-image-tablet.webp");
   }
 
   #page-2-video-overlay-2 {
@@ -2305,7 +2305,7 @@ body {
     height : auto;
     aspect-ratio: 352 / 954;
     margin : 64px 28px;
-    background-image: url("assets/images/intro-image-mobile.webp");
+    background-image: url("/assets/images/intro-image-mobile.webp");
   }
 
   #page-2 {

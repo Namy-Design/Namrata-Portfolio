@@ -221,7 +221,8 @@ export default function Home() {
 
       <div className="view-resume">
         <a href="./resume" target="_blank" rel="noreferrer">
-          <div id="resume-btn-text">VIEW RESUME </div>
+          <div id="resume-btn-text" className="hide-mobile">VIEW RESUME </div>
+          <div id="resume-btn-text-show" className = "hide-tab hide-desktop ">CV</div>
           <img src="assets/images/resume_arrow.svg" className="asset-tracker" style={{ transform: 'rotate(90deg)' }} alt="arrow" />
         </a>
       </div>
@@ -403,7 +404,7 @@ export default function Home() {
                 >
                   VISUAL
                 </ScrollHighlight>
-                <div className="hover-highlight"> Moodboards consumed, references digested, trends ignored. What comes out is mine, not a Dribbble copy with a new color palette</div>
+                <div className="hover-highlight"> Moodboards consumed, references digested, trends ignored. What comes out is mine, not a Dribbble copy with a new palette</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
               <div className="what-i-do-selector">
@@ -724,9 +725,10 @@ export default function Home() {
               {/* Equation & Product Design */}
               <div className="making-row-3">
                 <img className="asset-tracker hide-desktop hide-mobile" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
-                <div className="making-symbol text-orange">=</div>
-                <div className="making-text text-orange">Product Design</div>
+                <div className="making-symbol">=</div>
+                <div className="making-text text-orange hide-mobile">Product Design</div>
                 <img className="asset-tracker hide-tab" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
+                <div className="making-text text-orange hide-tab hide-desktop">Product Design</div>
               </div>
               
             </div>
@@ -767,7 +769,7 @@ export default function Home() {
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '23 &bull;</span>
-                        <h3 className="p10-title">SME Business Management WebApp</h3>
+                        <h3 className="p10-title">Business Management WebApp</h3>
                         <span className="p10-skills">Visual Identity &bull; UI/UX &bull; Illustration &bull; Design System &bull; IA</span>
                       </div>
                     </a>

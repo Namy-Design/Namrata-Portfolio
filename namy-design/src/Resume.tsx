@@ -23,7 +23,7 @@ export default function Resume() {
   const handleDownload = () => {
     if (window.jsFileDownloader) {
       new window.jsFileDownloader({
-        url: 'assets/pdf/Namrata_Jaiswal_Product_Designer_Resume.pdf',
+        url: '/assets/pdf/Namrata_Jaiswal_Product_Designer_Resume.pdf',
       })
         .then(() => {
           console.log('Download Done!');
@@ -38,7 +38,7 @@ export default function Resume() {
     <>
       <div className="resume-download" id="download-btn">
         <img
-          src="assets/images/resume_arrow.svg"
+          src="/assets/images/resume_arrow.svg"
           alt="download"
           style={{ transform: 'rotate(225deg)' }}
         />
@@ -47,7 +47,7 @@ export default function Resume() {
 
       <div className="resume-container">
         <div className="resume-timeline">
-          <img src="assets/images/dp.svg" className="resume-dp" alt="profile" />
+          <img src="/assets/images/dp.svg" className="resume-dp" alt="profile" />
           <div className="timeline-details">
             <div className="timeline-name">Namrata Jaiswal</div>
             <div className="timeline-jd">Product Designer in India</div>
@@ -60,7 +60,7 @@ export default function Resume() {
               <div className="timeline-web-url">
                 namy.design
                 <img
-                  src="assets/images/resume-page-arrow.svg"
+                  src="/assets/images/resume-page-arrow.svg"
                   style={{ marginLeft: '2px' }}
                   alt="arrow"
                 />
@@ -91,7 +91,7 @@ export default function Resume() {
               rel="noreferrer"
             >
               Ionic Wealth by AngelOne{' '}
-              <img src="assets/images/resume-arrow-small.svg" alt="arrow" />
+              <img src="/assets/images/resume-arrow-small.svg" alt="arrow" />
             </a>
             <div className="resume-company-link">
               Skills: Figma, User Research, Design Systems, Prototyping with Claude, Interaction
@@ -217,7 +217,7 @@ export default function Resume() {
               target="_blank"
               rel="noreferrer"
             >
-              Flobiz <img src="assets/images/resume-arrow-small.svg" alt="arrow" />
+              Flobiz <img src="/assets/images/resume-arrow-small.svg" alt="arrow" />
             </a>
             <div className="resume-company-link">
               Skills: Figma, Adobe Creative Suite, User Research, Prototyping, Wireframing,
@@ -323,7 +323,7 @@ export default function Resume() {
               target="_blank"
               rel="noreferrer"
             >
-              Goldsetu <img src="assets/images/resume-arrow-small.svg" alt="arrow" />
+              Goldsetu <img src="/assets/images/resume-arrow-small.svg" alt="arrow" />
             </a>
             <div className="resume-company-link">
               Skills: User Research, Prototyping, Wireframing, Interaction Design, Motion Design,
@@ -365,7 +365,7 @@ export default function Resume() {
               rel="noreferrer"
             >
               Bytflakes, Medical Solution{' '}
-              <img src="assets/images/resume-arrow-small.svg" alt="arrow" />
+              <img src="/assets/images/resume-arrow-small.svg" alt="arrow" />
             </a>
             <div className="resume-company-link">
               Skills: Branding, Visual Design, Motion Design
@@ -402,7 +402,7 @@ export default function Resume() {
               target="_blank"
               rel="noreferrer"
             >
-              Galleri5 <img src="assets/images/resume-arrow-small.svg" alt="arrow" />
+              Galleri5 <img src="/assets/images/resume-arrow-small.svg" alt="arrow" />
             </a>
             <div className="resume-company-link">
               Skills: High Fidelity, Illustrations, Graphics, Emailers, Packaging design
@@ -464,7 +464,7 @@ export default function Resume() {
           >
             <div className="resume-heading" style={{ marginBottom: '4px' }}>
               namy.designwork@gmail.com{' '}
-              <img src="assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
+              <img src="/assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
             </div>
           </a>
         </div>
@@ -478,7 +478,7 @@ export default function Resume() {
           >
             <div className="resume-heading" style={{ marginBottom: '4px' }}>
               linkedin.com/in/namrata-jaiswal{' '}
-              <img src="assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
+              <img src="/assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
             </div>
           </a>
         </div>
@@ -492,7 +492,7 @@ export default function Resume() {
           >
             <div className="resume-heading" style={{ marginBottom: '4px' }}>
               behance.net/namrata_jaiswal{' '}
-              <img src="assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
+              <img src="/assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
             </div>
           </a>
         </div>
@@ -506,7 +506,7 @@ export default function Resume() {
           >
             <div className="resume-heading" style={{ marginBottom: '4px' }}>
               dribbble.com/Namrata_Jaiswal{' '}
-              <img src="assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
+              <img src="/assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
             </div>
           </a>
         </div>
@@ -520,7 +520,7 @@ export default function Resume() {
           >
             <div className="resume-heading" style={{ marginBottom: '4px' }}>
               namy.design{' '}
-              <img src="assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
+              <img src="/assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
             </div>
           </a>
         </div>

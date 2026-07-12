@@ -198,7 +198,7 @@ export default function Home() {
          <div className="loading-page">
             <div className="circular-loader" style={{ background: `conic-gradient(#F67C29 ${loadingProgress * 3.6}deg, #171717 0deg)` }} >
             <div className="loader-value">{loadingProgress}%</div>
-            <img src="assets/images/namy_logo.svg" style={{ height: '20%', position: 'relative', zIndex: 10001 }} alt="logo" />
+            <img src="/assets/images/namy_logo.svg" style={{ height: '20%', position: 'relative', zIndex: 10001 }} alt="logo" />
             </div>
         </div>
       )}
@@ -209,31 +209,31 @@ export default function Home() {
         <a href="./resume" target="_blank" rel="noreferrer">
           <div id="resume-btn-text" className="hide-mobile">VIEW RESUME </div>
           <div id="resume-btn-text-show" className = "hide-tab hide-desktop ">CV</div>
-          <img src="assets/images/resume_arrow.svg" className="asset-tracker" style={{ transform: 'rotate(90deg)' }} alt="arrow" />
+          <img src="/assets/images/resume_arrow.svg" className="asset-tracker" style={{ transform: 'rotate(90deg)' }} alt="arrow" />
         </a>
       </div>
 
       <div className="left-sticky-logo">
-        <img src="assets/images/namy_logo.svg" className="asset-tracker" style={{ height: '100%' }} alt="logo" />
+        <img src="/assets/images/namy_logo.svg" className="asset-tracker" style={{ height: '100%' }} alt="logo" />
       </div>
 
       <div className="left-sticky-menu hide-tab hide-mobile">
         <div className="side-bar-logo-container">
           <a href="https://dribbble.com/Namrata_Jaiswal" target="_blank" rel="noreferrer">
-            <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/dribble_inactive.svg" alt="dribbble" />
-            <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/dribble_active.svg" alt="dribbble" />
+            <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/dribble_inactive.svg" alt="dribbble" />
+            <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/dribble_active.svg" alt="dribbble" />
           </a>
         </div>
         <div className="side-bar-logo-container">
           <a href="https://www.behance.net/namrata_jaiswal" target="_blank" rel="noreferrer">
-            <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/behance_inactive.svg" alt="behance" />
-            <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/behance_active.svg" alt="behance" />
+            <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/behance_inactive.svg" alt="behance" />
+            <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/behance_active.svg" alt="behance" />
           </a>
         </div>
         <div className="side-bar-logo-container">
           <a href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank" rel="noreferrer">
-            <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/linkedin_inactive.svg" alt="linkedin" />
-            <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/linkedin_active.svg" alt="linkedin" />
+            <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/linkedin_inactive.svg" alt="linkedin" />
+            <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/linkedin_active.svg" alt="linkedin" />
           </a>
         </div>
       </div>
@@ -242,20 +242,20 @@ export default function Home() {
         {/* Exact duplicate of above for menu-2 */}
         <div className="side-bar-logo-container-2">
           <a href="https://dribbble.com/Namrata_Jaiswal" target="_blank" rel="noreferrer">
-            <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/dribble_inactive.svg" alt="dribbble" />
-            <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/dribble_active.svg" alt="dribbble" />
+            <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/dribble_inactive.svg" alt="dribbble" />
+            <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/dribble_active.svg" alt="dribbble" />
           </a>
         </div>
         <div className="side-bar-logo-container-2">
           <a href="https://www.behance.net/namrata_jaiswal" target="_blank" rel="noreferrer">
-            <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/behance_inactive.svg" alt="behance" />
-            <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/behance_active.svg" alt="behance" />
+            <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/behance_inactive.svg" alt="behance" />
+            <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/behance_active.svg" alt="behance" />
           </a>
         </div>
         <div className="side-bar-logo-container-2">
           <a href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank" rel="noreferrer">
-            <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/linkedin_inactive.svg" alt="linkedin" />
-            <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/linkedin_active.svg" alt="linkedin" />
+            <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/linkedin_inactive.svg" alt="linkedin" />
+            <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/linkedin_active.svg" alt="linkedin" />
           </a>
         </div>
       </div>
@@ -299,8 +299,8 @@ export default function Home() {
           <div className="slider bottom-slider">
             <p className="landing-header" id="landing-header-bottom">NAMRATA</p>
             <div className="bottom-slider-img">
-              <img src="assets/images/scroll_text.svg" className="slide-down-text asset-tracker" alt="scroll" />
-              <img src="assets/images/scroll_arrow.svg" className="slide-down-arrow asset-tracker" alt="arrow" />
+              <img src="/assets/images/scroll_text.svg" className="slide-down-text asset-tracker" alt="scroll" />
+              <img src="/assets/images/scroll_arrow.svg" className="slide-down-arrow asset-tracker" alt="arrow" />
             </div>
           </div>
         </div>
@@ -309,7 +309,7 @@ export default function Home() {
         
         <div className="page" id="page-2">
           <video id="page-2-video" className="asset-tracker" autoPlay muted loop>
-            <source src="assets/videos/fabric.mp4" type="video/mp4" />
+            <source src="/assets/videos/fabric.mp4" type="video/mp4" />
           </video>
           <div id="page-2-video-overlay-main">
             <canvas id="meshCanvas" ref={meshCanvasRef}></canvas>
@@ -318,14 +318,14 @@ export default function Home() {
             <div className="page-2-content-container"></div>
           </div>
           <div id="page-2-video-overlay-2">
-            <img id="awards-img" className="asset-tracker" src="assets/images/awards.webp" alt="awards" />
+            <img id="awards-img" className="asset-tracker" src="/assets/images/awards.webp" alt="awards" />
             <div id="page-2-video-overlay-2-main-overlay"></div>
             <div className="page-2-video-overlay-2-content">
               <div className="circular-stamp-container">
                 <a href="#page-11">
-                  <img src="assets/images/circle-text.svg" className="asset-tracker" id="page-2-circular-text" alt="circle text" />
+                  <img src="/assets/images/circle-text.svg" className="asset-tracker" id="page-2-circular-text" alt="circle text" />
                   <div className="circular-stamp-arrow-container">
-                    <img src="assets/images/circle-arrow.svg" className="asset-tracker" id="page-2-circular-arrow" alt="arrow" />
+                    <img src="/assets/images/circle-arrow.svg" className="asset-tracker" id="page-2-circular-arrow" alt="arrow" />
                   </div>
                 </a>
               </div>
@@ -541,9 +541,9 @@ export default function Home() {
                 <a href="./mybillbook" className="app-image-link" target="_blank" rel="noreferrer">
                   <picture>
                     {/* Image for Mobile/Tablet */}
-                    <source media="(max-width: 600px)" srcSet="assets/images/MyBillBook.webp" />
+                    <source media="(max-width: 600px)" srcSet="/assets/images/MyBillBook.webp" />
                     {/* Default Image for Desktop */}
-                    <img className="app-image asset-tracker" src="assets/images/e-invoice.webp" alt="e-invoice" />
+                    <img className="app-image asset-tracker" src="/assets/images/e-invoice.webp" alt="e-invoice" />
                   </picture>
                 </a>
               </div>
@@ -557,9 +557,9 @@ export default function Home() {
                 <a href="./goldsetu" className="app-image-link" target="_blank" rel="noreferrer">
                   <picture>
                     {/* Image for Mobile/Tablet */}
-                    <source media="(max-width: 600px)" srcSet="assets/images/GoldSetu.webp" />
+                    <source media="(max-width: 600px)" srcSet="/assets/images/GoldSetu.webp" />
                     {/* Default Image for Desktop */}
-                    <img className="app-image asset-tracker" src="assets/images/digi-gold.webp" alt="digi-gold" />
+                    <img className="app-image asset-tracker" src="/assets/images/digi-gold.webp" alt="digi-gold" />
                   </picture>
                 </a>
               </div>
@@ -573,9 +573,9 @@ export default function Home() {
                 <a href="./group-orders" className="app-image-link" target="_blank" rel="noreferrer">
                   <picture>
                     {/* Image for Mobile/Tablet */}
-                    <source media="(max-width: 600px)" srcSet="assets/images/Personal.webp" />
+                    <source media="(max-width: 600px)" srcSet="/assets/images/Personal.webp" />
                     {/* Default Image for Desktop */}
-                    <img className="app-image asset-tracker" src="assets/images/group-order.webp" alt="group-order" />
+                    <img className="app-image asset-tracker" src="/assets/images/group-order.webp" alt="group-order" />
                   </picture>
                 </a>
               </div>
@@ -590,7 +590,7 @@ export default function Home() {
             
             <div id="page-8-container">
               <div id="page-8-quote-container" >
-                <img className="asset-tracker" src="assets/images/open_quotes.svg" alt="quote" />
+                <img className="asset-tracker" src="/assets/images/open_quotes.svg" alt="quote" />
               </div>
               
               <div id="page-8-text-container">
@@ -657,16 +657,16 @@ export default function Home() {
               
               <div id="page-8-selector-container">
                 <div className="feedback-selector-container" onMouseOver={() => setActiveFeedback('sid')}>
-                  <img className="feedback-arrow asset-tracker" style={{ display: activeFeedback === 'sid' ? 'block' : 'none' }} src="assets/images/left_arrow_selector.svg" alt="arrow" />
-                  <img className="feedback-img asset-tracker" src={activeFeedback === 'sid' ? "assets/images/sid_active.svg" : "assets/images/sid_inactive.svg"} alt="sid" />
+                  <img className="feedback-arrow asset-tracker" style={{ display: activeFeedback === 'sid' ? 'block' : 'none' }} src="/assets/images/left_arrow_selector.svg" alt="arrow" />
+                  <img className="feedback-img asset-tracker" src={activeFeedback === 'sid' ? "/assets/images/sid_active.svg" : "/assets/images/sid_inactive.svg"} alt="sid" />
                 </div>
                 <div className="feedback-selector-container" onMouseOver={() => setActiveFeedback('kevin')}>
-                  <img className="feedback-arrow asset-tracker" style={{ display: activeFeedback === 'kevin' ? 'block' : 'none' }} src="assets/images/left_arrow_selector.svg" alt="arrow" />
-                  <img className="feedback-img asset-tracker" src={activeFeedback === 'kevin' ? "assets/images/kevin_active.svg" : "assets/images/kevin_inactive.svg"} alt="kevin" />
+                  <img className="feedback-arrow asset-tracker" style={{ display: activeFeedback === 'kevin' ? 'block' : 'none' }} src="/assets/images/left_arrow_selector.svg" alt="arrow" />
+                  <img className="feedback-img asset-tracker" src={activeFeedback === 'kevin' ? "/assets/images/kevin_active.svg" : "/assets/images/kevin_inactive.svg"} alt="kevin" />
                 </div>
                 <div className="feedback-selector-container" onMouseOver={() => setActiveFeedback('shankar')}>
-                  <img className="feedback-arrow asset-tracker" style={{ display: activeFeedback === 'shankar' ? 'block' : 'none' }} src="assets/images/left_arrow_selector.svg" alt="arrow" />
-                  <img className="feedback-img asset-tracker" src={activeFeedback === 'shankar' ? "assets/images/shankar_active.svg" : "assets/images/shankar_inactive.svg"} alt="shankar" />
+                  <img className="feedback-arrow asset-tracker" style={{ display: activeFeedback === 'shankar' ? 'block' : 'none' }} src="/assets/images/left_arrow_selector.svg" alt="arrow" />
+                  <img className="feedback-img asset-tracker" src={activeFeedback === 'shankar' ? "/assets/images/shankar_active.svg" : "/assets/images/shankar_inactive.svg"} alt="shankar" />
                 </div>
               </div>
             </div>
@@ -682,14 +682,14 @@ export default function Home() {
               
               <div className="making-row-1">
                 <div className="img-wrapper">
-                  <img className="art-c asset-tracker" src="assets/images/creativity-art.webp" alt="Art" />
+                  <img className="art-c asset-tracker" src="/assets/images/creativity-art.webp" alt="Art" />
                   <p className="making-text">Creativity</p>
                 </div>
                 
                 <div className="making-symbol hide-tab hide-desktop">×</div>
 
                 <div className="img-wrapper">
-                  <img className="art-ps asset-tracker" src="assets/images/psychology-art.webp" alt="Art" />
+                  <img className="art-ps asset-tracker" src="/assets/images/psychology-art.webp" alt="Art" />
                   <p className="making-text" >Psychology</p>
                 </div>
 
@@ -697,7 +697,7 @@ export default function Home() {
                 
 
                 <div className="img-wrapper">
-                  <img className="art-pa asset-tracker" src="assets/images/patterns-art.webp" alt="Art" />
+                  <img className="art-pa asset-tracker" src="/assets/images/patterns-art.webp" alt="Art" />
                   <p className="making-text" >Patterns</p>
                 </div>
               </div>
@@ -710,10 +710,10 @@ export default function Home() {
               </div>
               {/* Equation & Product Design */}
               <div className="making-row-3">
-                <img className="asset-tracker hide-desktop hide-mobile" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
+                <img className="asset-tracker hide-desktop hide-mobile" src="/assets/images/product-design-art.webp" alt="Venn Diagram" />
                 <div className="making-symbol">=</div>
                 <div className="making-text text-orange hide-mobile">Product Design</div>
-                <img className="asset-tracker hide-tab" src="assets/images/product-design-art.webp" alt="Venn Diagram" />
+                <img className="asset-tracker hide-tab" src="/assets/images/product-design-art.webp" alt="Venn Diagram" />
                 <div className="making-text text-orange hide-tab hide-desktop">Product Design</div>
               </div>
               
@@ -733,10 +733,10 @@ export default function Home() {
                     {/* 1. Ionic Wealth */}
                     <a href="https://ionic.in/" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/ionic_wealth.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ionic_wealth.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/ionic_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ionic_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jun '25 &bull;</span>
@@ -748,10 +748,10 @@ export default function Home() {
                     {/* 2. Flobiz */}
                     <a href="https://www.figma.com/design/HnD750utdXv8PfigcrKYRQ/Flobiz-Revamp" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/flobiz.mp4" type="video/mp4" />
+                        <source src="/assets/videos/flobiz.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/flobiz_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/flobiz_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '23 &bull;</span>
@@ -763,8 +763,8 @@ export default function Home() {
                     {/* 3. Galleri5 */}
                     <a href="https://dribbble.com/shots/18515848-Campaign-Management-Platform" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <picture>
-                        <source media="(max-width: 768px)" srcSet="assets/images/g5_mobile.png" />
-                        <img className="page-10-card-content asset-tracker" src="assets/images/g5.png" alt="Galleri5" />
+                        <source media="(max-width: 768px)" srcSet="/assets/images/g5_mobile.png" />
+                        <img className="page-10-card-content asset-tracker" src="/assets/images/g5.png" alt="Galleri5" />
                       </picture>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jul '20 &bull;</span>
@@ -776,10 +776,10 @@ export default function Home() {
                     {/* 4. Get Fit */}
                     <a href="https://www.figma.com/design/jv3VP6AdVlLa3szqqB7G8y/Get-fit?node-id=0-1&t=U4um4kw8KIAv81r9-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/getfit.mp4" type="video/mp4" />
+                        <source src="/assets/videos/getfit.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/getfit_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/getfit_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '24 &bull;</span>
@@ -791,8 +791,8 @@ export default function Home() {
                     {/* 5. Covet */}
                     <a href="https://www.behance.net/gallery/149906219/Covet-Magical-Potions" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <picture>
-                        <source media="(max-width: 768px)" srcSet="assets/images/covet_mobile.png" />
-                        <img className="page-10-card-content asset-tracker" src="assets/images/covet.png" alt="Covet" />
+                        <source media="(max-width: 768px)" srcSet="/assets/images/covet_mobile.png" />
+                        <img className="page-10-card-content asset-tracker" src="/assets/images/covet.png" alt="Covet" />
                       </picture>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '22 &bull;</span>
@@ -804,10 +804,10 @@ export default function Home() {
                     {/* 6. Wellness Pro */}
                     <a href="https://www.figma.com/design/agglKv6liBYos4tO16qwXt/Wellness-PRO?node-id=0-1&t=hfR1BUu1OPb5oBzS-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/wellnesspro.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellnesspro.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/wellnesspro_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellnesspro_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '24 &bull;</span>
@@ -819,8 +819,8 @@ export default function Home() {
                     {/* 7. NYC Skyline */}
                     <a href="https://dribbble.com/shots/13921738-NYC-Skyline-Sketch" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <picture>
-                        <source media="(max-width: 768px)" srcSet="assets/images/nyc_skyline_mobile.png" />
-                        <img className="page-10-card-content asset-tracker" src="assets/images/city_scape.png" alt="NYC Skyline" />
+                        <source media="(max-width: 768px)" srcSet="/assets/images/nyc_skyline_mobile.png" />
+                        <img className="page-10-card-content asset-tracker" src="/assets/images/city_scape.png" alt="NYC Skyline" />
                       </picture>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jun '21 &bull;</span>
@@ -832,10 +832,10 @@ export default function Home() {
                     {/* 8. Wellthy */}
                     <a href="https://dribbble.com/shots/18535381-Health-Medication-Tracker" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/wellthy.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellthy.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/wellthy_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellthy_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '20 &bull;</span>
@@ -847,10 +847,10 @@ export default function Home() {
                     {/* 9. Goldsetu */}
                     <a href="https://www.figma.com/design/IRoViMR4f9QFnIeGtw4dp7/Goldsetu-Website-Design--Resume-Link?node-id=0-1&t=EK7WVK1WmZ3Pu3JL-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/goldsetu.mp4" type="video/mp4" />
+                        <source src="/assets/videos/goldsetu.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/goldsetu_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/goldsetu_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Nov '21 &bull;</span>
@@ -862,10 +862,10 @@ export default function Home() {
                     {/* 10. Ezsplit */}
                     <a href="https://www.behance.net/gallery/146569409/Expense-Sharing-App" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/ezsplit.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ezsplit.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/ezsplit_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ezsplit_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jan '20 &bull;</span>
@@ -877,10 +877,10 @@ export default function Home() {
                      {/* 11. Bytflakes (Hashhealth) */}
                     <a href="https://dribbble.com/shots/18544189-Hashhealth" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/bytflakes.mp4" type="video/mp4" />
+                        <source src="/assets/videos/bytflakes.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/bytflakes_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/bytflakes_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '21 &bull;</span>
@@ -892,10 +892,10 @@ export default function Home() {
                     {/* 12. Fraple */}
                     <a href="https://www.behance.net/gallery/147704601/Mobile-App-Design" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted>
-                        <source src="assets/videos/fraple.mp4" type="video/mp4" />
+                        <source src="/assets/videos/fraple.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted>
-                        <source src="assets/videos/fraple_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/fraple_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Dec '22 &bull;</span>
@@ -914,7 +914,7 @@ export default function Home() {
         <div className="page" id="page-11">
           <div className="page-container">
             <div id="page-11-content">
-              <img src="assets/images/connect.svg" className="asset-tracker" style={{ objectFit: 'cover', height: '100%' }} alt="connect" />
+              <img src="/assets/images/connect.svg" className="asset-tracker" style={{ objectFit: 'cover', height: '100%' }} alt="connect" />
             </div>
             <div id="page-11-footer">
               <div id="page-11-footer-left">Say Hello</div>
@@ -924,7 +924,7 @@ export default function Home() {
                     Email<br />
                     <span className="contact-text">
                       namy.designwork@gmail.com 
-                      <img className="asset-tracker" src="assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
+                      <img className="asset-tracker" src="/assets/images/resume-page-arrow.svg" style={{ marginLeft: '4px' }} alt="arrow" />
                     </span>
                   </div>
                 </a>
@@ -936,20 +936,20 @@ export default function Home() {
                 <div className="fixed-sticky-menu hide-desktop">
                   <div className="side-bar-logo-container">
                     <a href="https://dribbble.com/Namrata_Jaiswal" target="_blank" rel="noreferrer">
-                      <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/dribble_inactive.svg" alt="dribbble" />
-                      <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/dribble_active.svg" alt="dribbble" />
+                      <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/dribble_inactive.svg" alt="dribbble" />
+                      <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/dribble_active.svg" alt="dribbble" />
                     </a>
                   </div>
                   <div className="side-bar-logo-container">
                     <a href="https://www.behance.net/namrata_jaiswal" target="_blank" rel="noreferrer">
-                      <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/behance_inactive.svg" alt="behance" />
-                      <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/behance_active.svg" alt="behance" />
+                      <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/behance_inactive.svg" alt="behance" />
+                      <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/behance_active.svg" alt="behance" />
                     </a>
                   </div>
                   <div className="side-bar-logo-container">
                     <a href="https://www.linkedin.com/in/namrata-jaiswal-213449197/" target="_blank" rel="noreferrer">
-                      <img className="left-sticky-menu-img-inactive asset-tracker" src="assets/images/linkedin_inactive.svg" alt="linkedin" />
-                      <img className="left-sticky-menu-img-active asset-tracker" src="assets/images/linkedin_active.svg" alt="linkedin" />
+                      <img className="left-sticky-menu-img-inactive asset-tracker" src="/assets/images/linkedin_inactive.svg" alt="linkedin" />
+                      <img className="left-sticky-menu-img-active asset-tracker" src="/assets/images/linkedin_active.svg" alt="linkedin" />
                     </a>
                   </div>
                 </div>

@@ -459,7 +459,7 @@ body {
   font-weight: 500;
   font-size: 20px;
   color: #797979;
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   margin-bottom: 58px;
   letter-spacing: 19.2px;
@@ -478,10 +478,11 @@ body {
 .what-i-do-selector {
   position: relative;
   width: 100%;
-  height: 6.85rem;
+  min-height: 6.85rem;
   display: flex;
   align-items: center;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   cursor: default;
   overflow: hidden;
 }
@@ -524,6 +525,7 @@ body {
   letter-spacing: 0.4rem;
   z-index: 1;
   cursor: help;
+  margin : 0;
 }
 
 .hover-aboslute-bg {
@@ -533,6 +535,9 @@ body {
   height: 0;
   transition-timing-function: ease-in;
   z-index: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: height 0.3s ease-in;
 }
 
 .what-i-do-text:hover .scroll-word-active, .what-i-do-text:hover .scroll-word-inactive {
@@ -554,9 +559,7 @@ body {
 }
 
 .what-i-do-text:hover + .hover-highlight + .hover-aboslute-bg {
-  height: 100%; 
-  transition: height 0.3s;
-  transition-timing-function: ease-in;
+  height: 100%;
 }
 
 #page-5 {
@@ -586,14 +589,14 @@ body {
   font-weight: 500;
   font-size: 20px;
   color: #797979;
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   margin-bottom: 58px;
   letter-spacing: 19.2px;
   width: 80%;
   padding-left: 10%;
   padding-right: 10%;
-  margin-top: auto;
+  margin-top: 0;
 }
 
 #page-6-selector-container {
@@ -636,6 +639,7 @@ body {
   height: 100%;
   align-items: center;
   display: flex;
+  line-height : 1.2;
 }
 
 .history-text-exp {
@@ -645,6 +649,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  line-height : 1.2;
 }
 
 
@@ -671,8 +676,6 @@ body {
 
 .history-selector:has(.history-text-date:hover, .history-text-exp:hover) > .hover-aboslute-bg {
   height: 100%;
-  transition: height 0.3s;
-  transition-timing-function: ease-in;
 }
 
 .history-selector:has(.history-text-date:hover, .history-text-exp:hover) > .history-text {
@@ -811,7 +814,7 @@ body {
   color: #797979;
   margin: 0;
   padding: 0;
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   letter-spacing: 19.2px;
   margin-top: 10%;
@@ -925,6 +928,8 @@ body {
   letter-spacing: 19.2px;
   position: relative;
   text-transform: uppercase;
+  display : flex;
+  align-items: center;
 }
 
 .making-container {
@@ -1044,7 +1049,7 @@ body {
   color: #ABABAB;
   margin: 0;
   padding: 0;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 58px;
   letter-spacing: 19.2px;
   margin-top: auto;

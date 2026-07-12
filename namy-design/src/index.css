@@ -1118,6 +1118,11 @@ body {
   width: max-content;
   flex-wrap: nowrap;
   animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  animation-play-state: running;
+}
+
+#page-10-gallery-container[data-animated="true"]:hover #page-10-gallery {
+  animation-play-state: paused;
 }
 
 #page-10-gallery-container[data-direction="right"] {
@@ -1176,6 +1181,25 @@ body {
   width: 100%;
   object-fit: cover;
   /* border-radius removed from here since parent now handles clipping */
+}
+
+/* ── Responsive Video Display ─────────────────────────────────────────── */
+.page-10-video-desktop {
+  display: block;
+}
+
+.page-10-video-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .page-10-video-desktop {
+    display: none;
+  }
+
+  .page-10-video-mobile {
+    display: block;
+  }
 }
 
 /* ── Premium Gradient Overlay ────────────────────────────────────────────── */
@@ -2664,12 +2688,14 @@ body {
 
   #page-10-gallery-container {
     margin : 0;
-    height : 450px;
+    height : 520px;
   }
 
 
   .page-10-video {
-    aspect-ratio: 4/5;
+    /* aspect-ratio: 167/207; */
+    width : 334px;
+    height : 80%;
     margin-left: 10px;
     margin-right: 10px;
   }

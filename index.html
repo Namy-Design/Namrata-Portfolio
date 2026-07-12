@@ -386,13 +386,52 @@
       font-family: 'EulogyDemo-SemiBold';
       font-weight: 600;
       font-size: 64px;
-      color: #E0DFBF;
       margin: 0;
       padding: 0;
-      /* display: flex;
-      flex-wrap: wrap; */
       letter-spacing: 3.84px;
       margin-bottom: auto;
+      color: rgba(224, 223, 191, 0.16);
+      line-height: 1.12;
+    }
+
+    #page-5-text {
+      width: 100%;
+      max-width: 1093px;
+      font-family: "Inter";
+      font-weight: 500;
+      font-family: 'EulogyDemo-SemiBold';
+      font-weight: 600;
+      font-size: 64px;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 3.84px;
+      margin-bottom: auto;
+      color: rgba(224, 223, 191, 0.16);
+      line-height: 1.12;
+    }
+
+    .scroll-highlight-line {
+      display: block;
+      max-width: 100%;
+      max-width: fit-content;
+    }
+
+    .scroll-highlight-word {
+      display: inline-block;
+      color: rgba(224, 223, 191, 0.16);
+      background-image: linear-gradient(90deg, #E0DFBF 0%, #E0DFBF 100%);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: calc(var(--word-progress, 0) * 100%) 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: background-size 0.12s linear;
+      will-change: background-size;
+    }
+
+    .scroll-highlight-word.scroll-highlight-accent {
+      color: rgba(246, 124, 41, 0.22);
+      background-image: linear-gradient(90deg, #F67C29 0%, #F67C29 100%);
     }
 
     #page-4-header {
@@ -424,25 +463,28 @@
       align-items: center;
       width: 100%;
       padding-top: 1rem;
-      cursor: help;
+      cursor: default;
     }
 
     .hover-highlight {
       height: 100%;
       margin-left: auto;
+      width: 754px;
       padding-right: 10%;
       transition: height 0.3s;
       transition-timing-function: ease-in;
       font-family: 'Inter';
       font-weight: 400;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: left;
       font-size: 0;
       display: flex;
       line-height: 145%;
       z-index: 1;
       letter-spacing: 0px;
+      box-sizing: border-box;
+      pointer-events: none;
     }
 
     .what-i-do-text {
@@ -460,6 +502,7 @@
       align-items: center;
       letter-spacing: 0.4rem;
       z-index: 1;
+      cursor: help;
     }
 
     .hover-aboslute-bg {
@@ -472,17 +515,17 @@
       z-index: 0;
     }
 
-    .what-i-do-selector:hover > .hover-highlight {
+    .what-i-do-text:hover + .hover-highlight {
       color: #2B2B2B;
       font-size: 20px;
     }
 
-    .what-i-do-selector:hover > .what-i-do-text {
+    .what-i-do-text:hover {
       color: #2B2B2B;
       transition: transform 0.3s ease;
     }
 
-    .what-i-do-selector:hover > .hover-aboslute-bg {
+    .what-i-do-text:hover + .hover-highlight + .hover-aboslute-bg {
       height: 100%;
       transition: height 0.3s;
       transition-timing-function: ease-in;
@@ -490,23 +533,6 @@
 
     #page-5 {
       background-color: rgba(7, 15, 206, 0.5);
-    }
-
-    #page-5-text {
-      width: 100%;
-      max-width: 1093px;
-      font-family: "Inter";
-      font-weight: 500;
-      font-family: 'EulogyDemo-SemiBold';
-      font-weight: 600;
-      font-size: 64px;
-      color: #E0DFBF;
-      margin: 0;
-      padding: 0;
-      /* display: flex;
-      flex-wrap: wrap; */
-      letter-spacing: 3.84px;
-      margin-bottom: auto;
     }
 
     #page-5-overlay {
@@ -1046,6 +1072,17 @@
       transform: rotate(-90deg) translateX(100%);
       z-index: 1;
       transform-origin: bottom right;
+      transition: box-shadow 0.4s ease;
+    }
+
+    .view-resume:hover {
+      box-shadow: -6px 0px 24px rgba(246, 124, 41, 0.45);
+    }
+
+    .view-resume a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
 
     #resume-btn-text {
@@ -1053,12 +1090,20 @@
       font-family: 'EulogyDemo-SemiBold';
       font-size: 1.5rem;
       letter-spacing: 3px;
-      display: none;
-      margin-right: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 0;
+      opacity: 0;
+      margin-right: 0;
+      transition: max-width 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+                  opacity 0.35s ease,
+                  margin-right 0.55s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     .view-resume:hover #resume-btn-text {
-      display: inline-block; /* Show the text on hover */
+      max-width: 260px;
+      opacity: 1;
+      margin-right: 10px;
     }
 
     .left-sticky-menu {
@@ -1379,7 +1424,7 @@
       .exp-desc-hover {
         font-size: 16px;
       }
-      .what-i-do-selector:hover > .hover-highlight {
+      .what-i-do-text:hover + .hover-highlight {
         font-size: 16px;
       }
     }
@@ -1564,7 +1609,10 @@
           ABOUT ME ✦ 
         </div>
         <div id="page-3-text">
-          I'm a <span data-text="Product designer" id="page-3-colored-text" style="color: #F67C29;">Product designer</span>,<br>selectively skilled & intentionally thorough because pretty without purpose is just a wallpaper
+          <span class="scroll-highlight-line">I'm a <span data-text="Product designer" id="page-3-colored-text" class="scroll-highlight-accent">Product designer</span>,</span>
+          <span class="scroll-highlight-line">selectively skilled & intentionally</span>
+          <span class="scroll-highlight-line">thorough because pretty without</span>
+          <span class="scroll-highlight-line">purpose is just wallpaper</span>
         </div>
       </div>
     </div>
@@ -1610,7 +1658,9 @@
           EXPERIENCE ✦ 
         </div>
         <div id="page-5-text">
-         <span data-text="5+ years" id="page-5-colored-text" style="color: #F67C29;">5+ years</span> of shaping digital products while navigating the beautiful mess of Indian startups
+          <span class="scroll-highlight-line"><span data-text="5+ years" id="page-5-colored-text" class="scroll-highlight-accent">5+ years</span> of shaping digital </span>
+          <span class="scroll-highlight-line">products while navigating the</span>
+          <span class="scroll-highlight-line">beautiful mess of Indian startups</span>
         </div>
       </div>
     </div>
@@ -1830,5 +1880,8 @@
     </div>
   </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="js/index.js" class="asset-tracker"></script>
 </html>

@@ -1,0 +1,301 @@
+@font-face {
+  font-family: EulogyDemo-SemiBold;
+  src: url(assets/fonts/eulogy-demo/EulogyDemo-SemiBold.ttf);
+}
+
+body {
+  background-color: #171717;
+  margin: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+  justify-content: center;
+  line-height: 22px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.resume-container {
+  width: 578px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.resume-timeline {
+  width: 100%;
+  height: 12%;
+  display: flex;
+  margin-bottom: 42px;
+  align-items: center;
+}
+
+.resume-dp {
+  height: 120px;
+  display: flex;
+}
+
+.timeline-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.timeline-name {
+  font-family: "Inter";
+  color: #DDDDDD;
+  font-size: 24px;
+  display: flex;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.timeline-jd {
+  font-family: "Inter";
+  color: #909090;
+  font-size: 14px;
+  display: flex;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.timeline-web-url {
+  font-family: "Inter";
+  color: #BBBBBB;
+  font-size: 14px;
+  display: flex;
+  font-weight: 300;
+  padding: 6px 10px;
+  background-color: #333333;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.resume-heading {
+  display: flex;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  color: #DDDDDD;
+  margin-bottom: 24px;
+}
+
+.resume-content-container {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.resume-title-content {
+  color: #909090;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 300;
+  margin-right: 30px;
+  white-space: nowrap;
+  width: 110px;
+}
+
+.resume-content {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 14px;
+  color: #909090;
+  flex-direction: column;
+  text-decoration: none;
+  width: calc(100% - 140px);
+}
+
+.resume-company-link {
+  text-decoration: none;
+  color: #909090;
+  align-items: center;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+.resume-list-item {
+  margin-bottom: 12px;
+}
+
+.resume-highlight-text {
+  color: #BBBBBB;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.resume-text {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 14px;
+  color: #909090;
+  margin-bottom: 40px;
+}
+
+.resume-download {
+  position: fixed;
+  bottom: 100px;
+  right: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #F67C29;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  cursor: pointer;
+  transform: rotate(-90deg) translateX(100%);
+  z-index: 1;
+  transform-origin: bottom right;
+  transition: box-shadow 0.4s ease;
+}
+
+.resume-download:hover {
+  box-shadow: -6px 0px 24px rgba(246, 124, 41, 0.45);
+}
+
+#resume-btn-text {
+  color: #2B2B2B;
+  font-family: 'EulogyDemo-SemiBold';
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  display: none;
+  margin-left: 10px;
+}
+
+.resume-download:hover #resume-btn-text {
+  display: inline-block;
+}
+
+.for-interesting-people {
+  width: 100%;
+  height: 16px;
+  background-color: #F67C29;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 786px) {
+.resume-download {
+  position: fixed;
+  bottom: 100px;
+  right: 0px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #F67C29;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  cursor: pointer;
+  transform: rotate(-90deg) translateX(100%);
+  z-index: 1;
+  transform-origin: bottom right;
+  transition: box-shadow 0.4s ease;
+}
+
+#download-btn img{
+    height : 20px !important;
+    width : auto;
+}
+
+  .resume-container {
+    width: 100%;
+    padding : 0 28px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .resume-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-details {
+    margin-top: 30px;
+    margin-left: 0px;
+  }
+
+  .resume-content-container {
+    flex-direction: column;
+  }
+
+  .resume-title-content {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 8px;
+  }
+
+  .resume-content {
+    width: 100%;
+  }
+}
+
+/* TABLET STYLES */
+@media (min-width: 481px) and (max-width: 834px) {
+  .resume-container {
+    width: 380px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+
+  .resume-timeline {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .timeline-details {
+    margin-top: 0px;
+    margin-left: 30px;
+  }
+
+  .resume-content-container {
+    flex-direction: column;
+  }
+
+  .resume-title-content {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 8px;
+  }
+
+  .resume-content {
+    width: 100%;
+  }
+}
+
+/* DESKTOP STYLES */
+@media (min-width: 835px) {
+  .resume-container {
+    width: 578px;
+    margin-top: 160px;
+    margin-bottom: 160px;
+  }
+
+  .resume-timeline {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .timeline-details {
+    margin-top: 0px;
+    margin-left: 30px;
+  }
+
+  .resume-content-container {
+    flex-direction: row;
+  }
+
+  .resume-title-content {
+    width: 110px;
+    margin-bottom: 0px;
+  }
+
+  .resume-content {
+    width: calc(100% - 140px);
+  }
+}

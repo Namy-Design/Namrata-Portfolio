@@ -53,7 +53,7 @@ export default function MyBillBook() {
   return (
     <div className="mybillbook-page">
       <picture>
-        <source srcSet="assets/images/mybillbook_1_small.jpg" media="(max-width: 1920px)" />
+        <source srcSet="assets/images/mybillbook_1.jpg" media="(max-width: 1920px)" />
         <img className="project-img" src="assets/images/mybillbook_1.jpg" alt="MyBillBook Intro" />
       </picture>
 

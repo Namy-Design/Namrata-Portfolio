@@ -142,7 +142,7 @@ body::-webkit-scrollbar {
   bottom: 100px;
   right: 0px;
   padding-top: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: #F67C29;
@@ -180,6 +180,29 @@ body::-webkit-scrollbar {
 
 /* MOBILE STYLES */
 @media (max-width: 786px) {
+.resume-download {
+  position: fixed;
+  bottom: 100px;
+  right: 0px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #F67C29;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  cursor: pointer;
+  transform: rotate(-90deg) translateX(100%);
+  z-index: 1;
+  transform-origin: bottom right;
+  transition: box-shadow 0.4s ease;
+}
+
+#download-btn img{
+    height : 20px !important;
+    width : auto;
+}
+
   .resume-container {
     width: 100%;
     padding : 0 28px;

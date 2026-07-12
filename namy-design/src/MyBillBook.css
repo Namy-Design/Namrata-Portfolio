@@ -1,13 +1,5 @@
 /* Container to replace the body styles and isolate this page's theme */
 
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  overflow: hidden;
-  font-family: 'Arial', sans-serif;
-}
-
 .mybillbook-page {
   background-color: #FBFBFB;
   margin: 0;
@@ -16,15 +8,16 @@ body {
 }
 
 .project-img {
-  width: 100%;
+  position: relative;
+  width: 100vw;
   height : auto;
-  margin-top: -1px;
-  margin-bottom: -4px;
+  object-fit: contain;
 }
 
 .page-2-video-container {
-  height: 100vh;
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  height : 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,9 +25,10 @@ body {
 }
 
 #page-2-video {
-  height: 100%;
   width: 100%;
   object-fit: cover;
+  display: block;
+  aspect-ratio: 16/9;
 }
 
 /* ── MARQUEE ANIMATION ─────────────────────────────────────────────── */
@@ -152,6 +146,11 @@ picture {
 }
 
 @media (max-width: 784px) {
+
+  .page-2-video-container{
+    height : 70vw;
+  }
+
   .footer-header {
     font-size: 16px;
     letter-spacing: 10px;

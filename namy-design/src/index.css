@@ -16,6 +16,7 @@ body {
   padding: 0;
   width: 100vw;
   font-family: 'Arial', sans-serif;
+  overflow-x : hidden !important;
 }
 
 .hide-desktop{
@@ -536,9 +537,6 @@ body {
   height: 0;
   transition-timing-function: ease-in;
   z-index: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: height 0.3s ease-in;
 }
 
 .what-i-do-text:hover .scroll-word-active, .what-i-do-text:hover .scroll-word-inactive {
@@ -560,11 +558,13 @@ body {
 }
 
 .what-i-do-text:hover + .hover-highlight + .hover-aboslute-bg {
-  height: 100%;
+  height: 100%; 
+  transition: height 0.3s;
+  transition-timing-function: ease-in;
 }
 
 #page-5 {
-  background-color: #070FCE;
+  background-color: #050d91;
   background-image:
     linear-gradient(#5F64E050 1px, transparent 1px),
     linear-gradient(90deg, #5F64E050 1px, transparent 1px) !important; 
@@ -576,7 +576,7 @@ body {
   height: 100%;
   width: 100%;
   opacity: 80%;
-  background-color: #070FCE;
+  background-color: #050d91;
 }
 
 #page-6 .page-container {
@@ -677,6 +677,8 @@ body {
 
 .history-selector:has(.history-text-date:hover, .history-text-exp:hover) > .hover-aboslute-bg {
   height: 100%;
+  transition: height 0.3s;
+  transition-timing-function: ease-in;
 }
 
 .history-selector:has(.history-text-date:hover, .history-text-exp:hover) > .history-text {
@@ -702,6 +704,7 @@ body {
 .page-7-content-container {
   height: 60%;
   width: 100%;
+  max-width : 982px ;
   display: flex;
   align-items: flex-end;
   z-index: 1;
@@ -710,6 +713,7 @@ body {
 .page-7-container {
   position: relative;
   display: flex;
+  justify-content: center;
   height: 100vh;
   width: 80vw;
   flex-wrap: wrap;
@@ -905,10 +909,10 @@ body {
 }
 
 #page-9 {
-  background-color: #070FCE;
+  background-color: #050d91;
   background-image:
-    linear-gradient(#5F64E050 1px, transparent 1px),
-    linear-gradient(90deg, #5F64E050 1px, transparent 1px);
+    linear-gradient(#5F64E032 1px, transparent 1px),
+    linear-gradient(90deg, #5F64E032 1px, transparent 1px);
   background-size: 20px 20px;
   position: relative;
   height: auto !important;
@@ -1088,7 +1092,7 @@ body {
 #page-10-gallery-container {
   overflow-x: hidden;
   width: 100vw;
-  height: 600px;
+  height: 448px;
   margin-left: -20%;
   margin-right: -20%;
   display: flex;
@@ -1102,7 +1106,8 @@ body {
 }
 
 .page-10-video {
-  aspect-ratio: 5/4;
+  /* aspect-ratio: 5/4; */
+  width : 512px;
   height: 80%;
   display: flex;
   margin-left: 16px;
@@ -1314,6 +1319,7 @@ body {
   font-family: 'EulogyDemo-SemiBold';
   color: #2B2B2B;
   font-size: 5.5rem;
+  line-height : 1.2;
 }
 
 #page-11-footer-right {
@@ -1325,6 +1331,7 @@ body {
 .contact-info {
   color: #E0DFBF;
   font-size: 3rem;
+  line-height : 1.2;
   font-family: 'EulogyDemo-Medium';
   display: flex;
   flex-direction: column;
@@ -2800,6 +2807,7 @@ body {
 
   #page-11-footer-left {
     font-size : 56px;
+
   }
 
   #page-11-footer-right {

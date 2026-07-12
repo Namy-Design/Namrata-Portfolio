@@ -191,21 +191,6 @@ export default function Home() {
     };
   }, []);
 
-  // ── Helper for Scroll Highlight Text ───────────────────────────────────────
-  const renderHighlightText = (text: string, isAccent = false, customId?: string) => {
-    return text.split('').map((char, i) => {
-      return (
-        <span 
-          key={i} 
-          id={customId && i === 0 ? customId : undefined} 
-          className={`scroll-highlight-char ${isAccent ? 'scroll-highlight-accent' : ''}`}
-        >
-          {char}
-        </span>
-      );
-    });
-  };
-
   return (
     <>
       {isLoading && (

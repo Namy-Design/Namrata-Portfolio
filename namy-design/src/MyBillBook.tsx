@@ -31,10 +31,11 @@ export default function MyBillBook() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
           if (entry.isIntersecting) {
-            entry.target.play();
+            video.play();
           } else {
-            entry.target.pause();
+            video.pause();
           }
         });
       },

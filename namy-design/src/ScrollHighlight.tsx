@@ -58,12 +58,13 @@ export const ScrollHighlight: React.FC<ScrollHighlightProps> = ({
       });
     };
 
-    React.Children.forEach(children, child => {
+    React.Children.forEach(children, (child) => {
       if (typeof child === 'string') {
         processString(child, false);
       } else if (React.isValidElement(child)) {
-        if (typeof child.props.children === 'string') {
-          processString(child.props.children, true);
+        const childElement = child as React.ReactElement<any>;
+        if (typeof childElement.props.children === 'string') {
+          processString(childElement.props.children, true);
         }
       }
     });
@@ -138,7 +139,7 @@ export const ScrollHighlight: React.FC<ScrollHighlightProps> = ({
   useGSAP(() => {
     document.fonts.ready.then(setupAnimation);
 
-    let resizeTimer: NodeJS.Timeout;
+    let resizeTimer: ReturnType<typeof setTimeout>;
     const handleResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(setupAnimation, 200);

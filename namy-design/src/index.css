@@ -226,10 +226,14 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  background-size: 20px 20px;
+  image-rendering: pixelated;
 }
 
 #mainCanvas {
   position: absolute;
+  background-size: 20px 20px;
+  image-rendering: pixelated;
 }
 
 .page-2-content-container {
@@ -2224,6 +2228,16 @@ body {
 
 /* MOBILE STYLES */
 @media (max-width : 768px) {
+
+  .bottom-slider-img {
+    height: 16vh;
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 15vh;
+    position: relative;
+    justify-content: center;
+  }
 
   .view-resume {
     padding : 16px 12px 12px 12px;

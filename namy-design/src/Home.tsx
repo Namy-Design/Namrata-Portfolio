@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -538,14 +539,14 @@ export default function Home() {
             <div className="page-header" id="page-7-page-header">CASE STUDIES<span className="page-header-symbol">✦</span> </div>
             <div className="page-7-content-container" id="e-invoice-content">
               <div className="app-image-container">
-                <a href="/mybillbook" className="app-image-link" target="_blank" rel="noreferrer">
+                <Link to="/mybillbook" className="app-image-link">
                   <picture>
                     {/* Image for Mobile/Tablet */}
                     <source media="(max-width: 600px)" srcSet="/assets/images/MyBillBook.webp" />
                     {/* Default Image for Desktop */}
                     <img className="app-image asset-tracker" src="/assets/images/e-invoice.webp" alt="e-invoice" />
                   </picture>
-                </a>
+                </Link>
               </div>
             </div>
             <div id="page-7-blurred-bg-1" className="page-7-blurred-bg"></div>
@@ -554,14 +555,14 @@ export default function Home() {
           <div className="page-7-container" id="page-7-container-2" style={{ alignItems: 'center' }}>
             <div className="page-7-content-container" id="digi-gold-content">
               <div className="app-image-container">
-                <a href="/goldsetu" className="app-image-link" target="_blank" rel="noreferrer">
+                <Link to="/goldsetu" className="app-image-link">
                   <picture>
                     {/* Image for Mobile/Tablet */}
                     <source media="(max-width: 600px)" srcSet="/assets/images/GoldSetu.webp" />
                     {/* Default Image for Desktop */}
                     <img className="app-image asset-tracker" src="/assets/images/digi-gold.webp" alt="digi-gold" />
                   </picture>
-                </a>
+                </Link>
               </div>
             </div>
             <div id="page-7-blurred-bg-2" className="page-7-blurred-bg"></div>
@@ -570,14 +571,14 @@ export default function Home() {
           <div className="page-7-container" id="page-7-container-3" style={{ alignItems: 'center' }}>
             <div className="page-7-content-container" id="groc-content">
               <div className="app-image-container">
-                <a href="/group-orders" className="app-image-link" target="_blank" rel="noreferrer">
+                <Link to="/group-orders" className="app-image-link">
                   <picture>
                     {/* Image for Mobile/Tablet */}
                     <source media="(max-width: 600px)" srcSet="/assets/images/Personal.webp" />
                     {/* Default Image for Desktop */}
                     <img className="app-image asset-tracker" src="/assets/images/group-order.webp" alt="group-order" />
                   </picture>
-                </a>
+                </Link>
               </div>
             </div>
             <div id="page-7-blurred-bg-3" className="page-7-blurred-bg"></div>

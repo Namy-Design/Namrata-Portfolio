@@ -207,11 +207,11 @@ export default function Home() {
       <div className="mobile-top-gradient"></div>
 
       <div className="view-resume">
-        <a href="./resume" target="_blank" rel="noreferrer">
+        <Link to="/resume" rel="noreferrer">
           <div id="resume-btn-text" className="hide-mobile">VIEW RESUME </div>
           <div id="resume-btn-text-show" className = "hide-tab hide-desktop ">CV</div>
           <img src="/assets/images/resume_arrow.svg" className="asset-tracker" style={{ transform: 'rotate(90deg)' }} alt="arrow" />
-        </a>
+        </Link>
       </div>
 
       <div className="left-sticky-logo">

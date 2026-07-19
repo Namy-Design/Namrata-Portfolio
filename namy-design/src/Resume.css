@@ -155,9 +155,6 @@ body::-webkit-scrollbar {
   transition: box-shadow 0.4s ease;
 }
 
-.resume-download:hover {
-  box-shadow: -6px 0px 24px rgba(246, 124, 41, 0.45);
-}
 
 #resume-btn-text {
   color: #2B2B2B;
@@ -168,9 +165,7 @@ body::-webkit-scrollbar {
   margin-left: 10px;
 }
 
-.resume-download:hover #resume-btn-text {
-  display: inline-block;
-}
+
 
 .for-interesting-people {
   width: 100%;

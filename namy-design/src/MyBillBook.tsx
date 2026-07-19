@@ -1,6 +1,7 @@
 import { useEffect, useRef, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './MyBillBook.css'; // Import the specific CSS for this page
+import BackArrow from './BackArrow';
 
 export default function MyBillBook() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -28,6 +29,8 @@ export default function MyBillBook() {
 
   // Intersection Observer to play/pause video when it enters/leaves screen
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -53,8 +56,11 @@ export default function MyBillBook() {
 
   return (
     <div className="mybillbook-page">
+      {/* Fixed Back Arrow */}
+      <BackArrow />
       <picture>
-        <source srcSet="/assets/images/mybillbook_1.jpg" media="(max-width: 1920px)" />
+        <source srcSet="/assets/images/mybillbook_1_small.jpg" media="(max-width: 1840px)" />
+        <source srcSet="/assets/images/mybillbook_1.jpg" media="(max-width: 2400px)" />
         <img className="project-img" src="/assets/images/mybillbook_1.jpg" alt="MyBillBook Intro" />
       </picture>
 
@@ -71,8 +77,9 @@ export default function MyBillBook() {
       </div>
 
       <picture>
-        <source srcSet="/assets/images/mybillbook_2_small.webp" media="(max-width: 1920px)" />
-        <img className="project-img" src="/assets/images/mybillbook_2.webp" alt="MyBillBook Details" />
+        <source srcSet="/assets/images/mybillbook_2_small.webp" media="(max-width: 1820px)" />
+        <source srcSet="/assets/images/mybillbook_2.webp" media="(max-width: 2400px)" />
+        <img className="project-img" src="/assets/images/mybillbook_2_small.webp" alt="MyBillBook Details" />
       </picture>
 
       {/* React-based Infinite Marquee */}

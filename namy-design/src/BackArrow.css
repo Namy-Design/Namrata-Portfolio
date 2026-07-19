@@ -1,0 +1,44 @@
+.fixed-back-arrow {
+  position: fixed;
+  top: 24px;
+  left: 10vw;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  background-color: #171717;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* For Safari support */
+  border: 1px solid #393939;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #E0DFBF;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-back-arrow:hover {
+  background-color: #F67C29;
+  transform: scale(1.05);
+  color : #171717;
+  border-color: #171717;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust position for mobile screens */
+@media (max-width: 768px) {
+  .fixed-back-arrow {
+    top: 16px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    padding : 0 !important;
+  }
+
+  .fixed-back-arrow svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+}

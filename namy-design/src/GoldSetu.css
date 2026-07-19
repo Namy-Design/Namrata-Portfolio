@@ -123,4 +123,16 @@ picture {
     padding-top: 100px;
     padding-bottom: 60px;
   }
+
+  .goldsetu-moving-text{
+    height : auto;
+  }
+
+  .goldsetu-revolve-child-txt {
+    font-size: 2rem;
+    line-height : 1.2;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height : auto;
+  }
 }

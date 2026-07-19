@@ -1,6 +1,7 @@
 import { useEffect, useRef, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './GroupOrders.css';
+import BackArrow from './BackArrow';
 
 export default function GroupOrders() {
   const video1Ref = useRef<HTMLVideoElement>(null);
@@ -8,6 +9,7 @@ export default function GroupOrders() {
 
   // 1. Force the page to scroll (cleaning up global App.tsx locks)
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.documentElement.style.overflowY = 'auto';
     document.body.style.overflowY = 'auto';
     document.body.style.height = 'auto';
@@ -82,6 +84,8 @@ export default function GroupOrders() {
 
   return (
     <div className="group-orders-page">
+      {/* Fixed Back Arrow */}
+      <BackArrow />
       {/* Intro Image */}
       <picture>
         <source srcSet="/assets/images/Swiggy_small_1.webp" media="(max-width: 1920px)" />

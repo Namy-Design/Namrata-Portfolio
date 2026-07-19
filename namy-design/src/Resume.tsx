@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './Resume.css';
+import JsFileDownloader from 'js-file-downloader';
 
 declare global {
   interface Window {
@@ -8,42 +9,37 @@ declare global {
 }
 
 export default function Resume() {
-  useEffect(() => {
-    const downloadBtn = document.getElementById('download-btn');
-    if (downloadBtn) {
-      downloadBtn.addEventListener('click', handleDownload);
-    }
-    return () => {
-      if (downloadBtn) {
-        downloadBtn.removeEventListener('click', handleDownload);
-      }
-    };
-  }, []);
+  
 
   const handleDownload = () => {
-    if (window.jsFileDownloader) {
-      new window.jsFileDownloader({
-        url: '/assets/pdf/Namrata_Jaiswal_Product_Designer_Resume.pdf',
+    console.log('Download button clicked');
+    
+    new JsFileDownloader({
+      url: 'namy-design/public/assets/pdf/Namrata_Jaiswal_Product_Designer_Resume.pdf',
+    })
+      .then(() => {
+        console.log('Download Done!');
       })
-        .then(() => {
-          console.log('Download Done!');
-        })
-        .catch(() => {
-          console.log('Download Error!');
-        });
-    }
+      .catch((error) => {
+        console.error('Download Error!', error);
+      });
   };
 
   return (
     <>
-      <div className="resume-download" id="download-btn">
+     <a 
+        href="/assets/pdf/Namrata_Jaiswal_Product_Designer_Resume.pdf" 
+        download="Namrata_Jaiswal_Product_Designer_Resume.pdf"
+        className="resume-download" 
+        style={{ textDecoration: 'none', cursor: 'pointer' }}
+      >
         <img
           src="/assets/images/resume_arrow.svg"
           alt="download"
           style={{ transform: 'rotate(225deg)' }}
         />
         <div id="resume-btn-text">DOWNLOAD</div>
-      </div>
+      </a>
 
       <div className="resume-container">
         <div className="resume-timeline">

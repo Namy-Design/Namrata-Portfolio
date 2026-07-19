@@ -17,6 +17,8 @@ body {
   width: 100vw;
   font-family: 'Arial', sans-serif;
   overflow-x : hidden !important;
+  line-height: 1.2;
+  min-height: 100vh;
 }
 
 .hide-desktop{
@@ -163,6 +165,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
 }
 
 #page-2-video-overlay-1 {
@@ -371,6 +377,11 @@ body {
 
 #page-3 {
   height: auto;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 .page-header {
@@ -473,12 +484,22 @@ body {
   padding-left: 10%;
   padding-right: 10%;
   margin-top: auto;
+  
+}
+
+#page-4 .page-container{
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 #page-4-selector-container {
   height: 50%;
   width: 100%;
   margin-bottom: auto;
+  
 }
 
 .what-i-do-selector {
@@ -586,6 +607,15 @@ body {
 #page-6 .page-container {
   width : 100%;
   padding : 30vh 0;
+  
+}
+
+#page-6{
+  background-image:
+      linear-gradient(#39393980 1px, transparent 1px),
+      linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+    background-size: 20px 20px;
+    background-attachment: fixed;
 }
 
 
@@ -703,6 +733,11 @@ body {
 #page-7 {
   height: 300vh;
   width: 100vw;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 .page-7-content-container {
@@ -804,6 +839,14 @@ body {
   flex-direction: column;
   gap : 52px;
   width : auto;
+}
+
+#page-8 {
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 
@@ -995,6 +1038,7 @@ body {
 
 .making-row-3 .text-orange {
   font-size: 96px;
+  line-height: 1.2;
 }
 
 .making-row-1 img {
@@ -1048,6 +1092,14 @@ body {
   display : none;
 }
 
+#page-10 .page-container {
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
 
 #page-10-header {
   width: 100%;
@@ -1096,7 +1148,7 @@ body {
 #page-10-gallery-container {
   overflow-x: hidden;
   width: 100vw;
-  height: 448px;
+  height: 400px;
   margin-left: -20%;
   margin-right: -20%;
   display: flex;
@@ -1107,31 +1159,40 @@ body {
   height: 100%;
   flex-wrap: nowrap;
   align-items: center;
+  gap : 20px;
+  transition: transform 0.5s ease;
 }
 
 .page-10-video {
-  /* aspect-ratio: 5/4; */
-  width : 512px;
+  aspect-ratio: 4/3;
+  /* width : 512px; */
   height: 80%;
   display: flex;
-  margin-left: 16px;
-  margin-right: 16px;
+  /* margin-left: 16px;
+  margin-right: 16px; */
   scroll-snap-align: start;
-  transition: height 0.5s ease;
+  transition: transform 0.5s ease;
 } 
 
-.page-10-video:hover {
-  height: 100%;
+@media (min-width:1100px) {
+  .page-10-video:hover {
+    transform: scale(1.01);
+    width : auto;
+  }
 }
 
 #page-10-gallery-container[data-animated="true"] {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #page-10-gallery-container[data-animated="true"] #page-10-gallery {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear infinite;
+  animation-play-state: paused;
+}
+
+#page-10-gallery-container[data-animated="true"][data-in-view="true"] #page-10-gallery {
   animation-play-state: running;
 }
 
@@ -1173,21 +1234,21 @@ body {
 /* ── Modified Container ──────────────────────────────────────────────────── */
 .page-10-video {
   position: relative; /* Added to contain the absolute overlay */
-  aspect-ratio: 5/4;
+  aspect-ratio: 4/3;
   height: 80%;
   display: flex;
-  margin-left: 16px;
-  margin-right: 16px;
+  /* margin-left: 16px;
+  margin-right: 16px; */
   scroll-snap-align: start;
   border-radius: 12px; /* Moved border-radius here to clip the overlay */
-  overflow: hidden;    /* Clips overlay to rounded corners */
+  /* overflow: hidden;    Clips overlay to rounded corners */
   transition: height 0.5s ease;
   text-decoration: none;
   cursor: url('/assets/images/custom-cursor.svg'), auto;
 }
 
 .page-10-video:hover {
-  height: 99%;
+  height: 97%;
   border : 1px solid #79797966;
 }
 
@@ -1306,6 +1367,11 @@ body {
 #page-11 .page-container {
   padding-top : 0;
   padding-bottom : 10vh !important;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 #page-11-footer {
@@ -2326,6 +2392,10 @@ body {
     height : 1550px;
   }
 
+  #page-2-video {
+    object-fit: cover;
+  }
+
   #page-2-video-overlay-1 {
     height: fit-content;
   }
@@ -2360,8 +2430,8 @@ body {
   }
 
   #page-3 {
-    height : 80vh; 
-    padding : 10vh 0;
+    height : auto; 
+    padding : 20vh 0;
   }
 
   #page-3 .page-container {
@@ -2627,7 +2697,7 @@ body {
 
   .making-container{
     padding : 0 24px;
-    margin-top : 70px !important;
+    /* margin-top : 70px !important; */
   }
 
   .making-row-1 {
@@ -2769,8 +2839,8 @@ body {
     /* aspect-ratio: 167/207; */
     width : 334px;
     height : 80%;
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
   }
 
   .page-10-overlay {
@@ -2851,7 +2921,83 @@ body {
     padding : 0;
   }
 
-
 }
 
+@media (max-width : 400px){
+  #page-2 {
+    height : 1550px;
+  }
+}
+
+@media (max-width : 380px){
+  #page-2 {
+    height : 1450px;
+  }
+}
+
+@media (max-width : 360px){
+  #page-2 {
+    height : 1400px;
+  }
+
+  .page-header, #page-4-header , #page-6-header, #page-8-header, #page-9-header, #page-10-header{
+    font-size: 12px !important;
+    letter-spacing: 12px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    height : auto !important ;
+  }
+
+  .page-header > .page-header-symbol , #page-4-header > .page-header-symbol , #page-6-header > .page-header-symbol, #page-8-header > .page-header-symbol, #page-9-header > .page-header-symbol, #page-10-header > .page-header-symbol, #page-11-footer-left > .page-header-symbol  {
+    font-size: 20px !important;
+    line-height: 20px !important;
+  }
+
+  .page-3-text, #page-5-text {
+    font-size: 2rem !important;
+  }
+
+  #page-4 .what-i-do-text, #page-8-main-text {
+    font-size : 2rem !important;
+  }
+
+  .history-text-date {
+    min-width : 25% !important;
+    max-width : 25% !important;
+  }
+
+  .history-text-exp {
+    min-width : 75% !important;
+    max-width : 75% !important;
+  }
+
+  .feedback-selector-container {
+    height: 60px !important;
+  }
+
+  #page-10-text {
+    font-size : 36px !important;
+  }
+
+  #page-10-gallery-container {
+    height : 400px !important;
+  }
+
+  .page-10-video {
+    width : 80vw;
+  }
+  
+}
+
+@media (max-width : 340px){
+  #page-2 {
+    height : 1350px;
+  }
+}
+
+@media (max-width : 300px){
+  #page-2 {
+    height : 1250px;
+  }
+}
 

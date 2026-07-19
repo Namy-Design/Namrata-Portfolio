@@ -431,9 +431,9 @@ useEffect(() => {
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
                 >
-                  WIREFRAME
+                  BLUEPRINT
               </ScrollHighlight>
-                <div className="hover-highlight"> Now AI does the digging, competitors, patterns, user data. I do the thinking. Surprisingly, prompts can't replace that yet</div>
+                <div className="hover-highlight"> AI does the digging; competitors, patterns, data & I do the thinking. Surprisingly, prompts can't replace that yet</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
               <div className="what-i-do-selector">
@@ -479,7 +479,7 @@ useEffect(() => {
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
                 >
-                  INTERACTION
+                  EXPERIENCE
                 </ScrollHighlight>
                 <div className="hover-highlight"> The first interaction is never the right one. I iterate until it feels like it couldn't have existed any other way</div>
                 <div className="hover-aboslute-bg"></div>
@@ -495,9 +495,9 @@ useEffect(() => {
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
                 >
-                  USER TESTING
+                  VALIDATE
                 </ScrollHighlight>
-                <div className="hover-highlight"> Shipped isn't done. User interviews, A/B tests, dev & PM follow-ups. I stick around until the numbers have something to say</div>
+                <div className="hover-highlight"> Shipped isn't done. User interviews, A/B tests, Dev/PM follow-ups. I stick around until the numbers have something to say</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
             </div>
@@ -594,7 +594,7 @@ useEffect(() => {
 
        <div className="page" id="page-7">
           <div className="page-7-container" id="page-7-container-1">
-            <div className="page-header" id="page-7-page-header">CASE STUDIES<span className="page-header-symbol">✦</span> </div>
+            <div className="page-header" id="page-7-page-header">SELECT WORK<span className="page-header-symbol">✦</span> </div>
             <div className="page-7-content-container" id="e-invoice-content">
               <div className="app-image-container">
                 <Link to="/mybillbook" className="app-image-link">

@@ -367,7 +367,7 @@ useEffect(() => {
         <div className="page" id="page-1"></div>
         
         <div className="page" id="page-2">
-          <video id="page-2-video" className="asset-tracker" autoPlay muted loop>
+          <video id="page-2-video" className="asset-tracker"  autoPlay loop muted playsInline>
             <source src="/assets/videos/fabric.mp4" type="video/mp4" />
           </video>
           <div id="page-2-video-overlay-main">
@@ -405,7 +405,7 @@ useEffect(() => {
                 end="bottom 85%"
                 scrub={0.5}
                 activeColor="#E0DFBF"
-                inactiveColor="rgba(224, 223, 191, 0.16)"
+                inactiveColor="rgba(224, 223, 191, 0.08)"
                 inlineHighlightColor="#F67C29"
                 className="page-3-text"
                 scroller="#myScrollableDiv"
@@ -422,11 +422,11 @@ useEffect(() => {
             <div id="page-4-selector-container">
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 95%"
-                  end="bottom 90%"
+                  start="top 85%"
+                end="bottom 85%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
-                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inactiveColor="rgba(224, 223, 191, 0.08)"
                   inlineHighlightColor="#F67C29"
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
@@ -438,11 +438,11 @@ useEffect(() => {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 95%"
-                  end="bottom 90%"
+                  start="top 85%"
+                  end="bottom 85%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
-                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inactiveColor="rgba(224, 223, 191, 0.08)"
                   inlineHighlightColor="#F67C29"
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
@@ -454,11 +454,11 @@ useEffect(() => {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 95%"
-                  end="bottom 90%"
+                  start="top 85%"
+                  end="bottom 85%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
-                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inactiveColor="rgba(224, 223, 191, 0.08)"
                   inlineHighlightColor="#F67C29"
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
@@ -470,11 +470,11 @@ useEffect(() => {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 95%"
-                  end="bottom 90%"
+                  start="top 85%"
+                  end="bottom 85%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
-                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inactiveColor="rgba(224, 223, 191, 0.08)"
                   inlineHighlightColor="#F67C29"
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
@@ -486,11 +486,11 @@ useEffect(() => {
               </div>
               <div className="what-i-do-selector">
                 <ScrollHighlight
-                  start="top 95%"
-                  end="bottom 90%"
+                  start="top 85%"
+                  end="bottom 85%"
                   scrub={0.5}
                   activeColor="#E0DFBF"
-                  inactiveColor="rgba(224, 223, 191, 0.16)"
+                  inactiveColor="rgba(224, 223, 191, 0.08)"
                   inlineHighlightColor="#F67C29"
                   className="what-i-do-text"
                   scroller="#myScrollableDiv"
@@ -509,11 +509,11 @@ useEffect(() => {
             <div className="page-header" style={{ color: '#ABABAB' }}>EXPERIENCE<span className="page-header-symbol">✦</span> </div>
             <div id="page-5-text">
               <ScrollHighlight
-                start="top 95%"
-                end="bottom 90%"
+                start="top 85%"
+                end="bottom 85%"
                 scrub={0.5}
                 activeColor="#E0DFBF"
-                inactiveColor="rgba(224, 223, 191, 0.16)"
+                inactiveColor="rgba(224, 223, 191, 0.12)"
                 inlineHighlightColor="#F67C29"
                 className="page-5-text"
                 scroller="#myScrollableDiv"
@@ -656,11 +656,11 @@ useEffect(() => {
                 <div id="page-8-main-text">
                   {activeFeedback === 'sid' && (
                     <ScrollHighlight
-                      start="top 95%"
-                      end="bottom 90%"
+                      start="top 85%"
+                      end="bottom 85%"
                       scrub={0.5}
                       activeColor="#E0DFBF"
-                      inactiveColor="rgba(224, 223, 191, 0.16)"
+                      inactiveColor="rgba(224, 223, 191, 0.08)"
                       inlineHighlightColor="#F67C29"
                       className="page-5-text"
                       scroller="#myScrollableDiv"
@@ -670,11 +670,11 @@ useEffect(() => {
                     )}
                   {activeFeedback === 'kevin' && (
                     <ScrollHighlight
-                      start="top 90%"
-                      end="bottom 70%"
+                      start="top 85%"
+                      end="bottom 85%"
                       scrub={0.5}
                       activeColor="#E0DFBF"
-                      inactiveColor="rgba(224, 223, 191, 0.16)"
+                      inactiveColor="rgba(224, 223, 191, 0.08)"
                       inlineHighlightColor="#F67C29"
                       className="page-5-text"
                       scroller="#myScrollableDiv"
@@ -684,11 +684,11 @@ useEffect(() => {
                     )}
                   {activeFeedback === 'shankar' && (
                     <ScrollHighlight
-                      start="top 90%"
-                      end="bottom 70%"
+                      start="top 85%"
+                      end="bottom 85%"
                       scrub={0.5}
                       activeColor="#E0DFBF"
-                      inactiveColor="rgba(224, 223, 191, 0.16)"
+                      inactiveColor="rgba(224, 223, 191, 0.08)"
                       inlineHighlightColor="#F67C29"
                       className="page-5-text"
                       scroller="#myScrollableDiv"

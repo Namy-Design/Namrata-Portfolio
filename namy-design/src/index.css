@@ -968,7 +968,7 @@ body {
 .making-symbol {
   font-family: 'EulogyDemo-Bold';
   font-size: 100px;
-  font-weight : 700;
+  font-weight : 500;
   color: #E0DFBF;
 }
 
@@ -2878,21 +2878,6 @@ body {
 }
 
 @media (max-width : 400px){
-  #page-2 {
-    height : 1550px;
-  }
-}
-
-@media (max-width : 380px){
-  #page-2 {
-    height : 1450px;
-  }
-}
-
-@media (max-width : 400px){
-  #page-2 {
-    height : 1400px;
-  }
 
   .page-header, #page-4-header , #page-6-header, #page-8-header, #page-9-header, #page-10-header{
     font-size: 12px !important;
@@ -2938,18 +2923,46 @@ body {
   }
 
   .page-10-video {
-    width : 80vw;
+    width : 280px;
+    height  : auto;
   }
   
   .page-10-card-content , .page-10-video{
-    aspect-ratio: 1/1 !important;
+    aspect-ratio: 4/5 !important;
   }
 
 }
 
+@media (max-width : 480px){
+  #page-2 {
+    height : 1650px ;
+  }
+}
+
+
+
+@media (max-width : 400px){
+  #page-2 {
+    height : 1550px ;
+  }
+}
+
+@media (max-width : 380px){
+  #page-2 {
+    height : 1500px;
+  }
+}
+
+@media (max-width : 360px){
+  #page-2 {
+    height : 1450px;
+  }
+}
+
+
 @media (max-width : 340px){
   #page-2 {
-    height : 1350px;
+    height : 1300px;
   }
 }
 

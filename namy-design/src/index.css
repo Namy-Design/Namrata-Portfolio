@@ -165,6 +165,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
 }
 
 #page-2-video-overlay-1 {
@@ -373,6 +377,11 @@ body {
 
 #page-3 {
   height: auto;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 .page-header {
@@ -476,6 +485,14 @@ body {
   padding-right: 10%;
   margin-top: auto;
   
+}
+
+#page-4 .page-container{
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 #page-4-selector-container {
@@ -593,7 +610,13 @@ body {
   
 }
 
-
+#page-6{
+  background-image:
+      linear-gradient(#39393980 1px, transparent 1px),
+      linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+    background-size: 20px 20px;
+    background-attachment: fixed;
+}
 
 
 #page-6-header {
@@ -710,6 +733,11 @@ body {
 #page-7 {
   height: 300vh;
   width: 100vw;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 .page-7-content-container {
@@ -811,6 +839,14 @@ body {
   flex-direction: column;
   gap : 52px;
   width : auto;
+}
+
+#page-8 {
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 
@@ -1055,6 +1091,15 @@ body {
 .art-vd-small{
   display : none;
 }
+
+#page-10 .page-container {
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
 
 #page-10-header {
   width: 100%;
@@ -1322,6 +1367,11 @@ body {
 #page-11 .page-container {
   padding-top : 0;
   padding-bottom : 10vh !important;
+  background-image:
+    linear-gradient(#39393980 1px, transparent 1px),
+    linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
+  background-size: 20px 20px;
+  background-attachment: fixed;
 }
 
 #page-11-footer {

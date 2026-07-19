@@ -757,10 +757,10 @@ export default function Home() {
                     {/* 1. Ionic Wealth */}
                     <a href="https://ionic.in/" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ionic_wealth.webm" type="video/webm" />
+                        <source src="/assets/videos/ionic_wealth.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ionic_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/ionic_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jun '25 &bull;</span>
@@ -772,10 +772,10 @@ export default function Home() {
                     {/* 2. Flobiz */}
                     <a href="https://www.figma.com/design/HnD750utdXv8PfigcrKYRQ/Flobiz-Revamp" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/flobiz.webm" type="video/webm" />
+                        <source src="/assets/videos/flobiz.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/flobiz_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/flobiz_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '23 &bull;</span>
@@ -800,10 +800,10 @@ export default function Home() {
                     {/* 4. Get Fit */}
                     <a href="https://www.figma.com/design/jv3VP6AdVlLa3szqqB7G8y/Get-fit?node-id=0-1&t=U4um4kw8KIAv81r9-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/getfit.webm" type="video/webm" />
+                        <source src="/assets/videos/getfit.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/getfit_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/getfit_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '24 &bull;</span>
@@ -828,10 +828,10 @@ export default function Home() {
                     {/* 6. Wellness Pro */}
                     <a href="https://www.figma.com/design/agglKv6liBYos4tO16qwXt/Wellness-PRO?node-id=0-1&t=hfR1BUu1OPb5oBzS-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellnesspro.webm" type="video/webm" />
+                        <source src="/assets/videos/wellnesspro.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellnesspro_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/wellnesspro_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '24 &bull;</span>
@@ -856,10 +856,10 @@ export default function Home() {
                     {/* 8. Wellthy */}
                     <a href="https://dribbble.com/shots/18535381-Health-Medication-Tracker" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellthy.webm" type="video/webm" />
+                        <source src="/assets/videos/wellthy.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellthy_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/wellthy_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '20 &bull;</span>
@@ -871,10 +871,10 @@ export default function Home() {
                     {/* 9. Goldsetu */}
                     <a href="https://www.figma.com/design/IRoViMR4f9QFnIeGtw4dp7/Goldsetu-Website-Design--Resume-Link?node-id=0-1&t=EK7WVK1WmZ3Pu3JL-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/goldsetu.webm" type="video/webm" />
+                        <source src="/assets/videos/goldsetu.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/goldsetu_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/goldsetu_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Nov '21 &bull;</span>
@@ -886,10 +886,10 @@ export default function Home() {
                     {/* 10. Ezsplit */}
                     <a href="https://www.behance.net/gallery/146569409/Expense-Sharing-App" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ezsplit.webm" type="video/webm" />
+                        <source src="/assets/videos/ezsplit.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ezsplit_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/ezsplit_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jan '20 &bull;</span>
@@ -901,10 +901,10 @@ export default function Home() {
                      {/* 11. Bytflakes (Hashhealth) */}
                     <a href="https://dribbble.com/shots/18544189-Hashhealth" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/bytflakes.webm" type="video/webm" />
+                        <source src="/assets/videos/bytflakes.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/bytflakes_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/bytflakes_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '21 &bull;</span>
@@ -916,10 +916,10 @@ export default function Home() {
                     {/* 12. Fraple */}
                     <a href="https://www.behance.net/gallery/147704601/Mobile-App-Design" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/fraple.webm" type="video/webm" />
+                        <source src="/assets/videos/fraple.mp4" type="video/mp4" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/fraple_mobile.webm" type="video/webm" />
+                        <source src="/assets/videos/fraple_mobile.mp4" type="video/mp4" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Dec '22 &bull;</span>

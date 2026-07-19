@@ -12,8 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   console.log('Hello World');
   const scrollableRef = useRef<HTMLDivElement>(null);
-  const mainCanvasRef = useRef<HTMLCanvasElement>(null);
-  const meshCanvasRef = useRef<HTMLCanvasElement>(null);
+  // const mainCanvasRef = useRef<HTMLCanvasElement>(null);
+  // const meshCanvasRef = useRef<HTMLCanvasElement>(null);
   
   // Refs for sequential video playback
   const video1Ref = useRef<HTMLVideoElement>(null);

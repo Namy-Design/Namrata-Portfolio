@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import './Resume.css';
-import JsFileDownloader from 'js-file-downloader';
 
 declare global {
   interface Window {
@@ -9,21 +8,6 @@ declare global {
 }
 
 export default function Resume() {
-  
-
-  const handleDownload = () => {
-    console.log('Download button clicked');
-    
-    new JsFileDownloader({
-      url: 'namy-design/public/assets/pdf/Namrata_Jaiswal_Product_Designer_Resume.pdf',
-    })
-      .then(() => {
-        console.log('Download Done!');
-      })
-      .catch((error) => {
-        console.error('Download Error!', error);
-      });
-  };
 
   return (
     <>

@@ -12,8 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   console.log('Hello World');
   const scrollableRef = useRef<HTMLDivElement>(null);
-  // const mainCanvasRef = useRef<HTMLCanvasElement>(null);
-  // const meshCanvasRef = useRef<HTMLCanvasElement>(null);
+  const mainCanvasRef = useRef<HTMLCanvasElement>(null);
+  const meshCanvasRef = useRef<HTMLCanvasElement>(null);
   
   // Refs for sequential video playback
   const video1Ref = useRef<HTMLVideoElement>(null);
@@ -22,6 +22,72 @@ export default function Home() {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [activeFeedback, setActiveFeedback] = useState<'sid' | 'kevin' | 'shankar'>('sid');
+
+  // ── Canvas Mesh Generation (Waits for assets to load) ──────────────────────
+useEffect(() => {
+  if (isLoading) return;
+
+  // Track the initial width to prevent mobile scroll-resize lag
+  let lastWidth = window.innerWidth;
+
+  const drawMesh = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    const lineColor = '#282828';
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    for (let y = 0; y < canvas.height; y += 20) {
+      ctx.beginPath(); 
+      ctx.moveTo(0, y); 
+      ctx.lineTo(canvas.width, y);
+      ctx.strokeStyle = lineColor; 
+      ctx.stroke();
+    }
+    
+    for (let x = 0; x < canvas.width; x += 20) {
+      ctx.beginPath(); 
+      ctx.moveTo(x, 0); 
+      ctx.lineTo(x, canvas.height);
+      ctx.strokeStyle = lineColor; 
+      ctx.stroke();
+    }
+  };
+
+  // The function that does the actual math and drawing
+  const generateCanvas = () => {
+    if (meshCanvasRef.current) {
+      meshCanvasRef.current.width = window.innerWidth;
+      meshCanvasRef.current.height = window.innerHeight;
+      drawMesh(meshCanvasRef.current, meshCanvasRef.current.getContext('2d')!);
+    }
+    
+    if (mainCanvasRef.current && scrollableRef.current) {
+      mainCanvasRef.current.width = window.innerWidth;
+      // Get the freshly calculated document height
+      mainCanvasRef.current.height = scrollableRef.current.scrollHeight || (13.6 * window.innerHeight);
+      drawMesh(mainCanvasRef.current, mainCanvasRef.current.getContext('2d')!);
+    }
+  };
+
+  const handleResize = () => {
+    const currentWidth = window.innerWidth;
+    
+    // ONLY regenerate if the width changed (ignores mobile address bar hiding/showing)
+    if (currentWidth !== lastWidth) {
+      lastWidth = currentWidth; // Update the stored width
+      generateCanvas();         // Recalculate everything and redraw
+    }
+  };
+
+  // 1. Generate the mesh for the first time now that loading is done
+  generateCanvas();
+  
+  // 2. Attach the optimized resize listener
+  window.addEventListener('resize', handleResize);
+
+  // 3. Cleanup
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, [isLoading]);
 
   // ── Asset Loader Logic ─────────────────────────────────────────────────────
   useEffect(() => {
@@ -96,36 +162,6 @@ export default function Home() {
     lenis.on('scroll', ({ scroll }) => handleScrollEffects(scroll));
     handleScrollEffects(0);
 
-    // // 3. Canvas Mesh
-    // const drawMesh = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
-    //   const lineColor = '#282828';
-    //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-    //   for (let y = 0; y < canvas.height; y += 20) {
-    //     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
-    //     ctx.strokeStyle = lineColor; ctx.stroke();
-    //   }
-    //   for (let x = 0; x < canvas.width; x += 20) {
-    //     ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height);
-    //     ctx.strokeStyle = lineColor; ctx.stroke();
-    //   }
-    // };
-
-    // const handleResize = () => {
-    //   if (meshCanvasRef.current) {
-    //     meshCanvasRef.current.width = window.innerWidth;
-    //     meshCanvasRef.current.height = window.innerHeight;
-    //     drawMesh(meshCanvasRef.current, meshCanvasRef.current.getContext('2d')!);
-    //   }
-    //   if (mainCanvasRef.current && scrollableRef.current) {
-    //     mainCanvasRef.current.width = window.innerWidth;
-    //     mainCanvasRef.current.height = scrollableRef.current.scrollHeight || (13.6 * window.innerHeight);
-    //     drawMesh(mainCanvasRef.current, mainCanvasRef.current.getContext('2d')!);
-    //   }
-    // };
-    // handleResize();
-    // window.addEventListener('resize', handleResize);
-
-
     // 5. Page 7 Blurred Backgrounds
     const observeBlur = (containerId: string, bgId: string) => {
       const container = document.querySelector(containerId);
@@ -142,7 +178,6 @@ export default function Home() {
 
     return () => {
       lenis.destroy();
-      // window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -316,7 +351,7 @@ export default function Home() {
 
       {/* ── Main Scrollable Container ─────────────────────────────────────── */}
       <div className="scrollable-container" id="myScrollableDiv" ref={scrollableRef} style={{ display: 'block' }}>
-        {/* <canvas id="mainCanvas" ref={mainCanvasRef}></canvas> */}
+        <canvas id="mainCanvas" ref={mainCanvasRef}></canvas>
         
         <div className="slider-screen-container">
           <div className="slider top-slider"><p className="landing-header" id="landing-header-top">NAMRATA</p></div>
@@ -336,7 +371,7 @@ export default function Home() {
             <source src="/assets/videos/fabric.mp4" type="video/mp4" />
           </video>
           <div id="page-2-video-overlay-main">
-            {/* <canvas id="meshCanvas" ref={meshCanvasRef}></canvas> */}
+            <canvas id="meshCanvas" ref={meshCanvasRef}></canvas>
           </div>
           <div id="page-2-video-overlay-1">
             <div className="page-2-content-container"></div>

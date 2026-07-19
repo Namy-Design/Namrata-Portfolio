@@ -30,15 +30,15 @@
 /* Adjust position for mobile screens */
 @media (max-width: 768px) {
   .fixed-back-arrow {
-    top: 16px;
-    left: 16px;
-    width: 24px;
-    height: 24px;
+    top: 28px;
+    left: 28px;
+    width: 32px;
+    height: 32px;
     padding : 0 !important;
   }
 
   .fixed-back-arrow svg {
-    width: 10px !important;
-    height: 10px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }

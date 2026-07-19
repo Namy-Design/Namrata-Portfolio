@@ -1,11 +1,14 @@
 import { useEffect, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './GoldSetu.css'; // Import the specific CSS for this page
+import BackArrow from './BackArrow';
 
 export default function GoldSetu() {
+  const navigate = useNavigate();
   
   useEffect(() => {
     // 1. Force the body and html to allow scrolling when this component mounts
+    window.scrollTo(0, 0);
     document.documentElement.style.overflowY = 'auto';
     document.body.style.overflowY = 'auto';
     document.body.style.height = 'auto';
@@ -19,6 +22,29 @@ export default function GoldSetu() {
 
   return (
     <div className="goldsetu-page">
+      {/* Fixed Back Arrow */}
+      <BackArrow />
+      <button 
+        className="fixed-back-arrow" 
+        onClick={() => navigate(-1)}
+        aria-label="Go back"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+
       {/* Intro Image */}
       <picture>
         <source srcSet="/assets/images/Goldsetu_1_small.webp" media="(max-width: 1920px)" />

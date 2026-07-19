@@ -96,34 +96,34 @@ export default function Home() {
     lenis.on('scroll', ({ scroll }) => handleScrollEffects(scroll));
     handleScrollEffects(0);
 
-    // 3. Canvas Mesh
-    const drawMesh = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
-      const lineColor = '#282828';
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let y = 0; y < canvas.height; y += 20) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
-        ctx.strokeStyle = lineColor; ctx.stroke();
-      }
-      for (let x = 0; x < canvas.width; x += 20) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height);
-        ctx.strokeStyle = lineColor; ctx.stroke();
-      }
-    };
+    // // 3. Canvas Mesh
+    // const drawMesh = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    //   const lineColor = '#282828';
+    //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //   for (let y = 0; y < canvas.height; y += 20) {
+    //     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
+    //     ctx.strokeStyle = lineColor; ctx.stroke();
+    //   }
+    //   for (let x = 0; x < canvas.width; x += 20) {
+    //     ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height);
+    //     ctx.strokeStyle = lineColor; ctx.stroke();
+    //   }
+    // };
 
-    const handleResize = () => {
-      if (meshCanvasRef.current) {
-        meshCanvasRef.current.width = window.innerWidth;
-        meshCanvasRef.current.height = window.innerHeight;
-        drawMesh(meshCanvasRef.current, meshCanvasRef.current.getContext('2d')!);
-      }
-      if (mainCanvasRef.current && scrollableRef.current) {
-        mainCanvasRef.current.width = window.innerWidth;
-        mainCanvasRef.current.height = scrollableRef.current.scrollHeight || (13.6 * window.innerHeight);
-        drawMesh(mainCanvasRef.current, mainCanvasRef.current.getContext('2d')!);
-      }
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    // const handleResize = () => {
+    //   if (meshCanvasRef.current) {
+    //     meshCanvasRef.current.width = window.innerWidth;
+    //     meshCanvasRef.current.height = window.innerHeight;
+    //     drawMesh(meshCanvasRef.current, meshCanvasRef.current.getContext('2d')!);
+    //   }
+    //   if (mainCanvasRef.current && scrollableRef.current) {
+    //     mainCanvasRef.current.width = window.innerWidth;
+    //     mainCanvasRef.current.height = scrollableRef.current.scrollHeight || (13.6 * window.innerHeight);
+    //     drawMesh(mainCanvasRef.current, mainCanvasRef.current.getContext('2d')!);
+    //   }
+    // };
+    // handleResize();
+    // window.addEventListener('resize', handleResize);
 
 
     // 5. Page 7 Blurred Backgrounds
@@ -142,7 +142,7 @@ export default function Home() {
 
     return () => {
       lenis.destroy();
-      window.removeEventListener('resize', handleResize);
+      // window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -193,13 +193,36 @@ export default function Home() {
     };
   }, []);
 
+  // ── Gallery Scroll Animation Trigger ───────────────────────────────────────
+  useEffect(() => {
+    const galleryContainer = document.querySelector('#page-10-gallery-container') as HTMLElement;
+    if (!galleryContainer) return;
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          galleryContainer.setAttribute('data-in-view', 'true');
+        } else {
+          galleryContainer.setAttribute('data-in-view', 'false');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, { threshold: 0.1 });
+    observer.observe(galleryContainer);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       {isLoading && (
          <div className="loading-page">
-            <div className="circular-loader" style={{ background: `conic-gradient(#F67C29 ${loadingProgress * 3.6}deg, #171717 0deg)` }} >
+            <div className="circular-loader" style={{ background: `conic-gradient(#E0DFBF ${loadingProgress * 3.6}deg, #39393936 0deg)` }} >
             <div className="loader-value">{loadingProgress}%</div>
-            <img src="/assets/images/namy_logo.svg" style={{ height: '20%', position: 'relative', zIndex: 10001 }} alt="logo" />
+            <img src="/assets/images/favicon.png" style={{ height: '20%', position: 'relative', zIndex: 10001 }} alt="logo" />
             </div>
         </div>
       )}
@@ -215,7 +238,7 @@ export default function Home() {
       </div>
 
       <div className="left-sticky-logo">
-        <img src="/assets/images/namy_logo.svg" className="asset-tracker" style={{ height: '100%' }} alt="logo" />
+        <img src="/assets/images/favicon.png" className="asset-tracker" style={{ height: '100%' }} alt="logo" />
       </div>
 
       <div className="left-sticky-menu hide-tab hide-mobile">
@@ -293,7 +316,7 @@ export default function Home() {
 
       {/* ── Main Scrollable Container ─────────────────────────────────────── */}
       <div className="scrollable-container" id="myScrollableDiv" ref={scrollableRef} style={{ display: 'block' }}>
-        <canvas id="mainCanvas" ref={mainCanvasRef}></canvas>
+        {/* <canvas id="mainCanvas" ref={mainCanvasRef}></canvas> */}
         
         <div className="slider-screen-container">
           <div className="slider top-slider"><p className="landing-header" id="landing-header-top">NAMRATA</p></div>
@@ -313,7 +336,7 @@ export default function Home() {
             <source src="/assets/videos/fabric.mp4" type="video/mp4" />
           </video>
           <div id="page-2-video-overlay-main">
-            <canvas id="meshCanvas" ref={meshCanvasRef}></canvas>
+            {/* <canvas id="meshCanvas" ref={meshCanvasRef}></canvas> */}
           </div>
           <div id="page-2-video-overlay-1">
             <div className="page-2-content-container"></div>
@@ -343,8 +366,8 @@ export default function Home() {
             <div className="page-header">ABOUT ME<span className="page-header-symbol">✦</span> </div>
             <div className="page-3-text">
               <ScrollHighlight
-                start="top 95%"
-                end="bottom 90%"
+                start="top 85%"
+                end="bottom 85%"
                 scrub={0.5}
                 activeColor="#E0DFBF"
                 inactiveColor="rgba(224, 223, 191, 0.16)"
@@ -734,10 +757,10 @@ export default function Home() {
                     {/* 1. Ionic Wealth */}
                     <a href="https://ionic.in/" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ionic_wealth.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ionic_wealth.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ionic_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ionic_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jun '25 &bull;</span>
@@ -749,10 +772,10 @@ export default function Home() {
                     {/* 2. Flobiz */}
                     <a href="https://www.figma.com/design/HnD750utdXv8PfigcrKYRQ/Flobiz-Revamp" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/flobiz.mp4" type="video/mp4" />
+                        <source src="/assets/videos/flobiz.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/flobiz_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/flobiz_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '23 &bull;</span>
@@ -765,7 +788,7 @@ export default function Home() {
                     <a href="https://dribbble.com/shots/18515848-Campaign-Management-Platform" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <picture>
                         <source media="(max-width: 768px)" srcSet="/assets/images/g5_mobile.png" />
-                        <img className="page-10-card-content asset-tracker" src="/assets/images/g5.png" alt="Galleri5" />
+                        <img className="page-10-card-content asset-tracker" style={{ width: '100% !important' }} src="/assets/images/g5.png" alt="Galleri5" />
                       </picture>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jul '20 &bull;</span>
@@ -777,10 +800,10 @@ export default function Home() {
                     {/* 4. Get Fit */}
                     <a href="https://www.figma.com/design/jv3VP6AdVlLa3szqqB7G8y/Get-fit?node-id=0-1&t=U4um4kw8KIAv81r9-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/getfit.mp4" type="video/mp4" />
+                        <source src="/assets/videos/getfit.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/getfit_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/getfit_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '24 &bull;</span>
@@ -805,10 +828,10 @@ export default function Home() {
                     {/* 6. Wellness Pro */}
                     <a href="https://www.figma.com/design/agglKv6liBYos4tO16qwXt/Wellness-PRO?node-id=0-1&t=hfR1BUu1OPb5oBzS-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellnesspro.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellnesspro.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellnesspro_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellnesspro_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '24 &bull;</span>
@@ -833,10 +856,10 @@ export default function Home() {
                     {/* 8. Wellthy */}
                     <a href="https://dribbble.com/shots/18535381-Health-Medication-Tracker" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellthy.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellthy.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/wellthy_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/wellthy_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Aug '20 &bull;</span>
@@ -848,10 +871,10 @@ export default function Home() {
                     {/* 9. Goldsetu */}
                     <a href="https://www.figma.com/design/IRoViMR4f9QFnIeGtw4dp7/Goldsetu-Website-Design--Resume-Link?node-id=0-1&t=EK7WVK1WmZ3Pu3JL-1" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/goldsetu.mp4" type="video/mp4" />
+                        <source src="/assets/videos/goldsetu.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/goldsetu_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/goldsetu_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Nov '21 &bull;</span>
@@ -863,10 +886,10 @@ export default function Home() {
                     {/* 10. Ezsplit */}
                     <a href="https://www.behance.net/gallery/146569409/Expense-Sharing-App" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ezsplit.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ezsplit.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/ezsplit_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/ezsplit_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Jan '20 &bull;</span>
@@ -878,10 +901,10 @@ export default function Home() {
                      {/* 11. Bytflakes (Hashhealth) */}
                     <a href="https://dribbble.com/shots/18544189-Hashhealth" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/bytflakes.mp4" type="video/mp4" />
+                        <source src="/assets/videos/bytflakes.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/bytflakes_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/bytflakes_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Oct '21 &bull;</span>
@@ -893,10 +916,10 @@ export default function Home() {
                     {/* 12. Fraple */}
                     <a href="https://www.behance.net/gallery/147704601/Mobile-App-Design" className="page-10-video" target="_blank" rel="noreferrer" aria-hidden={iteration === 2}>
                       <video className="page-10-card-content asset-tracker page-10-video-desktop" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/fraple.mp4" type="video/mp4" />
+                        <source src="/assets/videos/fraple.webm" type="video/webm" />
                       </video>
                       <video className="page-10-card-content asset-tracker page-10-video-mobile" autoPlay loop muted playsInline style={{ pointerEvents: 'none' }}>
-                        <source src="/assets/videos/fraple_mobile.mp4" type="video/mp4" />
+                        <source src="/assets/videos/fraple_mobile.webm" type="video/webm" />
                       </video>
                       <div className="page-10-overlay">
                         <span className="p10-meta">&bull; Dec '22 &bull;</span>

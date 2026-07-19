@@ -21,15 +21,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #CEC9FF;
+  background-color: #c8c2ff;
 }
 
-#page-2-video {
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  aspect-ratio: 16/9;
-}
 
 /* ── MARQUEE ANIMATION ─────────────────────────────────────────────── */
 .moving-text {
@@ -142,6 +136,18 @@ picture {
     line-height: 24px;
     padding-top: 100px;
     padding-bottom: 60px;
+  }
+
+  .moving-text{
+    height : auto;
+  }
+
+  .revolve-child-txt {
+    font-size: 2rem;
+    line-height : 1.2;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height : auto;
   }
 }
 

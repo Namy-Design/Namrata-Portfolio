@@ -12,8 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   console.log('Hello World');
   const scrollableRef = useRef<HTMLDivElement>(null);
-  const mainCanvasRef = useRef<HTMLCanvasElement>(null);
-  const meshCanvasRef = useRef<HTMLCanvasElement>(null);
+  // const mainCanvasRef = useRef<HTMLCanvasElement>(null);
+  // const meshCanvasRef = useRef<HTMLCanvasElement>(null);
   
   // Refs for sequential video playback
   const video1Ref = useRef<HTMLVideoElement>(null);
@@ -96,34 +96,34 @@ export default function Home() {
     lenis.on('scroll', ({ scroll }) => handleScrollEffects(scroll));
     handleScrollEffects(0);
 
-    // 3. Canvas Mesh
-    const drawMesh = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
-      const lineColor = '#282828';
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let y = 0; y < canvas.height; y += 20) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
-        ctx.strokeStyle = lineColor; ctx.stroke();
-      }
-      for (let x = 0; x < canvas.width; x += 20) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height);
-        ctx.strokeStyle = lineColor; ctx.stroke();
-      }
-    };
+    // // 3. Canvas Mesh
+    // const drawMesh = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    //   const lineColor = '#282828';
+    //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //   for (let y = 0; y < canvas.height; y += 20) {
+    //     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
+    //     ctx.strokeStyle = lineColor; ctx.stroke();
+    //   }
+    //   for (let x = 0; x < canvas.width; x += 20) {
+    //     ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height);
+    //     ctx.strokeStyle = lineColor; ctx.stroke();
+    //   }
+    // };
 
-    const handleResize = () => {
-      if (meshCanvasRef.current) {
-        meshCanvasRef.current.width = window.innerWidth;
-        meshCanvasRef.current.height = window.innerHeight;
-        drawMesh(meshCanvasRef.current, meshCanvasRef.current.getContext('2d')!);
-      }
-      if (mainCanvasRef.current && scrollableRef.current) {
-        mainCanvasRef.current.width = window.innerWidth;
-        mainCanvasRef.current.height = scrollableRef.current.scrollHeight || (13.6 * window.innerHeight);
-        drawMesh(mainCanvasRef.current, mainCanvasRef.current.getContext('2d')!);
-      }
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    // const handleResize = () => {
+    //   if (meshCanvasRef.current) {
+    //     meshCanvasRef.current.width = window.innerWidth;
+    //     meshCanvasRef.current.height = window.innerHeight;
+    //     drawMesh(meshCanvasRef.current, meshCanvasRef.current.getContext('2d')!);
+    //   }
+    //   if (mainCanvasRef.current && scrollableRef.current) {
+    //     mainCanvasRef.current.width = window.innerWidth;
+    //     mainCanvasRef.current.height = scrollableRef.current.scrollHeight || (13.6 * window.innerHeight);
+    //     drawMesh(mainCanvasRef.current, mainCanvasRef.current.getContext('2d')!);
+    //   }
+    // };
+    // handleResize();
+    // window.addEventListener('resize', handleResize);
 
 
     // 5. Page 7 Blurred Backgrounds
@@ -316,7 +316,7 @@ export default function Home() {
 
       {/* ── Main Scrollable Container ─────────────────────────────────────── */}
       <div className="scrollable-container" id="myScrollableDiv" ref={scrollableRef} style={{ display: 'block' }}>
-        <canvas id="mainCanvas" ref={mainCanvasRef}></canvas>
+        {/* <canvas id="mainCanvas" ref={mainCanvasRef}></canvas> */}
         
         <div className="slider-screen-container">
           <div className="slider top-slider"><p className="landing-header" id="landing-header-top">NAMRATA</p></div>

@@ -381,7 +381,7 @@ body {
     linear-gradient(#39393980 1px, transparent 1px),
     linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
   background-size: 20px 20px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 .page-header {
@@ -492,7 +492,7 @@ body {
     linear-gradient(#39393980 1px, transparent 1px),
     linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
   background-size: 20px 20px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 #page-4-selector-container {
@@ -615,7 +615,7 @@ body {
       linear-gradient(#39393980 1px, transparent 1px),
       linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
     background-size: 20px 20px;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 
 
@@ -737,7 +737,7 @@ body {
     linear-gradient(#39393980 1px, transparent 1px),
     linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
   background-size: 20px 20px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 .page-7-content-container {
@@ -846,7 +846,7 @@ body {
     linear-gradient(#39393980 1px, transparent 1px),
     linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
   background-size: 20px 20px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 
@@ -1097,7 +1097,7 @@ body {
     linear-gradient(#39393980 1px, transparent 1px),
     linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
   background-size: 20px 20px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 
@@ -1371,7 +1371,7 @@ body {
     linear-gradient(#39393980 1px, transparent 1px),
     linear-gradient(90deg, #39393980 1px, transparent 1px) !important; 
   background-size: 20px 20px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 #page-11-footer {

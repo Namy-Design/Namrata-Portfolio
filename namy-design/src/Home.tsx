@@ -22,6 +22,7 @@ export default function Home() {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [activeFeedback, setActiveFeedback] = useState<'sid' | 'kevin' | 'shankar'>('sid');
+  const [activeWhatIDo, setActiveWhatIDo] = useState<'blueprint' | 'visual' | 'motion' | 'experience' | 'validate' | null>(null);
 
   // ── Canvas Mesh Generation (Waits for assets to load) ──────────────────────
 useEffect(() => {
@@ -420,7 +421,11 @@ useEffect(() => {
           <div className="page-container" style={{ padding: '0px', width: '100%', paddingBottom : '30vh' }}>
             <div id="page-4-header">WHAT I DO<span className="page-header-symbol">✦</span> </div>
             <div id="page-4-selector-container">
-              <div className="what-i-do-selector">
+              <div
+                className={`what-i-do-selector ${activeWhatIDo === 'blueprint' ? 'is-active' : ''}`}
+                onTouchStart={() => setActiveWhatIDo('blueprint')}
+                onClick={() => setActiveWhatIDo('blueprint')}
+              >
                 <ScrollHighlight
                   start="top 85%"
                 end="bottom 85%"
@@ -436,7 +441,11 @@ useEffect(() => {
                 <div className="hover-highlight"> AI does the digging; competitors, patterns, data & I do the thinking. Surprisingly, prompts can't replace that yet</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
-              <div className="what-i-do-selector">
+              <div
+                className={`what-i-do-selector ${activeWhatIDo === 'visual' ? 'is-active' : ''}`}
+                onTouchStart={() => setActiveWhatIDo('visual')}
+                onClick={() => setActiveWhatIDo('visual')}
+              >
                 <ScrollHighlight
                   start="top 85%"
                   end="bottom 85%"
@@ -452,7 +461,11 @@ useEffect(() => {
                 <div className="hover-highlight"> Moodboards consumed, references digested, trends ignored. What comes out is mine, not a Dribbble copy with a new palette</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
-              <div className="what-i-do-selector">
+              <div
+                className={`what-i-do-selector ${activeWhatIDo === 'motion' ? 'is-active' : ''}`}
+                onTouchStart={() => setActiveWhatIDo('motion')}
+                onClick={() => setActiveWhatIDo('motion')}
+              >
                 <ScrollHighlight
                   start="top 85%"
                   end="bottom 85%"
@@ -468,7 +481,11 @@ useEffect(() => {
                 <div className="hover-highlight"> Motion isn't decoration. It's the difference<br />between a screen that works and one that feels alive</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
-              <div className="what-i-do-selector">
+              <div
+                className={`what-i-do-selector ${activeWhatIDo === 'experience' ? 'is-active' : ''}`}
+                onTouchStart={() => setActiveWhatIDo('experience')}
+                onClick={() => setActiveWhatIDo('experience')}
+              >
                 <ScrollHighlight
                   start="top 85%"
                   end="bottom 85%"
@@ -484,7 +501,11 @@ useEffect(() => {
                 <div className="hover-highlight"> The first interaction is never the right one. I iterate until it feels like it couldn't have existed any other way</div>
                 <div className="hover-aboslute-bg"></div>
               </div>
-              <div className="what-i-do-selector">
+              <div
+                className={`what-i-do-selector ${activeWhatIDo === 'validate' ? 'is-active' : ''}`}
+                onTouchStart={() => setActiveWhatIDo('validate')}
+                onClick={() => setActiveWhatIDo('validate')}
+              >
                 <ScrollHighlight
                   start="top 85%"
                   end="bottom 85%"

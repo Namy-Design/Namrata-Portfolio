@@ -2420,11 +2420,38 @@ body {
     width: 100%;
   }
 
+  #page-4 .hover-aboslute-bg {
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%) scaleY(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in;
+  }
+
   .what-i-do-text:hover + .hover-highlight {
     font-size: 12px;
     padding-top : 12px;
     padding-left: 24px;
     padding-bottom : 20px;
+  }
+
+  #page-4 .what-i-do-selector:has(.what-i-do-text:hover) > .hover-aboslute-bg,
+  #page-4 .what-i-do-selector.is-active > .hover-aboslute-bg {
+    transform: translateY(-50%) scaleY(1);
+  }
+
+  #page-4 .what-i-do-selector.is-active .what-i-do-text,
+  #page-4 .what-i-do-selector.is-active .what-i-do-text .scroll-word-active,
+  #page-4 .what-i-do-selector.is-active .what-i-do-text .scroll-word-inactive {
+    color: #2B2B2B !important;
+  }
+
+  #page-4 .what-i-do-selector.is-active .hover-highlight {
+    color: #2B2B2B !important;
+    font-size: 12px;
+    padding-top: 12px;
+    padding-left: 24px;
+    padding-bottom: 20px;
   }
 
   #page-5 {
